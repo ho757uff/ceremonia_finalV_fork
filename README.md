@@ -35,3 +35,4 @@ For the first week, our aim is to develop a basic version that allows users to r
 ## Final Version for the Jury
 
 In the second week, we plan to add features to enhance user experience, such as personalized invitations, a more interactive interface for the seating plan, and advanced options for managing gift lists.
+.
