@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'ImprintMTShadow';
+  src: url('/asset/fonts/ImprimMTShadow.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.title1 {
+  font-family: 'ImprintMTShadow';
+  font-size: 6rem;
+  color: #fcb1cf;
+}
+
+.hyphen {
+  font-family: 'ImprintMTShadow';
+  font-size: 6rem;
+  color: #fcb1cf;
+}
+
+.leit {
+  font-family: 'ImprintMTShadow';
+  font-size: 3rem;
+  color: #fcb1cf;
+  padding-bottom: 20px;
+}
+
+.btn-light {
+  background-color: #fcb1cf;
+
+}
+
+.logo-img {
+  max-width: 100px; 
+  height: auto; 
+  margin-right: 10px;
+  border-radius: 89px;
+}
+.rounded-button {
+  border-radius: 10px; 
+  margin-right: 5px;
+}
