@@ -1,3 +1,4 @@
 class Location < ApplicationRecord
-    # belongs_to :event_location
+  has_many :event_locations
+  has_many :events, through: :event_locations
 end
