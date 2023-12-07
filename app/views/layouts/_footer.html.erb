@@ -1,13 +1,32 @@
-<div class="container-fluid " id="footer">
-  <div class="row d-flex ">
-    <div class="col-2">
-      <h6>Qui sommes nous ?</h6>
-    </div>
-    <div class="col-1">
-      <h6>Contact</h6>
-    </div>
-    <div class="col-1">
-      <h6>CGU</h6>
-    </div>
+<div class="container-fluid d-flex justify-content-between" id="footer">
+  <!-- Left links (GitHub) -->
+  <div class="d-flex align-items-center">
+    <%= link_to "https://www.github.com/LLRMF", class: "btn btn-lg me-2", target: "_blank", rel: "noopener noreferrer" do %>
+      <i class="fab fa-github"></i> GitHub
+    <% end %>
+  </div>
+  <!-- Center Links (About, Contact, Feedback) -->
+  <div class="d-flex align-items-center justify-content-center flex-grow-1">
+    <%= link_to about_path, class: 'nav-link me-3', style: 'color: grey' do %>
+      <i class="fas fa-info-circle"></i> Qui sommes nous ?
+    <% end %>
+    <%= link_to contact_path, class: 'nav-link me-3', style: 'color: grey' do %>
+      <i class="fas fa-envelope"></i> Contact
+    <% end %>
+    <%= link_to feedback_path, class: 'nav-link me-3', style: 'color: grey' do %>
+      <i class="fas fa-comments"></i> Feedback
+    <% end %>
+  </div>
+  <!-- Right Links (FAQ, CGU, Politique de confidentialité) -->
+  <div class="d-flex align-items-center">
+    <%= link_to faq_path, class: 'nav-link me-3', style: 'color: grey' do %>
+      <i class="fas fa-question-circle"></i> FAQ
+    <% end %>
+    <%= link_to terms_path, class: 'nav-link me-3', style: 'color: grey' do %>
+      <i class="fas fa-file-alt"></i> CGU
+    <% end %>
+    <%= link_to privacy_path, class: 'nav-link me-3', style: 'color: grey' do %>
+      <i class="fas fa-lock"></i> Politique de confidentialité
+    <% end %>
   </div>
 </div>
