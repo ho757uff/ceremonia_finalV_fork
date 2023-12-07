@@ -1,9 +1,10 @@
-<nav class="navbar navbar-expand-lg bg-dark">
+<nav class="navbar navbar-expand-lg bg-dark fixed-top">
   <div class="container-fluid">
-    <%= link_to root_path, class: 'navbar-brand text-white' do %>
-      <%= image_tag("gif_logo_notitle_white.gif", alt: "Description de l'image", class: "logo-img") %>
-      Ceremonia
-    <% end %>
+    <div>
+      <%= link_to root_path do %>
+        <%= image_tag("gif_logo_notitle_black.gif", alt: "Description de l'image", class: "logo-img") %>
+      <% end %>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,11 +18,6 @@
         <li class="nav-item" style="animation: fadeIn 1s forwards;">
           <%= link_to new_event_path, class: 'nav-link text-white' do %>
             <i class="fas fa-calendar-plus"></i> Créer un événement
-          <% end %>
-        </li>
-        <li class="nav-item" style="animation: fadeIn 1s forwards;">
-          <%= link_to "#", class: 'nav-link text-white' do %>
-            <i class="fas fa-comments"></i> Vos retours
           <% end %>
         </li>
       </ul>

@@ -3,9 +3,78 @@ body {
   padding: 0;
   height: 100%;
   background-color: #f5f5f5;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
+/*------------------------- NAVBAR-------------------------*/
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.logo-img {
+  max-width: 72px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 89px;
+}
+
+/*animation_navbar_by_flo----debut-----------------*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-brand {
+  animation: fadeIn 1s forwards;
+}
+
+/*animation_navbar_by_flo----fin-----------------*/
+
+
+/*------------------------- CONTENT-------------------------*/
+
+.content {
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+
+/*------------------------- FOOTER-------------------------*/
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fcb1cf;
+  padding: 10px 0;
+  color: white;
+  height: 100px;
+  z-index: 1000;
+}
+
+
+.content-wrapper {
+  margin-bottom: 60px;
+  /* Marge en bas égale à la hauteur du footer */
+  min-height: 100vh;
+  /* Assurez-vous que la hauteur minimale est d'au moins 100% de la vue */
+}
+
+
+
+
+/*------------------------- FONTS-------------------------*/
 @font-face {
   font-family: 'ImprintMTShadow';
   src: url('/asset/fonts/ImprimMTShadow.ttf') format('truetype');
@@ -34,14 +103,6 @@ body {
 
 .btn-light {
   background-color: #fcb1cf;
-
-}
-
-.logo-img {
-  max-width: 70px;
-  height: auto;
-  margin-right: 10px;
-  border-radius: 89px;
 }
 
 .rounded-button {
@@ -49,6 +110,54 @@ body {
   margin-right: 5px;
 }
 
+/*fonts_restyling_robin*/
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+li {
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+} */
+
+/*------------------------- BUTTONS -------------------------*/
+
+.sweetButton {
+  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+  background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+  background-color: #fc8d83;
+  border-radius: 6px;
+  border: 1px solid #d83526;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Trebuchet MS;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b23e35;
+}
+
+.sweetButton:hover {
+  background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+  background-color: #e4685d;
+}
+
+.sweetButton:active {
+  position: relative;
+  top: 1px;
+}
+
+/*------------------------- FLO -------------------------*/
 /* styles.css by flo------------------debut----------------------- */
 .container-custom {
   max-width: 400px;
@@ -101,94 +210,41 @@ input[type="submit"]:hover {
 
 /* styles.css by flo---------------fin-------------------------- */
 
-/* position footer by flo------*/
-#footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #fcb1cf;
-  padding: 10px 0;
-  color: white;
-  text-align: center;
-  height: 40px;
-}
-
-.content-wrapper {
-  margin-bottom: 60px;
-  /* Marge en bas égale à la hauteur du footer */
-  min-height: 100vh;
-  /* Assurez-vous que la hauteur minimale est d'au moins 100% de la vue */
-}
-
-.content {
-  padding-bottom: 150px;
-}
-
-/* position footer fin by flo------*/
-
-
-
-/*animation_navbar_by_flo----debut-----------------*/
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/*animation_navbar_by_flo----fin-----------------*/
-
 
 /*----------animation accueil by flo debut---------*/
 #jumbotron {
   animation: slideInFromLeft 1.5s ease-out forwards;
 }
 
-/* Ajoutez ces règles CSS pour l'animation d'apparition de droite à gauche */
 #home-text {
   animation: slideInFromRight 1.5s ease-out forwards;
-  /* forwards maintient les propriétés à la fin de l'animation */
 }
 
-
-
-/* Définition de l'animation slideInFromLeft */
 @keyframes slideInFromLeft {
   from {
     opacity: 0;
     transform: translateX(-20px);
-    /* Déplacement initial vers la gauche */
   }
 
   to {
     opacity: 1;
     transform: translateX(0);
-    /* Pas de déplacement, position finale */
   }
 }
-
 
 @keyframes slideInFromRight {
   from {
     opacity: 0;
     transform: translateX(20px);
-    /* Déplacement initial vers la droite */
   }
 
   to {
     opacity: 1;
     transform: translateX(0);
-    /* Pas de déplacement, position finale */
   }
 }
 
 /*----------animation accueil by flo fin---------*/
-
 
 /*animation_form_signup/sign_in_by_flo----debut-----------------*/
 @keyframes slideInFromRight {
@@ -209,13 +265,12 @@ input[type="submit"]:hover {
 
 /*animation_form_signup_by_flo----fin-----------------*/
 
-/* design event show creer par flo-----debut------------------ */
+/* design event show créé par flo-----debut------------------ */
 .event-heading,
 .guest-heading {
   font-size: 24px;
   margin-bottom: 10px;
   color: #333;
-  /* Couleur du texte */
 }
 
 table {
@@ -227,17 +282,14 @@ table {
 th,
 td {
   border: 1px solid #ddd;
-  /* Bordures de la table */
   padding: 8px;
   text-align: left;
 }
 
 th {
   background-color: #f2f2f2;
-  /* Couleur de fond pour les en-têtes */
 }
 
-/* Animation d'apparition */
 .animate-bottom {
   position: relative;
   animation: animateBottom 1s;
@@ -255,10 +307,9 @@ th {
   }
 }
 
-/* design event show creer par flo-----fin------------------ */
+/* design event show créé par flo -----fin------------------ */
 
-
-/*acceuil animation apparitions-------debut-----------*/
+/*accueil animation apparitions -------debut-----------*/
 #jumbotron .col-4,
 #jumbotron .col-3 {
   opacity: 0;
@@ -266,76 +317,16 @@ th {
   animation: slideInFromLeft 1.5s ease-out forwards;
 }
 
-/* Définition de l'animation slideInFromLeft */
 @keyframes slideInFromLeft {
   from {
     opacity: 0;
     transform: translateX(-100%);
-    /* Déplacement initial vers la gauche */
   }
 
   to {
     opacity: 1;
     transform: translateX(0);
-    /* Pas de déplacement, position finale */
   }
 }
 
-/*acceuil animation apparitions-------fin-----------*/
-
-/*navbar_restyling_robin*/
-.navbar {
-  background-color: transparent !important;
-  color: black !important;
-}
-
-.navbar-brand {
-  animation: fadeIn 1s forwards;
-}
-}
-
-/*sweet_button_restyling_robin*/
-.sweetButton {
-  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
-  background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
-  background-color: #fc8d83;
-  border-radius: 6px;
-  border: 1px solid #d83526;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Trebuchet MS;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 6px 24px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #b23e35;
-}
-
-.sweetButton:hover {
-  background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
-  background-color: #e4685d;
-}
-
-.sweetButton:active {
-  position: relative;
-  top: 1px;
-}
-
-/*fonts_restyling_robin*/
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-a,
-li {
-  font-family: 'Roboto Slab', sans-serif;
-}
-
-p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-} */
+/*accueil animation apparitions-------fin-----------*/
