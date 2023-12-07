@@ -148,10 +148,7 @@ input[type="submit"]:hover {
   animation: slideInFromRight 1.5s ease-out forwards; /* forwards maintient les propriétés à la fin de l'animation */
 }
 
-/* Ajoutez ces règles CSS pour l'animation d'apparition de droite à gauche */
-#home-text {
-  animation: slideInFromRight 1.5s ease-out;
-}
+
 
 /* Définition de l'animation slideInFromLeft */
 @keyframes slideInFromLeft {
@@ -237,4 +234,23 @@ th {
 /* design event show creer par flo-----fin------------------ */
 
 
+/*acceuil animation apparitions-------debut-----------*/
+#jumbotron .col-4,
+#jumbotron .col-3 {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideInFromLeft 1.5s ease-out forwards;
+}
 
+/* Définition de l'animation slideInFromLeft */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%); /* Déplacement initial vers la gauche */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Pas de déplacement, position finale */
+  }
+}
+/*acceuil animation apparitions-------fin-----------*/
