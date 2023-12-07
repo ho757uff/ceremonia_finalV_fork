@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   resources :locations
   resources :events
+  resources :events do
+    post 'join_as_guest', on: :member
+    get 'join_as_guest', on: :member
+  end
 
   # Static pages
   get "about", to: "static_pages#about"
