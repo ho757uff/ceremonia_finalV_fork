@@ -2,12 +2,17 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    @all_events = Event.all
+    if current_user.organizer?
+      @events = @all_events.joins(:user_events).where(user_events: {role_id: 1, user_id: current_user.id})
+    end
   end
+
   def show
     @event = Event.find(params[:id])
-    if current_user.organizer?
-      @guest_users = User.joins(:user_events).where(user_events: { role_id: 2, event_id: @event.id })
-      render :show
+    @guest_users = User.joins(:user_events).where(user_events: { role_id: 2, event_id: @event.id })
+    unless @event.organizer?(current_user)
+      render :event_details_only
     end
   end
 
@@ -25,6 +30,11 @@ class EventsController < ApplicationController
     end
   end
   
+  def join_as_guest
+    @event = Event.find(params[:id])
+    current_user.user_events.create(event_id: @event.id, role_id: 2)
+    redirect_to @event
+  end
 
   def edit
     @event = Event.find(params[:id])
@@ -33,7 +43,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(event_params)
-      redirect_to events_show_path(@event), notice: 'Événement mis à jour avec succès.'
+      redirect_to events_show_path(@event)
     else
       render :edit
     end
@@ -42,7 +52,6 @@ class EventsController < ApplicationController
   def destroy
   end
 
-  private
 
   private
   
@@ -50,7 +59,7 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :program, :date, :city_name)
   end
   def organizer?
-    roles.exists?(role_name: 'organizer')
+    user_events.exists?(role_id: 1, user_id: current_user.id, event_id: params[:id])
   end
 
   def guest

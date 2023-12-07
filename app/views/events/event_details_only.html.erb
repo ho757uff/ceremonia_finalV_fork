@@ -1,0 +1,6 @@
+  <h1>Détails de l'événement</h1>
+  <p>Titre : <%= @event.title %></p>
+  <p>Date : <%= @event.date %></p>
+  <p>Programme : <%= @event.program %></p>
+
+  <%= link_to 'Devenir invité', join_as_guest_event_path(@event), method: :post %>
