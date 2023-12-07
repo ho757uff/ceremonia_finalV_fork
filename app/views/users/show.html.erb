@@ -1,0 +1,45 @@
+      
+<div class="container">
+  <div class="row">
+    <!-- Profile Section -->
+    <div class="col-md-4">
+      <div class="profile-section">
+        <img src="path_to_profile_image.jpg" alt="Photo de profil" class="img-fluid">
+        <h3>Madame Yvette Chaudierre et Monsieur Paul Ledure</h3>
+      </div>
+    </div>
+    <!-- Events Section -->
+    <div class="col-md-4">
+      <div class="events-section">
+        <h4>Ma liste d'événements</h4>
+        <ul>
+          <li><strong>Événement:</strong> Mairie</li>
+          <li><strong>Horaire:</strong> 14h00</li>
+          <li><strong>Lieu:</strong> Adresse Mairie</li>
+        </ul>
+        <button type="button" class="btn btn-primary">Créer un nouvel événement</button>
+      </div>
+    </div>
+    <!-- To-Do List Section -->
+    <div class="col-md-4">
+      <div class="todo-section">
+        <h4>To-Do Liste</h4>
+        <ul>
+          <li>Acheter les fleurs</li>
+          <li>Réserver le limousine</li>
+          <li>Rencontrer le DJ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function submitForm() {
+    document.getElementById('avatar-form').submit();
+  }
+  function changeBackgroundColor(element, newClass) {
+    element.classList.remove('bg-primary', 'bg-secondary', 'bg-warning');
+    element.classList.add(newClass);
+  }
+</script>

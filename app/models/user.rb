@@ -8,6 +8,16 @@ class User < ApplicationRecord
   has_many :roles, through: :user_events
   has_many :events, through: :user_events
 
+after_create :welcome_send
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
+
+
+  # def password_reset
+  #   UserMailer.password_reset(self).deliver_now
+  # end
+
   # has_one_attached :avatar
   # has_one :guest_list
   # has_one :menu
