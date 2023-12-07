@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :guest_lists
-  resources :menus
-  resources :wishlists
-  resources :funds
-  resources :guest_books
-  resources :photos
+  # resources :guest_lists
+  # resources :menus
+  # resources :wishlists
+  # resources :funds
+  # resources :guest_books
+  # resources :photos
   devise_for :users
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
