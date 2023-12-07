@@ -195,6 +195,46 @@ input[type="submit"]:hover {
 }
 /*animation_form_signup_by_flo----fin-----------------*/
 
+/* design event show creer par flo-----debut------------------ */
+.event-heading, .guest-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333; /* Couleur du texte */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd; /* Bordures de la table */
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2; /* Couleur de fond pour les en-têtes */
+}
+
+/* Animation d'apparition */
+.animate-bottom {
+  position: relative;
+  animation: animateBottom 1s;
+}
+
+@keyframes animateBottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+/* design event show creer par flo-----fin------------------ */
 
 
 

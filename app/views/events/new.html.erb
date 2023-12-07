@@ -1,35 +1,29 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
-<!-- app/views/events/new.html.erb -->
+<div class="container-custom">
+  <h2>Create a New Event</h2>
 
-<h1>Créer un nouvel événement</h1>
+  <%= form_for(@event, html: { class: 'event-form' }) do |f| %>
+    <div class="form-group">
+      <%= f.label :title %><br />
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
 
-<%= form_with(model: @event, url: events_path, local: true) do |form| %>
-  <div>
-    <%= form.label :title, 'Titre' %>
-    <%= form.text_field :title %>
-  </div>
+    <div class="form-group">
+      <%= f.label :date %><br />
+      <%= f.datetime_field :date, class: 'form-control' %>
+    </div>
 
-  <div>
-    <%= form.label :program, 'Programme' %>
-    <%= form.text_area :program %>
-  </div>
+    <div class="form-group">
+      <%= f.label :city_name %><br />
+      <%= f.text_field :city_name, class: 'form-control' %>
+    </div>
 
-  <div>
-    <%= form.label :city_name, 'Ville' %>
-    <%= form.text_field :city_name %>
-  </div>
+    <div class="form-group">
+      <%= f.label :program %><br />
+      <%= f.text_area :program, class: 'form-control' %>
+    </div>
 
-  <div>
-    <%= form.label :date, 'Date' %>
-    <%= form.date_field :date %>
-  </div>
-
-  <!-- Ajoutez d'autres champs pour les autres attributs de l'événement ici -->
-
-  <div>
-    <%= form.submit 'Créer l\'événement' %>
-  </div>
-<% end %>
-
-<%= link_to 'Retour à la liste des événements', events_path %>
+    <div class="actions">
+      <%= f.submit "Create Event", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
