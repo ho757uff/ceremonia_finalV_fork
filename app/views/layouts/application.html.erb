@@ -23,13 +23,12 @@
     <link rel="icon" type="image/png" href="/assets/favicon_black.png" />
   </head>
   <body>
-    <!-- Navbar -->
-    <%= render 'layouts/navbar' %>
-    <div class="content">
-      <!-- Content -->
-      <%= yield %>
-      <!-- Footer -->
-      <%= render 'layouts/footer' %>
-    </div>
+  <%= render 'layouts/navbar' %>
+  <div class="content">
+    <!-- Content -->
+    <%= yield %>
+  </div>
+  <!-- Footer -->
+  <%= render 'layouts/footer' %>
   </body>
 </html>
