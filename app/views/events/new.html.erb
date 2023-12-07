@@ -1,0 +1,35 @@
+<h1>Events#new</h1>
+<p>Find me in app/views/events/new.html.erb</p>
+<!-- app/views/events/new.html.erb -->
+
+<h1>Créer un nouvel événement</h1>
+
+<%= form_with(model: @event, url: events_path, local: true) do |form| %>
+  <div>
+    <%= form.label :title, 'Titre' %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :program, 'Programme' %>
+    <%= form.text_area :program %>
+  </div>
+
+  <div>
+    <%= form.label :city_name, 'Ville' %>
+    <%= form.text_field :city_name %>
+  </div>
+
+  <div>
+    <%= form.label :date, 'Date' %>
+    <%= form.date_field :date %>
+  </div>
+
+  <!-- Ajoutez d'autres champs pour les autres attributs de l'événement ici -->
+
+  <div>
+    <%= form.submit 'Créer l\'événement' %>
+  </div>
+<% end %>
+
+<%= link_to 'Retour à la liste des événements', events_path %>
