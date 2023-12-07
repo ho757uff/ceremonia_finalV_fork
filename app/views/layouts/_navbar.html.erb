@@ -12,15 +12,26 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <!-- Les liens des pages -->
-        <li class="nav-item">
+        <li class="nav-item" style="animation: fadeIn 1s forwards;">
           <%= link_to root_path, class: 'nav-link text-white' do %>
             <i class="fas fa-home"></i> Accueil
           <% end %>
         </li>
+        <li class="nav-item" style="animation: fadeIn 1s forwards;">
+          <%= link_to root_path, class: 'nav-link text-white' do %>
+            <i class="fas fa-home"></i> Creer un evenement
+          <% end %>
+          <li class="nav-item" style="animation: fadeIn 1s forwards;">
+          <%= link_to root_path, class: 'nav-link text-white' do %>
+            <i class="fas fa-home"></i> Vos retours
+          <% end %>
+        </li>
+        </li>
+        
       </ul>
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item">
+          <li class="nav-item" style="animation: fadeIn 1s forwards;">
             <%= button_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete, confirm: "Êtes-vous sûr de vouloir vous déconnecter ?" }, class: "nav-link bg-danger text-white rounded-button" do %>
               <i class="fas fa-sign-out-alt"></i> Déconnexion
             <% end %>

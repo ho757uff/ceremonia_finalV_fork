@@ -1,3 +1,11 @@
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+}
+
 @font-face {
   font-family: 'ImprintMTShadow';
   src: url('/asset/fonts/ImprimMTShadow.ttf') format('truetype');
@@ -41,13 +49,7 @@
   margin-right: 5px;
 }
 
-/* styles.css by flo----------------------------------------- */
-
-body {
-  background-color: #f5f5f5;
-  font-family: 'Arial', sans-serif;
-}
-
+/* styles.css by flo------------------debut----------------------- */
 .container-custom {
   max-width: 400px;
   margin: 50px auto;
@@ -96,4 +98,103 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #ffdb58;
 }
-/* styles.css by flo----------------------------------------- */
+
+/* styles.css by flo---------------fin-------------------------- */
+
+/* position footer by flo------*/
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fcb1cf;
+  padding: 10px 0;
+  color: white;
+  text-align: center;
+  height: 40px;
+}
+.content-wrapper {
+    margin-bottom: 60px; /* Marge en bas égale à la hauteur du footer */
+    min-height: 100vh; /* Assurez-vous que la hauteur minimale est d'au moins 100% de la vue */
+  }
+
+  .content {
+    padding-bottom: 150px;
+  }
+/* position footer fin by flo------*/
+
+
+
+/*animation_navbar_by_flo----debut-----------------*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*animation_navbar_by_flo----fin-----------------*/
+
+
+/*----------animation accueil by flo debut---------*/
+#jumbotron {
+  animation: slideInFromLeft 1.5s ease-out forwards; 
+}
+
+/* Ajoutez ces règles CSS pour l'animation d'apparition de droite à gauche */
+#home-text {
+  animation: slideInFromRight 1.5s ease-out forwards; /* forwards maintient les propriétés à la fin de l'animation */
+}
+
+/* Ajoutez ces règles CSS pour l'animation d'apparition de droite à gauche */
+#home-text {
+  animation: slideInFromRight 1.5s ease-out;
+}
+
+/* Définition de l'animation slideInFromLeft */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px); /* Déplacement initial vers la gauche */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Pas de déplacement, position finale */
+  }
+}
+
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px); /* Déplacement initial vers la droite */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Pas de déplacement, position finale */
+  }
+}
+/*----------animation accueil by flo fin---------*/
+
+
+/*animation_form_signup/sign_in_by_flo----debut-----------------*/
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.container-custom {
+  animation: slideInFromRight 1s ease-out;
+}
+/*animation_form_signup_by_flo----fin-----------------*/
+
+
+
+
