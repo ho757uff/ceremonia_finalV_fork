@@ -1,0 +1,25 @@
+<div id="location_index" style="text-align: center">
+
+<h1> ceci est l'index du controller location</h1>
+<h2> il sert à montrer tout les lieux du le mariage</h2>
+
+<%= link_to "Créer", new_location_path, class: "btn btn-secondary" %>
+
+
+<br><br>
+
+
+<% @locations.each do |location|%>
+
+    
+        <h5>Place : </h5><%= location.place %>
+        <h5>Adress : </h5><%= location.address %>
+        <h5>Description : </h5><%= location.description %>
+
+        <br><br>
+
+        <%= link_to "Voir détail", location_path(location), class: "btn btn-primary" %>
+
+<% end %>
+
+</div>
