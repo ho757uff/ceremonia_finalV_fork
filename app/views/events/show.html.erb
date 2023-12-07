@@ -1,33 +1,32 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show_guest.html.erb</p>
+<div class="event-container animate-bottom text-center mt-5">
+  <h1 class="guest-heading mb-4">Liste des invités</h1>
 
-<h1>Liste des utilisateurs avec le rôle Guest</h1>
-
-<% if @guest_users.present? %>
-  <table>
-    <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @guest_users.each do |user| %>
+  <% if @guest_users.present? %>
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <td><%= user.last_name %></td>
-          <td><%= user.first_name %></td>
-          <td><%= user.email %></td>
-          <!-- Afficher d'autres informations si nécessaire -->
+          <th>Nom</th>
+          <th>Email</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <p>Dommage, personne ne s'est encore inscrit en tant qu'invité.</p>
-<% end %>
+      </thead>
+      <tbody>
+        <% @guest_users.each do |user| %>
+          <tr>
+            <td><%= user.last_name %></td>
+            <td><%= user.first_name %></td>
+            <td><%= user.email %></td>
+            <!-- Afficher d'autres informations si nécessaire -->
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p class="mb-4">Dommage, personne ne s'est encore inscrit en tant qu'invité.</p>
+  <% end %>
 
-<h1>Détails de l'événement</h1>
+  <h1 class="guest-heading mt-5 mb-4">Détails de l'évènement</h1>
 
-<p>Titre : <%= @event.title %></p>
-<p>Date : <%= @event.date %></p>
-<p>programm : <%= @event.program %></p>
+  <p class="mb-2"><strong>Titre :</strong> <%= @event.title %></p>
+  <p class="mb-2"><strong>Date :</strong> <%= @event.date %></p>
+  <p class="mb-4"><strong>Programme :</strong> <%= @event.program %></p>
+</div>
