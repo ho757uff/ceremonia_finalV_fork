@@ -22,15 +22,19 @@
             <i class="fas fa-home"></i> Creer un evenement
           <% end %>
           <li class="nav-item" style="animation: fadeIn 1s forwards;">
-          <%= link_to root_path, class: 'nav-link text-white' do %>
-            <i class="fas fa-home"></i> Vos retours
-          <% end %>
+            <%= link_to root_path, class: 'nav-link text-white' do %>
+              <i class="fas fa-home"></i> Vos retours
+            <% end %>
+          </li>
         </li>
-        </li>
-        
       </ul>
       <ul class="navbar-nav">
         <% if user_signed_in? %>
+          <li class="nav-item" style="animation: fadeIn 1s forwards;">
+            <%= link_to user_path(current_user), class: 'nav-link' do %>
+              <i class="fas fa-user"></i> Bienvenue, <%= current_user.email %>
+            <% end %>
+          </li>
           <li class="nav-item" style="animation: fadeIn 1s forwards;">
             <%= button_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete, confirm: "Êtes-vous sûr de vouloir vous déconnecter ?" }, class: "nav-link bg-danger text-white rounded-button" do %>
               <i class="fas fa-sign-out-alt"></i> Déconnexion
@@ -39,7 +43,7 @@
         <% else %>
           <li class="nav-item">
             <%= button_to new_user_session_path, class: "nav-link bg-primary text-white rounded-button" do %>
-            <i class="fas fa-sign-in-alt"></i> Se connecter
+              <i class="fas fa-sign-in-alt"></i> Se connecter
             <% end %>
           </li>
           <li class="nav-item">
