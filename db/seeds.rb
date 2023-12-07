@@ -36,10 +36,10 @@ Locations << Location
 
 
 
-location_indexes = []
-Locations.each_with_index do |location, index|
-  location_indexes << { index: index, id: location.id }
-end
+# location_indexes = []
+# Locations.each_with_index do |location, index|
+#   location_indexes << { index: index, id: location.id }
+# end
 
 
 
