@@ -1,25 +1,32 @@
-<div id="location_show" style="text-align: center">
-
-<br><br>
-
-<h1> ceci est le show du controller locations </h1>
-<h2> il sert à montrer le détail d'un lieu pendant le mariage</h2>
-
-<br><br>
-
-
-
-
-
-    
-        <h5>Place : </h5><%= @location.place %>
-        <h5>Adress : </h5><%= @location.address %>
-        <h5>Description : </h5><%= @location.description %>
-
-        <br><br>
-
-        <%= link_to "Editer", edit_location_path, class: "btn btn-success" %>
-        <%= link_to "Retour", locations_path, class: "btn btn-info" %>
-        <%= link_to "Supprimer", location_path(@location.id), method: 'delete', class: "btn btn-danger" %>
-
+<div class="mt-1">
+  <div id="location_show" style="text-align: center">
+    <h2>Un endroit qui vous tient à cœur</h2>
+  </div>
+  <div>
+    <div class="container d-flex justify-content-center">
+      <div class="card col-md-6">
+        <div class="card-header">
+          <h5>Place : <%= @location.place %></h5>
+        </div>
+        <div class="card-header">
+          <h5>Address : <%= @location.address %></h5>
+        </div>
+        <div class="card-body text-center">
+          <h5>Description</h5>
+          <p class="text-center"><%= @location.description %></p>
+        </div>
+        <div class="card-footer d-flex justify-content-space-around">
+          <div class="col-md-4">
+            <%= button_to "Editer", edit_location_path, class: "btn btn-success" %>
+          </div>
+          <div class="col-md-4">
+            <%= button_to "Retour", locations_path, class: "btn btn-info" %>
+          </div>
+          <div class="col-md-4">
+            <%= button_to "Supprimer", location_path(@location.id), method: :delete, class: "btn btn-danger", data: { turbo: false, confirm: "Êtes-vous sûr de vouloir supprimer ?" } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
