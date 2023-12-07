@@ -1,0 +1,30 @@
+<h1>Events#edit</h1>
+<p>Find me in app/views/events/edit.html.erb</p>
+
+
+<h1>Modifier un événement</h1>
+
+<%= form_with(model: @event, url: event_path(@event), method: :patch, local: true) do |form| %>
+  <div>
+    <%= form.label :title, 'Title' %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description, 'Description' %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :date, 'Date' %>
+    <%= form.date_field :date %>
+  </div>
+
+  <!-- Ajoutez d'autres champs pour les autres attributs de l'événement ici -->
+
+  <div>
+    <%= form.submit 'Mettre à jour l\'événement' %>
+  </div>
+<% end %>
+
+<%= link_to 'Retour à la liste des événements', events_path %>

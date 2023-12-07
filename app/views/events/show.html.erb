@@ -1,0 +1,33 @@
+<h1>Events#show</h1>
+<p>Find me in app/views/events/show_guest.html.erb</p>
+
+<h1>Liste des utilisateurs avec le rôle Guest</h1>
+
+<% if @guest_users.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @guest_users.each do |user| %>
+        <tr>
+          <td><%= user.last_name %></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.email %></td>
+          <!-- Afficher d'autres informations si nécessaire -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Dommage, personne ne s'est encore inscrit en tant qu'invité.</p>
+<% end %>
+
+<h1>Détails de l'événement</h1>
+
+<p>Titre : <%= @event.title %></p>
+<p>Date : <%= @event.date %></p>
+<p>programm : <%= @event.program %></p>

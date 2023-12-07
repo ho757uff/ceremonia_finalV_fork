@@ -12,13 +12,6 @@ Location.destroy_all
 Event.destroy_all
 Role.destroy_all
 
-Events =[]
-5. times do
-    Event.create(date: Faker::Time.between(from: DateTime.now, to: '2024-12-31'), city_name: Faker::Address.city, title: Faker::Science.element, program: Faker::Lorem.characters(number: 255, min_alpha: 0, min_numeric: 0))
-end
-Events << Event
-
-
 
 Users = []
 5.times do
@@ -35,21 +28,8 @@ end
 Locations << Location
 
 
-
-# location_indexes = []
-# Locations.each_with_index do |location, index|
-#   location_indexes << { index: index, id: location.id }
-# end
-
-
-
-Roles = []
-5.times do
-    Role.create(role_name: Faker::Games::SuperMario.character)
-end
-
-Roles << Role
-
+Role.create(role_name: 'organizer')
+Role.create(role_name: 'guest')
 
 
 # EventLocations =[]
