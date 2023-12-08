@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :locations
   resources :events
   resources :events do
+    get 'add_location', on: :member
+    post 'create_association', on: :member
     post 'join_as_guest', on: :member
     get 'join_as_guest', on: :member
   end
