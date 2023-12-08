@@ -4,6 +4,7 @@ body {
   height: 100%;
   background-color: #f5f5f5;
   font-family: 'Lato', sans-serif;
+  font weight: 100;
 }
 
 /*------------------------- NAVBAR-------------------------*/
@@ -23,14 +24,7 @@ body {
 }
 
 /* Ajoutez ces règles CSS pour le hover rose pâle avec RGBA */
-.navbar-nav .nav-link:hover,
-.nav-item.sign-in a:hover,
-.nav-item.sign-up a:hover {
-  background-color: rgba(255, 192, 203, 0.5);
-  /* Couleur rose pâle avec une valeur RGBA pour le hover */
-}
-
-/* Convertissez les boutons en liens */
+/* Styles pour les liens de la barre de navigation */
 .nav-item.sign-in,
 .nav-item.sign-up {
   list-style-type: none;
@@ -48,12 +42,17 @@ body {
   /* Transition pour l'effet de survol */
 }
 
+/* Styles pour le survol des liens */
 .nav-item.sign-in a:hover,
 .nav-item.sign-up a:hover,
 .navbar-nav .nav-link:hover {
   background-color: #FFB7B7;
-  /* Couleur rose pâle avec une valeur RGBA pour le hover */
+  /* Couleur rose pâle pour le fond */
+  color: rgb(59, 59, 59) !important;
+  /* Couleur grise pour le texte */
 }
+
+/* Couleur rose pâle avec une valeur RGBA pour le hover */
 
 /*animation_navbar_by_flo----debut-----------------*/
 @keyframes fadeIn {
@@ -92,7 +91,7 @@ body {
   background-color: #fcb1cf;
   padding: 10px 0;
   color: white;
-  height: 100px;
+  height: 60px;
   z-index: 1000;
 }
 
@@ -172,9 +171,9 @@ p {
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: Trebuchet MS;
+  font-family: 'Lato', sans-serif;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 100;
   padding: 6px 24px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #b23e35;
