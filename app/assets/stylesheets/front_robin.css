@@ -7,7 +7,7 @@ body {
   font-weight: 300;
 }
 
-/*------------------------- NAVBAR -------------------------*/
+
 *navbar_restyling_robin*/ @@ -260, 10+289, 11 @@ th {
   color: black !important;
 }
@@ -17,7 +17,6 @@ body {
 }
 
 
-/*------------------------- FOOTER -------------------------*/
 
 
 
@@ -32,7 +31,7 @@ body {
   z-index: 1000;
 }
 
-/* Styles pour le hover des liens dans le footer */
+
 .footer-link:hover {
   color: #FFB7B7;
   background-color: rgb(59, 59, 59);
@@ -44,9 +43,9 @@ body {
 }
 
 
-/*------------------------- FONTS -------------------------*/
 
-/*fonts_restyling_robin*/
+
+
 h1,
 h2,
 h3,

@@ -1,25 +1,25 @@
-<div id="location_index" style="text-align: center">
-
-<h1> ceci est l'index du controller location</h1>
-<h2> il sert à montrer tout les lieux du le mariage</h2>
-
-<%= link_to "Créer", new_location_path, class: "btn btn-secondary" %>
 
 
-<br><br>
+<div id="location_index" class="text-center">
 
+  <h1> ceci est l'index du controller location</h1>
+  <h2> il sert à montrer tout les lieux du mariage</h2>
 
-<% @locations.each do |location|%>
+  <%= link_to "Créer", new_location_path, class: "btn btn-secondary" %>
 
+  <br><br>
 
-        <h5>Place : </h5><%= location.place %>
-        <h5>Adress : </h5><%= location.address %>
-        
+  <% @locations.each do |location|%>
+    <div class="location-card">
+      <h5 class="location-heading">Place :</h5>
+      <p class="location-details"><%= location.place %></p>
+      <h5 class="location-heading">Adresse :</h5>
+      <p class="location-details"><%= location.address %></p>
 
-        <br><br>
+      <br><br>
 
-        <%= link_to "Voir détail", location_path(location), class: "btn btn-primary" %>
-
-<% end %>
+      <%= link_to "Voir détail", location_path(location), class: "btn btn-view-detail" %>
+    </div>
+  <% end %>
 
 </div>
