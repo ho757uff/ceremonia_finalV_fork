@@ -1,0 +1,13 @@
+<%= form_tag create_association_event_path(@event), method: :post do %>
+  <% @locations.each do |location| %>
+    <label>
+      <%= check_box_tag 'location_ids[]', location.id %>
+      <%= location.place %>
+      <%= text_area_tag "event_location[#{location.id}][description]" %>
+      <%= label_tag "event_location[#{location.id}][date]", 'Date' %>
+      <%= datetime_field_tag "event_location[#{location.id}][date]" %>
+    </label>
+    <br>
+  <% end %>
+  <%= submit_tag 'Add Locations' %>
+<% end %>

@@ -11,6 +11,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @guest_users = User.joins(:user_events).where(user_events: { role_id: 2, event_id: @event.id })
+    @event_locations = @event.event_locations
     unless @event.organizer?(current_user)
       render :event_details_only
     end
@@ -18,6 +19,28 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+  end
+
+  def add_location
+    @event = Event.find(params[:id])
+    @locations = Location.all
+  end
+
+  def create_association
+    @event = Event.find(params[:id])
+    locations_params = params[:event_location]
+
+    if locations_params.present?
+      locations_params.each do |location_id, location_params|
+        permitted_params = event_location_params(location_params)
+        if params[:location_ids].include?(location_id)
+          EventLocation.create(permitted_params.merge(event_id: @event.id, location_id: location_id))
+        end
+      end
+      redirect_to @event, notice: 'Locations were successfully added to the event.'
+    else
+      redirect_to @event, alert: 'No locations were selected to be added.'
+    end
   end
 
   def create
@@ -62,6 +85,8 @@ class EventsController < ApplicationController
     user_events.exists?(role_id: 1, user_id: current_user.id, event_id: params[:id])
   end
 
-  def guest
+  def event_location_params(input_params)
+    input_params.permit(:location_id, :event_id, :date, :description)
   end
+
 end
