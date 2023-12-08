@@ -11,10 +11,7 @@
         <div class="card-header">
           <h5>Address : <%= @location.address %></h5>
         </div>
-        <div class="card-body text-center">
-          <h5>Description</h5>
-          <p class="text-center"><%= @location.description %></p>
-        </div>
+        
         <div class="card-footer d-flex justify-content-space-around">
           <div class="col-md-4">
             <%= button_to "Editer", edit_location_path, class: "btn btn-success" %>
