@@ -11,12 +11,14 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item" style="animation: fadeIn 1s forwards;">
-          <%= link_to root_path, class: 'nav-link text-white' do %>
+          <%= link_to root_path, class: 'nav-link text-white rounded-button
+' do %>
             <i class="fas fa-home"></i> Accueil
           <% end %>
         </li>
         <li class="nav-item" style="animation: fadeIn 1s forwards;">
-          <%= link_to new_event_path, class: 'nav-link text-white' do %>
+          <%= link_to new_event_path, class: 'nav-link text-white rounded-button
+' do %>
             <i class="fas fa-calendar-plus"></i> Créer un événement
           <% end %>
         </li>
@@ -24,7 +26,7 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item" style="animation: fadeIn 1s forwards;">
-            <%= link_to user_path(current_user), class: 'nav-link text-white' do %>
+            <%= link_to user_path(current_user), class: 'nav-link text-white rounded-button' do %>
               <i class="fas fa-user"></i> Bienvenue, <%= current_user.email %>
             <% end %>
           </li>
@@ -34,13 +36,13 @@
             <% end %>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= button_to new_user_session_path, class: "nav-link bg-primary text-white rounded-button" do %>
+          <li class="nav-item" style="animation: fadeIn 1s forwards;">
+            <%= button_to new_user_session_path, class: "nav-link text-white rounded-button" do %>
               <i class="fas fa-sign-in-alt"></i> Se connecter
             <% end %>
           </li>
-          <li class="nav-item">
-            <%= link_to new_user_registration_path, class: 'nav-link bg-primary text-white rounded-button' do %>
+          <li class="nav-item" style="animation: fadeIn 1s forwards;">
+            <%= link_to new_user_registration_path, class: 'nav-link text-white rounded-button' do %>
               <i class="fas fa-user-plus"></i> S'inscrire
             <% end %>
           </li>
