@@ -1,0 +1,29 @@
+
+
+.location-card {
+  background-color: #f8f9fa; 
+  border: 1px solid #dee2e6; 
+  border-radius: 8px; 
+  padding: 20px; 
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
+.location-heading {
+  font-size: 24px; 
+  color: #007bff; 
+  margin-bottom: 10px; 
+}
+
+.location-details {
+  font-size: 16px; 
+  color: #495057; 
+}
+
+.btn-view-detail {
+  background-color: #007bff; 
+  color: #fff; 
+  text-decoration: none; 
+  padding: 8px 16px; 
+  border-radius: 4px; 
+}

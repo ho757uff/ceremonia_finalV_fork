@@ -7,7 +7,6 @@ body {
   font-weight: 300;
 }
 
-/*------------------------- NAVBAR-------------------------*/
 .navbar {
   position: fixed;
   top: 0;
@@ -23,12 +22,11 @@ body {
   border-radius: 89px;
 }
 
-/* Ajoutez ces règles CSS pour le hover rose pâle avec RGBA */
-/* Styles pour les liens de la barre de navigation */
+
 .nav-item.sign-in,
 .nav-item.sign-up {
   list-style-type: none;
-  /* Supprimez les puces */
+  
 }
 
 .nav-item.sign-in a,
@@ -39,22 +37,21 @@ body {
   color: white;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  /* Transition pour l'effet de survol */
+  
 }
 
-/* Styles pour le survol des liens */
+
 .nav-item.sign-in a:hover,
 .nav-item.sign-up a:hover,
 .navbar-nav .nav-link:hover {
   background-color: #FFB7B7;
-  /* Couleur rose pâle pour le fond */
+  
   color: rgb(59, 59, 59) !important;
-  /* Couleur grise pour le texte */
+ 
 }
 
-/* Couleur rose pâle avec une valeur RGBA pour le hover */
 
-/*animation_navbar_by_flo----debut-----------------*/
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -71,10 +68,7 @@ body {
   animation: fadeIn 1s forwards;
 }
 
-/*animation_navbar_by_flo----fin-----------------*/
 
-
-/*------------------------- CONTENT-------------------------*/
 
 .content {
   padding-top: 120px;
@@ -82,7 +76,6 @@ body {
 }
 
 
-/*------------------------- FOOTER-------------------------*/
 
 #footer {
   position: fixed;
@@ -98,15 +91,15 @@ body {
 
 .content-wrapper {
   margin-bottom: 60px;
-  /* Marge en bas égale à la hauteur du footer */
+
   min-height: 100vh;
-  /* Assurez-vous que la hauteur minimale est d'au moins 100% de la vue */
+
 }
 
 
 
 
-/*------------------------- FONTS-------------------------*/
+
 @font-face {
   font-family: 'ImprintMTShadow';
   src: url('/asset/fonts/ImprimMTShadow.ttf') format('truetype');
@@ -142,7 +135,7 @@ body {
   margin-right: 5px;
 }
 
-/*------------------------- BUTTONS -------------------------*/
+
 
 .sweetButton {
   box-shadow: inset 0px 1px 0px 0px #f7c5c0;
@@ -171,8 +164,6 @@ body {
   top: 1px;
 }
 
-/*------------------------- FLO -------------------------*/
-/* styles.css by flo------------------debut----------------------- */
 .container-custom {
   max-width: 400px;
   margin: 50px auto;
@@ -222,10 +213,7 @@ input[type="submit"]:hover {
   background-color: #ffdb58;
 }
 
-/* styles.css by flo---------------fin-------------------------- */
 
-
-/*----------animation accueil by flo debut---------*/
 #jumbotron {
   animation: slideInFromLeft 1.5s ease-out forwards;
 }
@@ -258,9 +246,7 @@ input[type="submit"]:hover {
   }
 }
 
-/*----------animation accueil by flo fin---------*/
 
-/*animation_form_signup/sign_in_by_flo----debut-----------------*/
 @keyframes slideInFromRight {
   from {
     opacity: 0;
@@ -277,9 +263,7 @@ input[type="submit"]:hover {
   animation: slideInFromRight 1s ease-out;
 }
 
-/*animation_form_signup_by_flo----fin-----------------*/
 
-/* design event show créé par flo-----debut------------------ */
 .event-heading,
 .guest-heading {
   font-size: 24px;
@@ -321,9 +305,7 @@ th {
   }
 }
 
-/* design event show créé par flo -----fin------------------ */
 
-/*accueil animation apparitions -------debut-----------*/
 #jumbotron .col-4,
 #jumbotron .col-3 {
   opacity: 0;
@@ -343,20 +325,19 @@ th {
   }
 }
 
-/*accueil animation apparitions-------fin-----------*/
-/*------------------------- EVENTS index debut-------------------------*/
+
 .events-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
-  opacity: 0; /* La grille est initialement invisible */
-  transform: translateX(-20px); /* Déplace la grille de 20px vers la gauche */
+  opacity: 0; 
+  transform: translateX(-20px); 
   background-size: cover;
   background-position: center;
   
   padding: 20px;
-  /* Animation d'apparition */
+  
   animation: fadeInFromLeft 1s ease-out forwards;
 }
 
@@ -382,7 +363,7 @@ th {
   
   
 
-  /* Hover rose pâle */
+ 
   &:hover {
     background-color: rgba(255, 192, 203, 0.5);
   }
@@ -418,18 +399,17 @@ th {
   color: rgb(49, 48, 49);
   margin: 0;
   text-decoration: underline;
-  text-decoration-color: #fcb1cf; /* Couleur du soulignement en rose très pâle */}
+  text-decoration-color: #fcb1cf;}
   
-  /*------------------------- EVENTS index fin-------------------------*/
 
- /*-----------page-event------------debut---------------*/
+
  .event-container img {
-  border-radius: 50%; /* Rend l'image arrondie */
-  margin: 0 auto; /* Centre l'image horizontalement */
-  display: block; /* Permet de centrer l'image avec margin: 0 auto */
+  border-radius: 50%; 
+  margin: 0 auto; 
+  display: block; 
 }
 
-/* ... Autres styles ... */
+
 
 .profile-section {
   text-align: center;
@@ -490,33 +470,33 @@ th {
   padding: 0;
 }
 
-/* .page events fin */
 
-/* Ajout d'un arrière-plan avec une image */
+
+
 .container {
   background-image: url('url_de_votre_image.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 60px 0; /* Ajustez la marge intérieure en fonction de vos besoins */
+  padding: 60px 0;
 }
 
-/* Rendre les cartes opaques */
+
 .container form {
-  background-color: rgba(255, 255, 255, 0.8); /* Couleur de fond avec opacité */
+  background-color: rgba(255, 255, 255, 0.8); 
   padding: 20px;
   border-radius: 10px;
 }
 
-/* Animation sur le survol des cartes */
+
 .container form:hover {
-  transform: scale(1.05); /* Ajustez la valeur pour l'effet de zoom */
+  transform: scale(1.05); 
   transition: transform 0.3s ease-in-out;
 }
 .opaque-background {
   background-image: url('https://images.unsplash.com/photo-1602615576820-ea14cf3e476a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmxldXJzJTIwcm9zZXxlbnwwfDB8MHx8fDA%3D'); /* Remplacez 'your-background-image-url.jpg' par le chemin de votre image de fond */
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.8; /* Réglez l'opacité selon vos préférences */
-  /* Ajoutez d'autres styles si nécessaire */
+  opacity: 0.8; 
+ 
 }
