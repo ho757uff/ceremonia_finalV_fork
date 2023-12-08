@@ -8,9 +8,7 @@ body {
 }
 
 
-*navbar_restyling_robin*/ @@ -260, 10+289, 11 @@ th {
-  color: black !important;
-}
+
 
 .navbar-brand {
   animation: fadeIn 1s forwards;
