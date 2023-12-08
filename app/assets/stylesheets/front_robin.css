@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f5f5f5;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+/*------------------------- NAVBAR -------------------------*/
+*navbar_restyling_robin*/ @@ -260, 10+289, 11 @@ th {
+  color: black !important;
+}
+
+.navbar-brand {
+  animation: fadeIn 1s forwards;
+}
+
+
+/*------------------------- FOOTER -------------------------*/
+
+
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fcb1cf;
+  padding: 10px;
+  color: white;
+  height: 60px;
+  z-index: 1000;
+}
+
+/* Styles pour le hover des liens dans le footer */
+.footer-link:hover {
+  color: #FFB7B7;
+  background-color: rgb(59, 59, 59);
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.socials-btn {
+  padding-left: auto;
+}
+
+
+/*------------------------- FONTS -------------------------*/
+
+/*fonts_restyling_robin*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+li {
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}

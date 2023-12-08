@@ -1,32 +1,34 @@
 <div class="container-fluid d-flex justify-content-between" id="footer">
   <!-- Left links (GitHub) -->
   <div class="d-flex align-items-center">
-    <%= link_to "https://www.github.com/LLRMF", class: "btn btn-lg me-2", target: "_blank", rel: "noopener noreferrer" do %>
+    <%= link_to "https://www.github.com/LLRMF", class: "btn me-2 footer-link socials-btn", target: "_blank", rel: "noopener noreferrer" do %>
       <i class="fab fa-github"></i> GitHub
     <% end %>
   </div>
-  <!-- Center Links (About, Contact, Feedback) -->
-  <div class="d-flex align-items-center justify-content-center flex-grow-1">
-    <%= link_to about_path, class: 'nav-link me-3', style: 'color: grey' do %>
-      <i class="fas fa-info-circle"></i> Qui sommes nous ?
-    <% end %>
-    <%= link_to contact_path, class: 'nav-link me-3', style: 'color: grey' do %>
-      <i class="fas fa-envelope"></i> Contact
-    <% end %>
-    <%= link_to feedback_path, class: 'nav-link me-3', style: 'color: grey' do %>
-      <i class="fas fa-comments"></i> Feedback
-    <% end %>
-  </div>
+
+   <!-- Center Links (About, Contact, Feedback) -->
+<div class="d-flex align-items-center justify-content-center" style="flex-grow: 1; animation: fadeIn 1s forwards;">
+  <%= button_to about_path, class: "btn me-2 footer-link" do %>
+    <i class="fas fa-info-circle"></i> Qui sommes nous ?
+  <% end %>
+  <%= button_to contact_path, class: "btn me-2 footer-link" do %>
+    <i class="fas fa-envelope"></i> Contact
+  <% end %>
+  <%= button_to feedback_path, class: "btn me-2 footer-link" do %>
+    <i class="fas fa-comments"></i> Feedback
+  <% end %>
+</div>
+
   <!-- Right Links (FAQ, CGU, Politique de confidentialité) -->
-  <div class="d-flex align-items-center">
-    <%= link_to faq_path, class: 'nav-link me-3', style: 'color: grey' do %>
+  <div class="d-flex align-items-center", style="animation: fadeIn 1s forwards;">
+    <%= button_to faq_path, class: "btn me-2 footer-link" do %>
       <i class="fas fa-question-circle"></i> FAQ
     <% end %>
-    <%= link_to terms_path, class: 'nav-link me-3', style: 'color: grey' do %>
+    <%= button_to terms_path, class: "btn me-2 footer-link" do %>
       <i class="fas fa-file-alt"></i> CGU
     <% end %>
-    <%= link_to privacy_path, class: 'nav-link me-3', style: 'color: grey' do %>
+    <%= button_to privacy_path, class: "btn me-2 footer-link" do %>
       <i class="fas fa-lock"></i> Politique de confidentialité
     <% end %>
   </div>
-</div>
+</div>0
