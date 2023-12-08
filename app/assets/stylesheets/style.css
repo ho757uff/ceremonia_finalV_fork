@@ -4,7 +4,7 @@ body {
   height: 100%;
   background-color: #d6d6d6;
   font-family: 'Lato', sans-serif;
-  font-weight: 100 ;
+  font-weight: 300;
 }
 
 /*------------------------- NAVBAR-------------------------*/
@@ -142,47 +142,28 @@ body {
   margin-right: 5px;
 }
 
-/*fonts_restyling_robin*/
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-a,
-li {
-  font-family: 'Roboto Slab', sans-serif;
-}
-
-p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-} */
-
 /*------------------------- BUTTONS -------------------------*/
 
 .sweetButton {
   box-shadow: inset 0px 1px 0px 0px #f7c5c0;
-  background: linear-gradient(to bottom, #fcb1cf 5%,  #fcb1cf 100%);
+  background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+  background-color: #fc8d83;
   border-radius: 6px;
   border: 1px solid #d83526;
   display: inline-block;
   cursor: pointer;
-  color: #282727;
+  color: #ffffff;
   font-family: 'Lato', sans-serif;
   font-size: 15px;
   font-weight: 100;
   padding: 6px 24px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #a86b67;
-  transition: background 0.3s ease; /* Ajout d'une transition pour un effet plus fluide */
-
+  text-shadow: 0px 1px 0px #b23e35;
 }
 
-/* Ajoutez ces règles pour le hover avec un gradient rose pâle */
 .sweetButton:hover {
-  background: linear-gradient(to bottom, #9c5b75 5%, #ad265c 50%, #210913 100%);
+  background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+  background-color: #e4685d;
 }
 
 .sweetButton:active {
