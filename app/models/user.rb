@@ -13,6 +13,7 @@ after_create :welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
 
+  has_one_attached :avatar
 
   # def password_reset
   #   UserMailer.password_reset(self).deliver_now

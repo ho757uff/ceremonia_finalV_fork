@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   
   # # Users show routes:
   resources :users do
+    resources :avatars, only: [:create] #ajout de photo de profil
+
     #   resources :guest_list, only: [:show, :update]
     #   resources :menu, only: [:show, :update]
     #   resources :wishlist, only: [:show, :update]
