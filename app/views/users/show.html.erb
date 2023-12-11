@@ -3,8 +3,15 @@
     <!-- Profile Section -->
     <div class="col-md-4">
       <div class="profile-section rounded-border">
-        <img src="https://images.unsplash.com/photo-1645389411992-e9ec49b158e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D" alt="Photo de profil" class="img-fluid rounded-image">
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar, alt: 'avatar', class: 'img-fluid rounded-circle' %>
+        <% else %>
+          <img src="https://images.unsplash.com/photo-1645389411992-e9ec49b158e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D" alt="Photo de profil" class="img-fluid rounded-image">
+        <% end %>
         <h3>Madame Yvette Chaudierre et Monsieur Paul Ledure</h3>
+        <%= form_tag user_avatars_path(@user), multipart: true, id: 'avatar-form' do %>
+          <%= file_field_tag :avatar, onchange: 'submitForm()' %>
+        <% end %>
       </div>
     </div>
     <!-- Events Section -->
@@ -33,6 +40,13 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function submitForm() {
+      document.getElementById('avatar-form').submit();
+    }
+</script>
+
 </div>
 
 
