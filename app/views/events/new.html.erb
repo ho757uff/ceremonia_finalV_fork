@@ -1,27 +1,23 @@
-<div class="container-custom newevent">
+<div class="container-custom events-container-bg">
   <h2>Create a New Event</h2>
-
   <%= form_for(@event, html: { class: 'event-form' }) do |f| %>
     <div class="form-group">
       <%= f.label :title %><br />
       <%= f.text_field :title, class: 'form-control' %>
     </div>
-
     <div class="form-group">
       <%= f.label :date %><br />
       <%= f.datetime_field :date, class: 'form-control' %>
     </div>
-
     <div class="form-group">
       <%= f.label :city_name %><br />
       <%= f.text_field :city_name, class: 'form-control' %>
     </div>
-
     <div class="form-group">
       <%= f.label :program %><br />
       <%= f.text_area :program, class: 'form-control' %>
     </div>
-
+    <br>
     <div class="actions">
       <%= f.submit "Create Event", class: 'btn btn-primary' %>
     </div>
