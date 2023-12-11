@@ -21,8 +21,13 @@ end
 Role.create(role_name: 'organizer')
 Role.create(role_name: 'guest')
 
+Events = []
+5.times do
+    event = Event.create(date: "28/05/2024", city_name: Faker::Address.city, title: Faker::Superhero.power, program: Faker::Sport.summer_olympics_sport)
+    Events << event
+end
 
 
 5.times do
-    Album.create(title: Faker::Color.name, description: Faker::Currency.name)
+    Album.create(title: Faker::Color.name, description: Faker::Currency.name, event_id: Events.sample.id)
 end
