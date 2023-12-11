@@ -7,33 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-User.destroy_all
+UserEvent.destroy_all
+EventLocation.destroy_all
 Location.destroy_all
 Event.destroy_all
 Role.destroy_all
 
-
-Users = []
-5.times do
-    User.create(email: Faker::Internet.unique.email(domain: 'yopmail.com'), password: "123456", first_name: Faker::FunnyName.name, last_name: Faker::FunnyName.name)
+10.times do
+    Location.create(place: Faker::Company.department, address: Faker::Address.city, privacy_status: 1)
 end
-Users << User
-
-
-
-Locations =[]
-5.times do
-    Location.create(place: Faker::Company.department, address: Faker::Address.city, description: Faker::Lorem.characters(number: 255, min_alpha: 0, min_numeric: 0))
-end
-Locations << Location
 
 
 Role.create(role_name: 'organizer')
 Role.create(role_name: 'guest')
-
-
-# EventLocations =[]
-# 5.times do
-#     EventLocation.create(date: Faker::Time.between(from: DateTime.now, to: '2024-12-31'), location_id: Locations.sample)
-# end
-# EventLocations << EventLocation
