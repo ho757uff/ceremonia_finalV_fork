@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!#, except: [:index, :show]
 
   def index
     @all_events = Event.all
@@ -21,15 +21,41 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  
+  def create
+    @event = current_user.events.build(event_params)
+    if @event.save
+      current_user.user_events.create(event_id: @event.id, role_id: 1, user_id: current_user.id)
+      redirect_to @event
+    else
+      # Gérer l'échec de la création de l'événement
+    end
+  end
+  
+  def edit
+    @event = Event.find(params[:id])
+  end
+  
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to events_show_path(@event)
+    else
+      render :edit
+    end
+  end
+  
+  def destroy
+  end
+  
   def add_location
     @event = Event.find(params[:id])
     @locations = Location.all
   end
-
+  
   def create_association
     @event = Event.find(params[:id])
     locations_params = params[:event_location]
-
     if locations_params.present?
       locations_params.each do |location_id, location_params|
         permitted_params = event_location_params(location_params)
@@ -43,38 +69,11 @@ class EventsController < ApplicationController
     end
   end
 
-  def create
-    @event = current_user.events.build(event_params)
-    if @event.save
-      current_user.user_events.create(event_id: @event.id, role_id: 1, user_id: current_user.id)
-      redirect_to @event
-    else
-      # Gérer l'échec de la création de l'événement
-    end
-  end
-  
   def join_as_guest
     @event = Event.find(params[:id])
     current_user.user_events.create(event_id: @event.id, role_id: 2)
     redirect_to @event
   end
-
-  def edit
-    @event = Event.find(params[:id])
-  end
-
-  def update
-    @event = Event.find(params[:id])
-    if @event.update(event_params)
-      redirect_to events_show_path(@event)
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-  end
-
 
   private
   

@@ -1,58 +1,91 @@
 class LocationsController < ApplicationController
+  before_action :authenticate_user!
+
+  # Affiche la liste des emplacements publics et privés accessibles à l'utilisateur actuel
+  def index
+    @public_locations = Location.where(privacy_status: :location_public)
+    @private_locations = Location.joins(event_locations: { event: :user_events }).where(privacy_status: :location_private, user_events: { user_id: current_user.id })
+  end
+
+  #Affiche un emplacement si public ou accessible à l'utilisateur
+  def show
+    begin
+      @location = Location.find(params[:id])
+      if @location
+        @location.location_public? || (@location.location_private? && current_user_can_access_location?)
+      else
+        redirect_to locations_path, alert: 'Cette localisation est privée ou inaccessible.'
+      end
+    rescue ActiveRecord::RecordNotFound => e
+      redirect_to '/404'
+    end
+  end
+
+  # Crée une nouvelle location avec des événements accessibles pour l'utilisateur
+  def new
+    @location = Location.new
+    @location.event_locations.build # Construit une instance de event_locations pour @location
+    @events = current_user.user_events.where(role_id: 1).map(&:event)
+  end
     
-    before_action :authenticate_user!
-
-    def index
-        @locations = Location.all 
+  # Crée un lieux avec les paramètres fournis
+  def create
+    @location = Location.new(location_params)
+    if @location.save
+      redirect_to locations_path
+    else
+      render :new
     end
+  end
 
-    def show
-        @location = Location.find(params[:id])
+  # Affiche le formulaire pour modifier un emplacement existant
+  def edit
+    @location = Location.find(params[:id])
+    if @location.location_private? && current_user_can_access_location?
+      render :edit
+    else
+      redirect_to locations_path
     end
-
-    def new
-        @location = Location.new
+  end
+  
+  def update
+    @location = Location.find(params[:id])
+    if @location.location_private? && !current_user_can_access_location?
+      redirect_to locations_path, alert: 'Cette localisation est privée ou inaccessible.'
+    else
+      if @location.update(location_params)
+        redirect_to locations_path, notice: 'Localisation mise à jour avec succès.'
+      else
+        render :edit
+      end
     end
-
-
-    def create
-        @location = Location.new(location_params)
-
-            if @location.save
-                redirect_to locations_url              
-            else
-                render:new
-            end
+  end
+  
+  
+  def destroy
+    @location = Location.find(params[:id])
+    @event_locations = @location.event_locations
+    if @location.location_private? && current_user_can_access_location?
+      @location.destroy
+      @event_locations.destroy_all
+      redirect_to locations_path
+    else
+      redirect_to locations_path
     end
+  end
+  
 
-    def edit
-        @location = Location.find(params[:id])
-    end
+  private
 
-    def update
-        @location = Location.find(params[:id])
-            post_params = location_params
+  def location_params
+    params.require(:location).permit(
+      :place, 
+      :address,
+      event_locations_attributes: [:id, :event_id, :location_id, :date, :description]
+    )
+  end
 
-            if @location.update(post_params)
-                redirect_to locations_path                
-            else
-                render :edit                
-            end
-    end
-
-    def destroy
-        @location = Location.find(params[:id])
-        @location.destroy
-        puts "location destroyed"
-        redirect_to locations_path
-    end
-
-
-
-private
-
-    def location_params
-        params.require(:location).permit(:place, :address, :description)
-    end
-
+  def current_user_can_access_location?
+    current_user.user_events.exists?(role_id: 1, event_id: @location.events.pluck(:id))
+  end
 end

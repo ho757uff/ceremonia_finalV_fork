@@ -9,16 +9,29 @@
 
   <br><br>
 
-  <% @locations.each do |location|%>
+  <% @public_locations.each do |public_location|%>
     <div class="location-card">
       <h5 class="location-heading">Place :</h5>
-      <p class="location-details"><%= location.place %></p>
+      <p class="location-details"><%= public_location.place %></p>
       <h5 class="location-heading">Adresse :</h5>
-      <p class="location-details"><%= location.address %></p>
+      <p class="location-details"><%= public_location.address %></p>
 
       <br><br>
 
-      <%= link_to "Voir détail", location_path(location), class: "btn btn-view-detail" %>
+      <%= link_to "Voir détail", location_path(public_location), class: "btn btn-view-detail" %>
+    </div>
+  <% end %>
+  <h2>vos lieux</h2>
+  <% @private_locations.each do |private_location|%>
+    <div class="location-card">
+      <h5 class="location-heading">Place :</h5>
+      <p class="location-details"><%= private_location.place %></p>
+      <h5 class="location-heading">Adresse :</h5>
+      <p class="location-details"><%= private_location.address %></p>
+
+      <br><br>
+
+      <%= link_to "Voir détail", location_path(private_location), class: "btn btn-view-detail" %>
     </div>
   <% end %>
 
