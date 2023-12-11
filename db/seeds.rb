@@ -22,6 +22,7 @@ Role.create(role_name: 'organizer')
 Role.create(role_name: 'guest')
 
 
+
 5.times do
     Album.create(title: Faker::Color.name, description: Faker::Currency.name)
 end

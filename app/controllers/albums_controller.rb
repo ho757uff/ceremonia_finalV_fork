@@ -11,5 +11,6 @@ class AlbumsController < ApplicationController
     def create
         @album = Album.create(:title, :description)
     end
+    
 
 end
