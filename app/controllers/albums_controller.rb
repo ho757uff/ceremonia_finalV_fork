@@ -28,32 +28,29 @@ class AlbumsController < ApplicationController
 
     def destroy
         @event = Event.find(params[:event_id])
-        @albums = @event.albums.destroy
-        redirect_to new_event_album_path(event_id: @event)
+        @album = @event.albums.find(params[:id])
+        @album.destroy
+        redirect_to event_path(@event)
     end
     
 
     def event_album
         @event = Event.find(params[:event_id])
-    # Try to find an existing album for the event
         @album = @event.albums.first
 
         if @album.nil?
-            # Si aucun album n'existe, redirige vers la page de création d'album
             redirect_to new_event_album_path(event_id: @event)
-          else
-            # Si un album existe, redirige vers l'index des albums
+        else
             redirect_to event_albums_path(event_id: @event)
-          end
+        end
+
     end
-
-
 
 end
 
 private
 
     def album_params
-    params.require(:album).permit(:title, :description)
-  end
+        params.require(:album).permit(:title, :description)
+    end
 
