@@ -74,6 +74,7 @@ class EventsController < ApplicationController
     current_user.user_events.create(event_id: @event.id, role_id: 2)
     redirect_to @event
   end
+  
 
   private
   
