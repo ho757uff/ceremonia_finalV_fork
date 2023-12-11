@@ -8,4 +8,8 @@ class AlbumsController < ApplicationController
         @album = Album.find(params[:id])
     end
 
+    def create
+        @album = Album.create(:title, :description)
+    end
+
 end
