@@ -393,3 +393,63 @@ input[type="submit"]:hover {
   list-style: none;
   padding: 0;
 }
+
+/* -------------- DERNIER AJOUT -------------- */
+
+
+.navbar {
+  margin-bottom: 0;
+}
+
+/* Ajoutez cette ligne pour réduire la marge inférieure de la navbar /
+
+/ Ajoutez ce style pour réduire l'espace entre le fond d'écran et le footer */
+#footer {
+  margin-top: 0;
+}
+
+.location-card {
+  background-color: rgba(248, 249, 250, 0.8);
+  border: 1px solid #dee2e6;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+  animation: slideIn 0.5s ease-in-out;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centered-image {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  width: 300px;
+  border-radius: 50%;
+}
+
+.location-card:hover {
+  transform: translateX(20px);
+}
+
+.avatar {
+  background-image: url("https://images.unsplash.com/photo-1589645858872-647d43ae8ce6?q=80&w=2926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.apparitionprofil {
+  animation: apparition 1s ease-out;
+}
+
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
