@@ -3,9 +3,12 @@
 <h1> ceci est l'index album </h1>
 
 <% @albums.each do |album| %>
-  <%= album.title %>
-  <%= link_to 'Voir Album', event_album_images_path(@event, album.id), class: 'btn btn-primary'%>
-  <%= button_to 'Supprimer Album', event_album_path(@event, album.id), method: :delete, class: 'btn btn-danger' %>
+<br>
+
+  <h3> titre de l'album :</h3><h5><%= album.title %></h5><br>
+    <%= link_to 'Voir Album', event_album_images_path(@event, album.id), class: 'btn btn-primary'%><br>
+    <%= link_to 'retour au show event', event_path(@event), class: 'btn btn-success'%>
+    <%= button_to 'Supprimer Album', event_album_path(@event, album.id), method: :delete, class: 'btn btn-danger' %>
   <br>
 <% end %>
 
