@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_11_100028) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_11_163143) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_100028) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "albums", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "event_id"
+    t.index ["event_id"], name: "index_albums_on_event_id"
+  end
+
   create_table "event_locations", force: :cascade do |t|
     t.datetime "date"
     t.datetime "created_at", null: false
@@ -60,6 +69,14 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_100028) do
     t.text "program"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "image_albums", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "album_id"
+    t.index ["album_id"], name: "index_image_albums_on_album_id"
   end
 
   create_table "locations", force: :cascade do |t|
