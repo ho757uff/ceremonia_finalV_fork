@@ -14,6 +14,11 @@ Rails.application.routes.draw do
     post 'create_association', on: :member
     post 'join_as_guest', on: :member
     get 'join_as_guest', on: :member
+
+    resources :albums do
+      resources :images
+    end
+
   end
   
   # Static pages
@@ -27,6 +32,8 @@ Rails.application.routes.draw do
   # # Users show routes:
   resources :users do
     resources :avatars, only: [:create] #ajout de photo de profil
+
+  
 
     #   resources :guest_list, only: [:show, :update]
     #   resources :menu, only: [:show, :update]
