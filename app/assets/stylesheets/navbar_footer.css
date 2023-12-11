@@ -1,0 +1,144 @@
+/* -------------- NAVBAR -------------- */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  z-index: 1000;
+  background-color: #333;
+  /* Updated background color */
+}
+
+.logo-img {
+  max-width: 72px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 50%;
+  /* Updated border radius */
+}
+
+.nav-item.sign-in,
+.nav-item.sign-up {
+  list-style-type: none;
+}
+
+.nav-item.sign-in a,
+.nav-item.sign-up a,
+.navbar-nav .nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.nav-item.sign-in a:hover,
+.nav-item.sign-up a:hover,
+.navbar-nav .nav-link:hover {
+  background-color: #FFB7B7;
+  color: #333 !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-brand {
+  animation: fadeIn 1s forwards;
+}
+
+.content {
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+/* -------------- FOOTER -------------- */
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fcb1cf;
+  padding: 10px 0;
+  color: white;
+  height: 60px;
+  z-index: 1000;
+}
+
+.content-wrapper {
+  margin-bottom: 60px;
+  min-height: 100vh;
+}
+
+/* @font-face {
+  font-family: 'ImprintMTShadow';
+  src: url('/asset/fonts/ImprimMTShadow.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title1 {
+  font-family: 'ImprintMTShadow';
+  font-size: 6rem;
+  color: #fcb1cf;
+}
+
+.hyphen {
+  font-family: 'ImprintMTShadow';
+  font-size: 6rem;
+  color: #fcb1cf;
+}
+
+.leit {
+  font-family: 'ImprintMTShadow';
+  font-size: 3rem;
+  color: #fcb1cf;
+  padding-bottom: 20px;
+} */
+
+/* -------------- BUTTONS -------------- */
+
+.btn-light {
+  background-color: #fcb1cf;
+}
+
+.rounded-button {
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.sweetButton {
+  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+  background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+  background-color: #fc8d83;
+  border-radius: 6px;
+  border: 1px solid #d83526;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b23e35;
+}
+
+.sweetButton:hover {
+  background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+  background-color: #e4685d;
+}
+
+.sweetButton:active {
+  position: relative;
+  top: 1px;
+}
