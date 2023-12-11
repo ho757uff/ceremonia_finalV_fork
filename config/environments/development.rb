@@ -73,4 +73,16 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['MAILJET_LOGIN'],
+    :password => ENV['MAILJET_PWD'],
+    :domain => 'https://the-wedding-project-1b83c5344eda.herokuapp.com/',
+    :address => 'in-v3.mailjet.com',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+  
 end
