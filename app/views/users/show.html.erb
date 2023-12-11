@@ -1,22 +1,22 @@
 <div class="container">
-  <div class="row">
+  <div class="row apparitionprofil">
     <!-- Profile Section -->
     <div class="col-md-4">
-      <div class="profile-section rounded-border">
+      <div class="profile-section rounded-border avatar" >
         <% if @user.avatar.attached? %>
           <%= image_tag @user.avatar, alt: 'avatar', class: 'img-fluid rounded-circle' %>
         <% else %>
           <img src="https://images.unsplash.com/photo-1645389411992-e9ec49b158e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D" alt="Photo de profil" class="img-fluid rounded-image">
         <% end %>
-          <h3>Madame Yvette Chaudierre et Monsieur Paul Ledure</h3>
         <%= form_tag user_avatars_path(@user), multipart: true, id: 'avatar-form' do %>
           <%= file_field_tag :avatar, onchange: 'submitForm()' %>
         <% end %>
       </div>
+      <br>
     </div>
     <!-- Events Section -->
     <div class="col-md-4">
-      <div class="events-section rounded-border">
+      <div class="events-section rounded-border newevent">
         <h4>Ma liste d'événements</h4>
         <ul>
           <li><strong>Événement:</strong> Mairie</li>
@@ -30,7 +30,7 @@
     </div>
     <!-- To-Do List Section -->
     <div class="col-md-4">
-      <div class="todo-section rounded-border">
+      <div class="todo-section rounded-border newevent">
         <h4>To-Do Liste</h4>
         <ul>
           <li>Acheter les fleurs</li>
@@ -40,13 +40,9 @@
       </div>
     </div>
   </div>
-
   <script>
     function submitForm() {
       document.getElementById('avatar-form').submit();
     }
-</script>
-
+  </script>
 </div>
-
-
