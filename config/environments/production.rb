@@ -96,14 +96,27 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
 
-  ActionMailer::Base.smtp_settings = {
-    :user_name => ENV['MAILJET_LOGIN'],
-    :password => ENV['MAILJET_PWD'],
-    :domain => 'https://the-wedding-project-1b83c5344eda.herokuapp.com/',
-    :address => 'in-v3.mailjet.com',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
+  # ActionMailer::Base.smtp_settings = {
+  #   :user_name => ENV['MAILJET_LOGIN'],
+  #   :password => ENV['MAILJET_PWD'],
+  #   :domain => 'https://the-wedding-project-1b83c5344eda.herokuapp.com/',
+  #   :address => 'in-v3.mailjet.com',
+  #   :port => 587,
+  #   :authentication => :plain,
+  #   :enable_starttls_auto => true
+  # }
+
+
+  config.action_mailer.default_url_options = { :host => 'https://the-wedding-project-1b83c5344eda.herokuapp.com/' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'in-v3.mailjet.com',
+    port: 587,
+    user_name: ENV['MAILJET_LOGIN'],
+    password: ENV['MAILJET_PWD'],
+    authentication: :plain,
+    enable_starttls_auto: true
   }
+
 
 end
