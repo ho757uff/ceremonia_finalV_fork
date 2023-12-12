@@ -27,6 +27,15 @@
 }
 
 /* -------------- FORMS -------------- */
+.container-custom {
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  border: 2px solid #f0d88f;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 .field {
   margin-bottom: 20px;
@@ -63,7 +72,6 @@ input[type="submit"]:hover {
 }
 
 /* -------------- ANIMATIONS -------------- */
-
 #jumbotron {
   animation: slideInFromLeft 1.5s ease-out forwards;
 }
@@ -138,12 +146,15 @@ input[type="submit"]:hover {
 }
 
 /* -------------- EVENTS -------------- */
-
 #jumbotron .col-4,
 #jumbotron .col-3 {
   opacity: 0;
   transform: translateX(-100%);
   animation: slideInFromLeft 1.5s ease-out forwards;
+}
+
+.container-custom {
+  animation: slideInFromRight 1s ease-out;
 }
 
 .event-heading,
@@ -249,7 +260,6 @@ th {
 }
 
 /* -------------- PROFILE -------------- */
-
 .profile-section {
   text-align: center;
   padding: 20px;
@@ -279,7 +289,7 @@ th {
 }
 
 .container {
-  background-image: url('url_de_votre_image.jpg');
+  background-image: url('');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -292,19 +302,39 @@ th {
   border-radius: 10px;
 }
 
-
 .container form:hover {
   transform: scale(1.05);
-}
-.container form {
   transition: transform 0.3s ease-in-out;
 }
+
+
 
 .opaque-background {
   background-image: url('https://images.unsplash.com/photo-1602615576820-ea14cf3e476a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmxldXJzJTIwcm9zZXxlbnwwfDB8MHx8fDA%3D');
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.8;
+}
+
+.container-custom {
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  border: 2px solid #f0d88f;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #ebaecd;
+  text-align: center;
+  font-size: 70px;
+}
+
+h2 {
+  color: #ebaecd;
+  text-align: center;
 }
 
 .field {
@@ -368,6 +398,15 @@ input[type="submit"]:hover {
 }
 
 /* -------------- DERNIER AJOUT -------------- */
+.navbar {
+  margin-bottom: 0;
+}
+
+/* Ajoutez cette ligne pour réduire la marge inférieure de la navbar /
+/ Ajoutez ce style pour réduire l'espace entre le fond d'écran et le footer */
+#footer {
+  margin-top: 0;
+}
 
 .location-card {
   background-color: rgba(248, 249, 250, 0.8);
@@ -433,5 +472,4 @@ input[type="submit"]:hover {
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  animation: slideInFromRight 1s ease-out;
 }

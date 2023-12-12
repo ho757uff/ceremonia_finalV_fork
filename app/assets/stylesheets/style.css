@@ -1,6 +1,8 @@
 /* -------------- BASE STYLES -------------- */
-
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -98,6 +100,10 @@ p {
 }
 
 /* -------------- BUTTONS -------------- */
+
+.btn {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
 
 .btn-light {
   background-color: #fcb1cf;
