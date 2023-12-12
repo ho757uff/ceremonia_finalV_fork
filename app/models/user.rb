@@ -2,11 +2,13 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :validatable
-
+  :recoverable, :rememberable, :validatable
+  
   has_many :user_events
   has_many :roles, through: :user_events
   has_many :events, through: :user_events
+  
+  scope :guests, ->(event) { joins(:user_events).where(user_events: { event_id: event.id, role_id: 2 }) }
 
 after_create :welcome_send
   def welcome_send
@@ -26,6 +28,7 @@ after_create :welcome_send
   # has_many :photos
   # has_one :guest_book
   # has_one :fund
+
 
   def organizer?
     roles.exists?(role_name: "organizer")
