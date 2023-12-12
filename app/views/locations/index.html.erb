@@ -1,38 +1,29 @@
-
-
 <div id="location_index" class="text-center">
 
-  <h1> ceci est l'index du controller location</h1>
-  <h2> il sert à montrer tout les lieux du mariage</h2>
+  <h2>tous les lieux du mariage</h2>
 
-  <%= link_to "Créer", new_location_path, class: "btn btn-secondary" %>
+  <%= link_to "Créer", new_location_path, class: "btn sweetButton" %>
 
-  <br><br>
+  <div class="location-cards-container">
+    <% @public_locations.each do |public_location|%>
+      <div class="location-card">
+        <h5 class="location-heading">Place :</h5>
+        <p class="location-details"><%= public_location.place %></p>
+        <h5 class="location-heading">Adresse :</h5>
+        <p class="location-details"><%= public_location.address %></p>
+        <%= link_to "Voir détail", location_path(public_location), class: "btn sweetButton" %>
+      </div>
+    <% end %>
 
-  <% @public_locations.each do |public_location|%>
-    <div class="location-card">
-      <h5 class="location-heading">Place :</h5>
-      <p class="location-details"><%= public_location.place %></p>
-      <h5 class="location-heading">Adresse :</h5>
-      <p class="location-details"><%= public_location.address %></p>
-
-      <br><br>
-
-      <%= link_to "Voir détail", location_path(public_location), class: "btn btn-view-detail" %>
-    </div>
-  <% end %>
-  <h2>vos lieux</h2>
-  <% @private_locations.each do |private_location|%>
-    <div class="location-card">
-      <h5 class="location-heading">Place :</h5>
-      <p class="location-details"><%= private_location.place %></p>
-      <h5 class="location-heading">Adresse :</h5>
-      <p class="location-details"><%= private_location.address %></p>
-
-      <br><br>
-
-      <%= link_to "Voir détail", location_path(private_location), class: "btn btn-view-detail" %>
-    </div>
-  <% end %>
+    <% @private_locations.each do |private_location|%>
+      <div class="location-card">
+        <h5 class="location-heading">Place :</h5>
+        <p class="location-details"><%= private_location.place %></p>
+        <h5 class="location-heading">Adresse :</h5>
+        <p class="location-details"><%= private_location.address %></p>
+        <%= link_to "Voir détail", location_path(private_location), class: "btn sweetButton" %>
+      </div>
+    <% end %>
+  </div>
 
 </div>

@@ -24,8 +24,9 @@ class LocationsController < ApplicationController
   # Crée une nouvelle location avec des événements accessibles pour l'utilisateur
   def new
     @location = Location.new
-    @location.event_locations.build # Construit une instance de event_locations pour @location
+    @location.event_locations.build 
     @events = current_user.user_events.where(role_id: 1).map(&:event)
+  Rails.logger.debug "@events: #{@events.inspect}"
   end
     
   # Crée un lieux avec les paramètres fournis
