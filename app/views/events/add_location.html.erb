@@ -1,41 +1,19 @@
-<div class="container-custom events-container-bg">
-  <h2>Create a New Event</h2>
-  <%= form_tag(create_association_event_path(@event), method: :post, html: { class: 'event-form' }) do %>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <%= label_tag 'Event Title' %>
-          <%= text_field_tag 'event[title]', nil, class: 'form-control', placeholder: 'Enter event title' %>
-        </div>
-        <div class="form-group">
-          <%= label_tag 'City Name' %>
-          <%= text_field_tag 'event[city_name]', nil, class: 'form-control', placeholder: 'Enter city name' %>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <%= label_tag 'Event Date' %>
-          <%= datetime_field_tag 'event[date]', nil, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= label_tag 'Program' %>
-          <%= text_area_tag 'event[program]', nil, class: 'form-control', placeholder: 'Enter event program' %>
-        </div>
-      </div>
-    </div>
-
+<form class="formaddloc custom-form">
+  <%= form_tag create_association_event_path(@event), method: :post, class: 'form-inline' do %>
     <% @locations.each do |location| %>
-      <div class="form-group compact-form">
-        <%= label_tag "location_#{location.id}", location.place %>
-        <%= check_box_tag 'location_ids[]', location.id, false, class: 'form-check-input' %>
-        <%= text_area_tag "event_location[#{location.id}][description]", nil, class: 'form-control', placeholder: 'Description' %>
-        <%= label_tag "event_location[#{location.id}][date]", 'Date', class: 'mt-2' %>
-        <%= datetime_field_tag "event_location[#{location.id}][date]", nil, class: 'form-control' %>
+      <div class="location-card form-group">
+        <label class="location-heading">
+          <%= check_box_tag 'location_ids[]', location.id, class: 'form-check-input' %> <%= location.place %>
+        </label>
+        <div class="location-details">
+          <%= text_area_tag "event_location[#{location.id}][description]", nil, class: 'form-control', placeholder: 'Description' %>
+          <%= label_tag "event_location[#{location.id}][date]", 'Date', class: 'form-label' %>
+          <%= datetime_field_tag "event_location[#{location.id}][date]", nil, class: 'form-control' %>
+        </div>
       </div>
     <% end %>
-    
-    <div class="actions mt-4">
+    <div class="text-center mt-3">
       <%= submit_tag 'Add Locations', class: 'btn btn-primary' %>
     </div>
   <% end %>
-</div>
+</form>

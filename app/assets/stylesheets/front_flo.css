@@ -532,3 +532,10 @@ input[type="submit"]:hover {
   /* Le reste de vos styles... */
 }
 .location-heading{color: #ebaecd;}
+/* styles.css */
+
+.custom-form {
+  max-height: 500px; /* Ajustez la hauteur selon vos besoins */
+  overflow-y: auto; /* Ajoutez une barre de défilement verticale si nécessaire */
+  border: 2px solid #ffc107; 
+}
