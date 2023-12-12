@@ -17,9 +17,9 @@
     <div class="col-md-8 pl-5 ">
       <p>Organiser son mariage est une aventure exaltante qui demande une planification minutieuse et une attention particulière aux détails. Tout commence par la vision que vous avez pour votre journée spéciale. Prenez le temps de discuter avec votre partenaire pour définir vos priorités et créer une liste de souhaits. Établissez un budget réaliste et identifiez les aspects les plus importants pour vous deux.</p>
       <p>Le choix du lieu de mariage est crucial, car il crée l'ambiance de votre célébration. Pensez également à la logistique, comme l'hébergement des invités et les transports. La sélection des prestataires, tels que le traiteur, le photographe et le fleuriste, joue un rôle clé dans la création de souvenirs durables.</p>
-      <button type="button" class="sweetButton mx-auto w-auto">
+      <%= link_to experience_path, class: "sweetButton" do %>
         <h6 class="m-0">Un Jour Inoubliable</h6>
-      </button>
+      <% end %>
     </div>
     <div class="col-md-2 align-items-center">
       <%= image_tag('eglise.webp', class: 'img-fluid', alt:"alliance", style:"width: 100%;") %>

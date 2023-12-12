@@ -7,21 +7,20 @@ Rails.application.routes.draw do
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   resources :locations
-  
+
   resources :events
   resources :events do
-    get 'add_location', on: :member
-    post 'create_association', on: :member
-    post 'join_as_guest', on: :member
-    get 'join_as_guest', on: :member
+    get "add_location", on: :member
+    post "create_association", on: :member
+    post "join_as_guest", on: :member
+    get "join_as_guest", on: :member
 
     resources :albums do
-      get 'event_album', on: :member
-        resources :images
+      get "event_album", on: :member
+      resources :images
     end
-
   end
-  
+
   # Static pages
   post "about", to: "static_pages#about"
   post "contact", to: "static_pages#contact"
@@ -29,12 +28,11 @@ Rails.application.routes.draw do
   post "terms", to: "static_pages#terms"
   post "privacy", to: "static_pages#privacy"
   post "faq", to: "static_pages#faq"
-  
+  get "experience", to: "static_pages#experience"
+
   # # Users show routes:
   resources :users do
-    resources :avatars, only: [:create] #ajout de photo de profil
-
-  
+    resources :avatars, only: [:create] # ajout de photo de profil
 
     #   resources :guest_list, only: [:show, :update]
     #   resources :menu, only: [:show, :update]
