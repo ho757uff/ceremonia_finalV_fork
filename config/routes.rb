@@ -16,8 +16,7 @@ Rails.application.routes.draw do
     get 'join_as_guest', on: :member
 
     resources :albums do
-      get 'event_album', on: :member
-        resources :images
+      resources :images
     end
 
   end

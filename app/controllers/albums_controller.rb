@@ -1,5 +1,7 @@
 class AlbumsController < ApplicationController
 
+    # un album est attaché à un event, cf: routes, il est nécessaire d'appeler l'event à chaque action
+
     def index
         @event = Event.find(params[:event_id])
         @albums = @event.albums
@@ -7,7 +9,7 @@ class AlbumsController < ApplicationController
 
     def new
         @event = Event.find(params[:event_id])
-        @album = Album.new
+        @album = @event.albums.new
     end
 
     def show
@@ -31,36 +33,20 @@ class AlbumsController < ApplicationController
     def update
         @event = Event.find(params[:event_id])
         @album = Album.find(params[:id])
+        new_images = params[:album][:images]
 
-        if @album.update(album_params)
-            album_params[:images].each do |image|
-                @album.images.attach(image)
-            end    
-            redirect_to event_album_path(@event, @album), notice: 'Album was successfully updated.'
-        else
-            render :edit
-        end
+        @album.images.attach(new_images) if new_images.present?
+
+        redirect_to event_album_path(@event, @album)        
     end
 
     def destroy
         @event = Event.find(params[:event_id])
         @album = @event.albums.find(params[:id])
         @album.destroy
-        redirect_to event_path(@event)
+        redirect_to event_albums_path(@event)
     end
-    
 
-    def event_album
-        @event = Event.find(params[:event_id])
-        @album = @event.albums.first
-
-        if @album.nil?
-            redirect_to new_event_album_path(event_id: @event)
-        else
-            redirect_to event_albums_path(event_id: @event)
-        end
-
-    end
 
 end
 

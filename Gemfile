@@ -16,6 +16,8 @@ gem "aws-sdk-s3", require: true
 
 gem "administrate"
 
+gem 'lightbox2-rails'
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"

@@ -1,0 +1,20 @@
+<div style="text-align: center;">                 <%# affichage d'une seule image format original %>
+
+        <h1>Ceci est la Show de l'image : <%= @image.title %></h1>
+
+        <br><br>
+
+        <h3>Description</h3><%= @image.description %>
+
+        <br>
+
+        <img src="<%= url_for(@image.image) %>" alt="<%= @image.title %>" width="500" height="500">
+
+        <br><br>
+
+
+        <div class="btn-group" >                     <%# redirection vers l'album %>
+                <%= link_to 'Retourner à l Album', event_album_images_path(@event, @album), class: 'btn btn-success'%><br>
+        </div>
+
+</div>
