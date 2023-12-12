@@ -1,102 +1,125 @@
-.events-container-bg {
-  display: grid;
-  background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  opacity: 0;
-  transform: translateX(-20px);
-  background-size: cover;
-  background-position: center;
-  animation: slideInFromRight 1s ease-out forwards;
-}
+  /* -------------- CAROUSEL -------------- */
 
-.carrejaune_accueil div {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 20px;
-}
+  .my-custom-carousel {
+    max-height: 400px;
+    /* Adjust the height as needed */
+  }
 
-.carregris_accueil {
-  margin-top: 30px;
-  padding: 20px;
-}
 
-/* -------------- CARDS -------------- */
-.custom-card {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  color: #000;
-}
+  .my-custom-carousel .carousel-inner {
+    text-align: center;
+  }
 
-.card {
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid #ccc;
-  transition: transform 0.3s ease-in-out;
-}
+  .my-custom-carousel img {
+    width: 100%;
+    /* Ensures the image takes the full width of the container */
+    height: 100%;
+    /* Ensures the image takes the full height of the container */
+    object-fit: contain;
+    /* Resizes the image to fit within the container while maintaining its aspect ratio */
+  }
 
-.card:hover {
-  transform: scale(1.05);
-}
+  /* -------------- CONTAINERS -------------- */
 
-.card-title {
-  text-align: center;
-}
+  .events-container-bg {
+    display: grid;
+    background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    opacity: 0;
+    transform: translateX(-20px);
+    background-size: cover;
+    background-position: center;
+    animation: slideInFromRight 1s ease-out forwards;
+  }
 
-.card-body {
-  padding: 20px;
-}
+  .carrejaune_accueil div {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+  }
 
-.card-img-top {
-  border-radius: 8px 8px 0 0;
-}
+  .carregris_accueil {
+    margin-top: 30px;
+    padding: 20px;
+  }
 
-#page_title {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
+  /* -------------- CARDS -------------- */
+  .custom-card {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    color: #000;
+  }
 
-#div-a-masquer {
-  background-color: rgba(255, 255, 255, 0);
-  border: none;
-  box-shadow: none;
-  padding: 0;
-}
+  .card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #ccc;
+    transition: transform 0.3s ease-in-out;
+  }
 
-#div-a-masquer .btn {
-  background: none;
-  color: black;
-  width: 48%;
-  height: fit-content;
-  border: none;
-  border: none;
-  text-transform: lowercase;
-  border: 1px solid black;
-  border-radius: 20px;
-  font-weight: bolder;
-}
+  .card:hover {
+    transform: scale(1.05);
+  }
 
-#div-a-masquer a:hover,
-#div-a-masquer button:hover {
-  transform: scale(1) !important;
-  background: black;
-  color: white;
-  transition: all 0.5s;
-}
+  .card-title {
+    text-align: center;
+  }
 
-#div-a-masquer .add-to-cart {
-  width: 100% !important;
-  border-right: none;
-  background: #E7BCDE;
-  border-radius: 20px;
-  color: black;
-  border: none;
-}
+  .card-body {
+    padding: 20px;
+  }
 
-#div-a-masquer .form-inline {
-  width: 48%;
-}
+  .card-img-top {
+    border-radius: 8px 8px 0 0;
+  }
+
+  #page_title {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  #div-a-masquer {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  #div-a-masquer .btn {
+    background: none;
+    color: black;
+    width: 48%;
+    height: fit-content;
+    border: none;
+    border: none;
+    text-transform: lowercase;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-weight: bolder;
+  }
+
+  #div-a-masquer a:hover,
+  #div-a-masquer button:hover {
+    transform: scale(1) !important;
+    background: black;
+    color: white;
+    transition: all 0.5s;
+  }
+
+  #div-a-masquer .add-to-cart {
+    width: 100% !important;
+    border-right: none;
+    background: #E7BCDE;
+    border-radius: 20px;
+    color: black;
+    border: none;
+  }
+
+  #div-a-masquer .form-inline {
+    width: 48%;
+  }
