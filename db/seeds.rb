@@ -12,22 +12,25 @@ EventLocation.destroy_all
 Location.destroy_all
 Event.destroy_all
 Role.destroy_all
+Image.destroy_all
+Album.destroy_all
+User.destroy_all
 
-10.times do
-    Location.create(place: Faker::Company.department, address: Faker::Address.city, privacy_status: 1)
-end
-
-
-Role.create(role_name: 'organizer')
-Role.create(role_name: 'guest')
-
-Events = []
-5.times do
-    event = Event.create(date: "28/05/2024", city_name: Faker::Address.city, title: Faker::Superhero.power, program: Faker::Sport.summer_olympics_sport)
-    Events << event
-end
+# 10.times do
+#     Location.create(place: Faker::Company.department, address: Faker::Address.city, privacy_status: 1)
+# end
 
 
-5.times do
-    Album.create(title: Faker::Color.name, description: Faker::Currency.name, event_id: Events.sample.id)
-end
+# Role.create(role_name: 'organizer')
+# Role.create(role_name: 'guest')
+
+# Events = []
+# 5.times do
+#     event = Event.create(date: "28/05/2024", city_name: Faker::Address.city, title: Faker::Superhero.power, program: Faker::Sport.summer_olympics_sport)
+#     Events << event
+# end
+
+
+# 5.times do
+#     Album.create(title: Faker::Color.name, description: Faker::Currency.name, event_id: Events.sample.id)
+# end

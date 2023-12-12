@@ -1,12 +1,50 @@
- <%# <div style="text-align: center;">
+<div style="text-align: center;">                 <%# affichage de toute les images d'un album avec possibilité d'ajout de photo %>
 
 
-<h1> ceci est  l'index des images d'un album </h1>
+  <h1> ceci est  l'index des images de l'Album : <%= @album.title %> </h1>
 
-    <%= link_to 'Retour Album Photo', @album ? event_album_event_album_path(@event, @album.id) : event_album_event_album_path(@event), class: 'btn btn-primary' %>
+  <%= link_to 'Retour A La Liste Des Albums', event_albums_path(@event, @album), class: 'btn btn-success'%>
 
-    <%= link_to 'retour au show event', event_path(@event), class: 'btn btn-success'%>
+  <br>
+
+
+  <% if @images.empty? %>
+    <h2> Vous n'avez pas encore de photo dans cet album </h2>
+  <% end %>
+
+  <br>
+
+  <h2>Ajouter une Image</h2>                     <%# formulaire d'ajout d'image %>
+
+  <%= form_with(model: [@event, @album, Image.new], local: true, html: { multipart: true }) do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+
+    <%= form.label :image %>
+    <%= form.file_field :image, accept: 'image/*' %>
+
+    <%= form.submit 'Télécharger', class: 'btn btn-success' %>
+  <% end %>
+
+  <br><br>
+
+
+  <% @images.each do |image| %>                   <%# affichage de toute les images avec redimensionnement %>
+    <% if image.album == @album %>
+      <% attached_image = image.image %>
+      <%= image_tag url_for(attached_image), width: '100', height: '100' %>
+
+      <div class="btn-group btn-group-vertical">           <%# bouton de navigation %>
+        <%= link_to 'Voir image', event_album_image_path(@event, @album, image), class: 'btn btn-primary btn-sm' %>
+        <br>
+        <%= button_to 'Supprimer image', event_album_image_path(@event, @album, image), method: :delete, class: 'btn btn-danger btn-sm' %>
+      </div>
+    <% end %>
+  <% end %>
 
 
 
-</div> %>
+</div>

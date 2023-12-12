@@ -1,9 +1,9 @@
- <div style="text-align: center;">
+ <div style="text-align: center;">             <%# la formulaire de création d'un album %>
 
 <h1>Ceci est la page pour créer un nouvelle album photo</h1>
 
   
- <%= form_for [@event, @album], url: event_album_path(@event) do |form| %>
+ <%= form_for [@event, @album], url: event_albums_path(@event, @album) do |form| %>
 
   <%= form.label :title %>
   <%= form.text_field :title %>
@@ -16,7 +16,7 @@
   <br>
   <br>
 
-  <%= form.submit "Create Album" %>
+  <%= form.submit "Create Album" %>         <%# redirige vers album#index ; cf controller %>
 <% end %>
 
 

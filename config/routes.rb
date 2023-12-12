@@ -18,8 +18,8 @@ Rails.application.routes.draw do
     post 'add_guest', on: :member
     get 'remove_guest', on: :member
     delete 'remove_guest', on: :member
+    
     resources :albums do
-      get "event_album", on: :member
       resources :images
     end
   end
