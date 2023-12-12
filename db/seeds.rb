@@ -21,8 +21,8 @@ User.destroy_all
 # end
 
 
-# Role.create(role_name: 'organizer')
-# Role.create(role_name: 'guest')
+Role.create(role_name: 'organizer')
+Role.create(role_name: 'guest')
 
 # Events = []
 # 5.times do
