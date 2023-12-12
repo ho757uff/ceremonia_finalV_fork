@@ -1,0 +1,29 @@
+ <div style="text-align: center;">
+
+
+<h1> ceci est la show d'un album </h1>
+
+
+    <%= link_to 'retour au index album', event_albums_path(@event, @album), class: 'btn btn-success'%>
+
+
+    <%= form_with(model: @album, local: true, html: { multipart: true }, url: event_album_path(@event, @album)) do |form| %>
+        <%= form.label :images %>
+        <%= form.file_field :images, multiple: true %>
+        <%= form.submit "Upload Images" %>
+    <% end %>
+
+  <div>
+    <% @album.images.each do |image| %>
+
+
+
+    <%= image_tag url_for(image) %>
+    <% end %>
+                                                                    <!-- Utilisez la méthode `service_url` pour récupérer l'URL de l'image -->
+  </div>
+
+
+
+
+</div>

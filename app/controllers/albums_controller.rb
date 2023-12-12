@@ -11,11 +11,13 @@ class AlbumsController < ApplicationController
     end
 
     def show
+        @event = Event.find(params[:event_id])
         @album = Album.find(params[:id])
+        @images = @album.images
     end
 
     def create
-        @event = Event.find(params[:event_id])  # Assurez-vous de récupérer l'événement correctement
+        @event = Event.find(params[:event_id])
         @album = @event.albums.create(album_params)
 
         if @album.save
@@ -24,6 +26,20 @@ class AlbumsController < ApplicationController
             render 'new'
         end
 
+    end
+
+    def update
+        @event = Event.find(params[:event_id])
+        @album = Album.find(params[:id])
+
+        if @album.update(album_params)
+            album_params[:images].each do |image|
+                @album.images.attach(image)
+            end    
+            redirect_to event_album_path(@event, @album), notice: 'Album was successfully updated.'
+        else
+            render :edit
+        end
     end
 
     def destroy
@@ -51,6 +67,6 @@ end
 private
 
     def album_params
-        params.require(:album).permit(:title, :description)
+        params.require(:album).permit(:title, :description, images: [])
     end
 
