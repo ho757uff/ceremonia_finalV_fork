@@ -10,7 +10,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @guest_users = User.joins(:user_events).where(user_events: { role_id: 2, event_id: @event.id })
+    @guest_users = User.guests(@event)
     @event_locations = @event.event_locations
     unless @event.organizer?(current_user)
       render :event_details_only
@@ -67,6 +67,35 @@ class EventsController < ApplicationController
     else
       redirect_to @event, alert: 'No locations were selected to be added.'
     end
+  end
+
+  def guest_list
+    @event = Event.find(params[:id])
+    @guests = User.guests(@event)
+  end
+
+  def add_guest
+    @event = Event.find(params[:id])
+    @role = Role.find_by(role_name: 'guest') # Assurez-vous que le nom du rôle pour les invités est 'guest'
+    
+    # Créez un nouvel utilisateur avec un mot de passe générique
+    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: 'password123', password_confirmation: 'password123')
+    if @user.save
+      UserEvent.create(user: @user, event: @event, role: @role)
+      redirect_to guest_list_event_path(@event), notice: 'Guest was successfully added.'
+    else
+      # Gérer l'échec de la création de l'utilisateur
+    end
+  end
+  
+  def remove_guest
+    @event = Event.find(params[:id])
+    @user = User.find(params[:user_id]) # Assurez-vous de passer user_id en paramètre
+    
+    user_event = UserEvent.find_by(user: @user, event: @event, role: Role.find_by(role_name: 'guest'))
+    user_event.destroy if user_event
+    
+    redirect_to @event, notice: 'Guest was successfully removed.'
   end
 
   def join_as_guest

@@ -1,0 +1,40 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>prenom</th>
+      <th>nom</th>
+      <th>Email</th>
+      <th>supprimé inviter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @guests.each do |guest| %>
+      <tr>
+        <td><%= guest.first_name %></td>
+        <td><%= guest.last_name %></td>
+        <td><%= guest.email %></td>
+        <td><%= link_to 'Remove Guest', remove_guest_event_path(id: @event.id, user_id: guest.id), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<!-- Bouton "Add Guest" -->
+<button id="add-guest-button">Add Guest</button>
+<!-- Formulaire pour ajouter un invité -->
+<div id="add-guest-form">
+  <%= form_with url: add_guest_event_path(@event), method: :post do |form| %>
+    <%= form.label :first_name, "Prenom" %>
+    <%= form.text_field :first_name %>
+    <%= form.label :last_name, "nom" %>
+    <%= form.text_field :last_name %>
+    <%= form.label :email, "Email" %>
+    <%= form.text_field :email %>
+    <%= form.submit "Add Guest" %>
+  <% end %>
+</div>
+<!-- JavaScript pour afficher le formulaire -->
+<script>
+  document.getElementById('add-guest-button').addEventListener('click', function() {
+    document.getElementById('add-guest-form').style.display = 'block';
+  });
+</script>

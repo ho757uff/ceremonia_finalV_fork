@@ -14,7 +14,11 @@ Rails.application.routes.draw do
     post 'create_association', on: :member
     post 'join_as_guest', on: :member
     get 'join_as_guest', on: :member
-
+    get 'guest_list', on: :member
+    post 'add_guest', on: :member
+    get 'remove_guest', on: :member
+    delete 'remove_guest', on: :member
+    
     resources :albums do
       get 'event_album', on: :member
         resources :images
