@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_11_163143) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_12_100240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_163143) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "event_id"
+    t.json "images"
     t.index ["event_id"], name: "index_albums_on_event_id"
   end
 
@@ -75,8 +76,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_163143) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "album_id"
-    t.index ["album_id"], name: "index_image_albums_on_album_id"
   end
 
   create_table "locations", force: :cascade do |t|

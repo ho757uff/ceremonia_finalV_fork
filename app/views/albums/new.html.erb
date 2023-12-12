@@ -3,7 +3,7 @@
 <h1>Ceci est la page pour créer un nouvelle album photo</h1>
 
   
- <%= form_for [@event, @album], url: event_albums_path(@event) do |form| %>
+ <%= form_for [@event, @album], url: event_album_path(@event) do |form| %>
 
   <%= form.label :title %>
   <%= form.text_field :title %>
@@ -19,7 +19,7 @@
   <%= form.submit "Create Album" %>
 <% end %>
 
-<%= link_to 'retour au show event', event_path(@event), class: 'btn btn-success'%>
+
  
 
 </div>

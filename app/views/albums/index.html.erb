@@ -2,15 +2,22 @@
 
 <h1> ceci est l'index album </h1>
 
+<%= link_to 'Créer Album Photo', new_event_album_path(@event), class: 'btn btn-secondary' %>
+<%= link_to 'retour au show event', event_path(@event), class: 'btn btn-success'%>
+
+<br><br>
+
 <% @albums.each do |album| %>
 <br>
-
-  <h3> titre de l'album :</h3><h5><%= album.title %></h5><br>
-    <%= link_to 'Voir Album', event_album_images_path(@event, album.id), class: 'btn btn-primary'%><br>
-    <%= link_to 'retour au show event', event_path(@event), class: 'btn btn-success'%>
-    <%= button_to 'Supprimer Album', event_album_path(@event, album.id), method: :delete, class: 'btn btn-danger' %>
+  <div class="album", style="border: 1px solid #ccc">
+    <h3> titre de l'album :</h3><h5><%= album.title %></h5><br>
+      <div class="btn-group" >
+        <%= link_to 'Voir Album', event_album_path(@event, album.id), class: 'btn btn-primary'%><br>
+        <%= button_to 'Supprimer Album', event_album_path(@event, album.id), method: :delete, class: 'btn btn-danger' %>
+      </div>
+  </div>
   <br>
-<% end %>
 
+<% end %>
 
 </div>
