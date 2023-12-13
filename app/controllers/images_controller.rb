@@ -13,6 +13,8 @@ class ImagesController < ApplicationController
     def show
       @image = @album.images.find(params[:id])
       @attached_image = @image.image
+      @comments = @image.comments
+      @comment = Comment.new
     end
   
     def new
