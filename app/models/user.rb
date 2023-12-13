@@ -17,6 +17,8 @@ after_create :welcome_send
 
   has_one_attached :avatar
 
+  has_many :comments
+
   # def password_reset
   #   UserMailer.password_reset(self).deliver_now
   # end

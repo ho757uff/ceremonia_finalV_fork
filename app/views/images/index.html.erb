@@ -16,8 +16,8 @@
 
   <h2>Ajouter une Image</h2>                     <%# formulaire d'ajout d'image %>
 
-  <%= form_with(model: [@event, @album, Image.new], local: true, html: { multipart: true }) do |form| %>
-    <%= form.label :title %>
+  <%= form_with(model: [@event, @album, Image.new], local: true, html: { multipart: true, id: 'image-form',  novalidate: true }) do |form| %>
+     <%= form.label :title %>
     <%= form.text_field :title %>
 
     <%= form.label :description %>
@@ -26,8 +26,9 @@
     <%= form.label :image %>
     <%= form.file_field :image, accept: 'image/*' %>
 
-    <%= form.submit 'Télécharger', class: 'btn btn-success' %>
-  <% end %>
+<%# Le bouton "Télécharger" est masqué avec style: 'display:none;' %>
+  <%= form.submit 'Télécharger', class: 'btn btn-success', style: '', id: 'upload-button' %>
+<% end %>
 
   <br><br>
 
@@ -40,11 +41,10 @@
       <div class="btn-group btn-group-vertical">           <%# bouton de navigation %>
         <%= link_to 'Voir image', event_album_image_path(@event, @album, image), class: 'btn btn-primary btn-sm' %>
         <br>
-        <%= button_to 'Supprimer image', event_album_image_path(@event, @album, image), method: :delete, class: 'btn btn-danger btn-sm' %>
+        <%= button_to 'X', event_album_image_path(@event, @album, image), method: :delete, class: 'btn btn-danger btn-sm' %>
       </div>
     <% end %>
   <% end %>
-
 
 
 
