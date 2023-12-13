@@ -1,29 +1,32 @@
- <div style="text-align: center;">                   <%# affichage de toute les albums %>
+<div class="bkg-album animate-bottom">
+  <%# affichage de toutes les albums %>
 
-<h1> ceci est l'index album </h1>
+  <h1>albums</h1>
+  <br><br>
 
-<% if @albums.empty? %>
-  <h2> Vous n'avez pas encore d'album photo </h2>
-<% end %>
+  <div class="background-content">
+    <h4 class="eventlisttitre">Créez, éditez, gérez vos albums photos comme vous le souhaitez !</h4>
+    <br><br>
 
-<%= link_to 'Créer Album Photo', new_event_album_path(@event), class: 'btn btn-secondary' %>
-<%= link_to 'retour au show event', event_path(@event), class: 'btn btn-success'%>
+    <% if @albums.empty? %>
+      <h2>Vous n'avez pas encore d'album photo</h2>
+    <% end %>
 
-<br><br>
+    <%= link_to 'Créer ton album', new_event_album_path(@event), class: 'btn sweetButton' %>
+    <%= link_to 'Retour', event_path(@event), class: 'btn sweetButton' %>
 
-<% @albums.each do |album| %>       <%# comment on affiche tout les albums, chacun à son bouton, toutes les images de l'album s'efface en même temps avec une validation dans le modèle %>
-<br>
-  <div class="album", style="border: 1px solid #ccc">
-    <h3> titre de l'album :</h3><h5><%= album.title %></h5><br>
-      <div class="btn-group" >
-        <%= link_to 'Voir Album', event_album_images_path(@event, album.id), class: 'btn btn-primary'%><br>
-        <%= button_to 'Supprimer Album', event_album_path(@event, album.id), method: :delete, class: 'btn btn-danger' %>
+    <br>
+
+    <% @albums.each do |album| %>
+      <br>
+      <div>
+        <h3 class="eventlisttitre">titre de l'album :</h3>
+        <h5 class="h5-album"><%= album.title %></h5><br>
+        <div class="btn-group">
+          <%= link_to 'Voir Album', event_album_images_path(@event, album.id), class: 'btn sweetButton' %><br>
+          <%= button_to 'Supprimer Album', event_album_path(@event, album.id), method: :delete, class: 'btn btn-danger sweetButton'  %>
+        </div>
       </div>
+    <% end %>
   </div>
-  <br>
-
-<% end %>
-
-
-
 </div>
