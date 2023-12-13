@@ -1,3 +1,6 @@
+<% content_for :title, "Création d'un Nouvel Événement" %>
+<% content_for :meta_description, "Utilisez notre formulaire pour créer un nouvel événement et célébrer vos moments spéciaux. Indiquez le titre, la date, le lieu et le programme de votre événement." %>
+
 <div class="container-custom events-container-bg">
   <h2>Create a New Event</h2>
   <%= form_for(@event, html: { class: 'event-form' }) do |f| %>
