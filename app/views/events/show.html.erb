@@ -1,13 +1,14 @@
+<% content_for :title, "Détails de l'Événement" %>
+<% content_for :meta_description, "Consultez les détails de cet événement, y compris la liste des invités, les informations sur l'événement et explorez les photos de l'album." %>
+
 <div class="event-container animate-bottom text-center mt-5">
-
-<div>
-  <%= link_to 'Album Photo', event_albums_path(@event), class: 'btn btn-primary' %>
-</div>
-
-
+  <div>
+    <%= link_to 'Album Photo', event_albums_path(@event), class: 'btn btn-primary' %>
+  </div>
   <h1 class="guest-heading mb-4 location-content-card">Liste des invités</h1>
 
   <% if @guest_users.present? %>
+
     <table class="table table-striped">
       <thead>
         <tr>
@@ -29,20 +30,14 @@
   <% else %>
     <p class="mb-4 pes">Dommage, personne ne s'est encore inscrit en tant qu'invité.</p>
   <% end %>
-
   <h1 class="guest-heading mt-5 mb-4 location-content-card">Détails de l'événement</h1>
-
   <p class="mb-2"><strong>Titre :</strong> <%= @event.title %></p>
   <p class="mb-2"><strong>Date :</strong> <%= @event.date %></p>
   <p class="mb-4"><strong>Programme :</strong> <%= @event.program %></p>
-
   <!-- Ajoutez cette balise img avec le chemin de votre image -->
-
   <img src="https://images.unsplash.com/photo-1624634564754-e45be6d06159?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fG1hcmlhZ2UlMjBldmVuZW1lbnR8ZW58MHx8MHx8fDA%3D" alt="Description de l'image">
 </div>
-<%= link_to 'Add Location', add_location_event_path(@event) %>
-
-
+  <%= link_to 'Add Location', add_location_event_path(@event) %>
 <div>
   <% @event_locations.each do |event_location| %>
     <div class="guest-heading">
