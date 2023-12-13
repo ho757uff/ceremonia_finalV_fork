@@ -1,6 +1,8 @@
-  <h1>Détails de l'événement</h1>
-  <p>Titre : <%= @event.title %></p>
-  <p>Date : <%= @event.date %></p>
-  <p>Programme : <%= @event.program %></p>
+<% content_for :title, "Détails de l'Événement" %>
+<% content_for :meta_description, "Consultez les détails de cet événement, y compris le titre, la date, le programme, et devenez invité pour y participer." %>
 
-  <%= link_to 'Devenir invité', join_as_guest_event_path(@event), method: :post %>
+<h1>Détails de l'événement</h1>
+<p>Titre : <%= @event.title %></p>
+<p>Date : <%= @event.date %></p>
+<p>Programme : <%= @event.program %></p>
+<%= link_to 'Devenir invité', join_as_guest_event_path(@event), method: :post %>

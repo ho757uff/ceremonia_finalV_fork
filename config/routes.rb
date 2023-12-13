@@ -20,7 +20,9 @@ Rails.application.routes.draw do
     delete 'remove_guest', on: :member
     
     resources :albums do
-      resources :images
+      resources :images do
+        resources :comments
+      end
     end
   end
 

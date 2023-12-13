@@ -1,13 +1,24 @@
-<%= form_tag create_association_event_path(@event), method: :post do %>
-  <% @locations.each do |location| %>
-    <label>
-      <%= check_box_tag 'location_ids[]', location.id %>
-      <%= location.place %>
-      
-      <%= label_tag "event_location[#{location.id}][date]", 'Date' %>
-      <%= datetime_field_tag "event_location[#{location.id}][date]" %>
-    </label>
-    <br>
+
+<% content_for :title, "Ajouter une étape à votre mariage" %>
+<% content_for :meta_description, "Personnalisez votre mariage en ajoutant des étapes uniques. Utilisez notre formulaire pour associer des lieux à votre événement avec des descriptions et des dates spécifiques." %>
+
+<form class="formaddloc custom-form">
+  <%= form_tag create_association_event_path(@event), method: :post, class: 'form-inline' do %>
+    <% @locations.each do |location| %>
+      <div class="location-card form-group">
+        <label class="location-heading">
+          <%= check_box_tag 'location_ids[]', location.id, class: 'form-check-input' %> <%= location.place %>
+        </label>
+        <div class="location-details">
+          <%= text_area_tag "event_location[#{location.id}][description]", nil, class: 'form-control', placeholder: 'Description' %>
+          <%= label_tag "event_location[#{location.id}][date]", 'Date', class: 'form-label' %>
+          <%= datetime_field_tag "event_location[#{location.id}][date]", nil, class: 'form-control' %>
+        </div>
+      </div>
+    <% end %>
+    <div class="text-center mt-3">
+      <%= submit_tag 'Add Locations', class: 'btn btn-primary' %>
+    </div>
   <% end %>
   <%= submit_tag 'Add Locations' %>
 <% end %>

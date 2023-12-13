@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-    <title>Ceremonia</title>
+    <title><%= yield :title %></title>
     <!-- CSRF et CSP meta tags -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -25,6 +25,10 @@
     <link rel="icon" type="image/png" href="/assets/favicon_black.png" />
     <!-- CDN FontAwesome pour les icônes -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Balise canonique -->
+    <link rel="canonical" href="<%= canonical_url %>" />
+    <!-- Meta description -->
+    <meta name="description" content="<%= yield :meta_description %>">
   </head>
   <body>
     <%= render 'layouts/navbar' %>
