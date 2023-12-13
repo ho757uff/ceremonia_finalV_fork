@@ -313,11 +313,16 @@ th {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+
+ 
 }
 
 .container form:hover {
   transform: scale(1.05);
-  transition: transform 0.3s ease-in-out;
+ 
+  
+  
 }
 
 
@@ -532,10 +537,111 @@ input[type="submit"]:hover {
   /* Le reste de vos styles... */
 }
 .location-heading{color: #ebaecd;}
-/* styles.css */
+.h5-album{color: #ffdb58;}
 
-.custom-form {
-  max-height: 500px; /* Ajustez la hauteur selon vos besoins */
-  overflow-y: auto; /* Ajoutez une barre de défilement verticale si nécessaire */
-  border: 2px solid #ffc107; 
+
+/*----------------------------------------*/
+.bkg-album {
+  position: relative;
+  border-radius: 10px;
 }
+.animate-bottom {
+  position: relative;
+  animation: animateBottom 1s ease-out;
+}
+
+@keyframes animateBottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+
+.bkg-album::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('https://images.unsplash.com/photo-1509316554658-04f9287cdb78?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGFsYnVtJTIwcGhvdG8lMjBtYXJpYWdlfGVufDB8fDB8fHww');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* Ajustez l'opacité selon vos préférences */
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.background-content {
+  padding: 90px;
+  position: relative;
+  z-index: 1;
+}
+/*albumaddphoto----------------------*/
+.upload-form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  float: left; 
+  
+}
+
+.form-title {
+  text-align: center;
+  color: #ebaecd;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.form-control-file {
+  margin-top: 5px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+.image-list {
+  float: right; /* Ajout de cette ligne pour placer les images à droite */
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.formalbumcolor{color:rgba(0, 0, 0, 0.5);}
+
