@@ -3,43 +3,44 @@
 </div>
 
 
-<div class="container">                 <%# affichage d'une seule image format original %>
+<div class="container-fluid">                 <%# affichage d'une seule image format original %>
  
-  <div class="row d-felx justify-content-center">
+  <div class="row d-felx">
     
-    <div class="col-9 justify-content-center">
+    <div class="col-9 mr-5">
       <p><h3>Description : <%= @image.description %></h3></p>
-      <img src="<%= url_for(@image.image) %>" alt="<%= @image.title %>" width="500" height="500">
+      <img src="<%= url_for(@image.image) %>" alt="<%= @image.title %>" width="100%" height="auto">
     </div>
 
-    <div class="col-3">
-      <div class="row mb-2">
+    <div class="col-3 align-content-center" >
+      <div class="row mt-5">
         <%= link_to 'Retourner à l Album', event_album_images_path(@event, @album), class: 'btn btn-success' %>
       </div>
-      <div class="row mt-3">
-        <p><strong><%= @image.comments.count %></strong> commentaire(s)</p>
+      <div class="row mt-2" style="background-color: white;">
+        <h6><%= @image.comments.count %></strong> commentaire(s)</h6>
       </div>
       
-
-      <h4>Liste des commentaires</h4>
-      <br>
-      <% @comments.each do |comment| %>
-        <h4><%= comment.content %></h4>
-        <h6>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<%= comment.user.first_name.presence && comment.user.last_name.presence || comment.user.email %></h6>
+      <div class="row mt-4" style="background-color: white; overflow-y: auto;"">
+        <h4>Liste des commentaires</h4>
+        <br><br>
+        <% @comments.each do |comment| %>
+        <br><br>
+        <h5><%= comment.content %></h5>
+        <h6>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Auteur : <%= comment.user.first_name.presence && comment.user.last_name.presence || comment.user.email %></h6>
         <%= button_to 'X', event_album_image_comment_path(@event, @album, @image, comment), method: :delete, class: 'btn btn-danger btn-sm' %>
         <br>
-      <% end %>
+        <% end %>
+      </div>
+
+      <div class="row-8 d-flex justify-content-center align-self-center mt-5">
+        <%= form_with(model: [ @event, @album, @image, @image.comments.build ], url: event_album_image_comments_path(@event, @album, @image), method: :post, local: true) do |form| %>
+          <%= form.text_area :content, placeholder: 'Ajouter un commentaire' %>
+          <%= form.submit 'Ajouter Commentaire', class: 'btn btn-primary' %>
+        <% end %>
+      </div>  
     </div>
 
   </div>
-
-  <div class="row-8 d-flex justify-content-center align-self-center mt-5">
-    <%= form_with(model: [ @event, @album, @image, @image.comments.build ], url: event_album_image_comments_path(@event, @album, @image), method: :post, local: true) do |form| %>
-      <%= form.text_area :content, placeholder: 'Ajouter un commentaire' %>
-      <%= form.submit 'Ajouter Commentaire', class: 'btn btn-primary' %>
-    <% end %>
-  </div>
-
 
 </div>
 
