@@ -82,17 +82,7 @@ private
       def is_organizer?(user, event)
         user_event = UserEvent.find_by(user: user, event: event)
         user_event&.role_id == 1 # Assurez-vous que 1 correspond au role_id d'organisateur dans votre application
-      end
-            
-            
-      
-      
-      
-   
-
+      end    
 
 end
-
-
-# http://127.0.0.1:3000/events/4/albums/2/images/2
 
