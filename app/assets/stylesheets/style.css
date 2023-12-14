@@ -8,7 +8,7 @@ body {
   height: 100%;
   background-color: #f5f5f5;
   font-family: 'Lato', sans-serif;
-  background-image: url("https://images.unsplash.com/photo-1595662000432-f8cdba893fa4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+ 
   background-size: cover;
 }
 
@@ -75,22 +75,9 @@ p,
 
 /* -------------- OTHER FONT RULES -------------- */
 
-h1 {
-  color: #fcb1cf;
-  text-align: center;
-  text-shadow: #000000 1px 0 10px;
-}
 
-h2 {
-  color: #fcb1cf;
-  text-align: center;
-  text-shadow: #000000 1px 0 10px;
-}
 
-p {
-  color: #ffffff;
-  border: #000000;
-}
+
 
 
 .title1,
@@ -116,10 +103,10 @@ p {
 
 .sweetButton {
   box-shadow: inset 0px 1px 0px 0px #f7c5c0;
-  background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+  background: linear-gradient(to bottom, #F26D91 5%, #F26D91  100%);
   background-color: #fc8d83;
   border-radius: 6px;
-  border: 1px solid #d83526;
+  border: 1px solid #F26D91; ;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;

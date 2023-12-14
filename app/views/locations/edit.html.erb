@@ -1,3 +1,5 @@
+<% content_for :title, "Modifier une étape de mariage" %>
+<% content_for :meta_description, "Personnalisez les détails d'une étape cruciale de votre mariage. Utilisez notre formulaire de modification pour mettre à jour le lieu et l'adresse de cette étape spéciale. Rendez votre mariage encore plus mémorable en ajustant chaque détail selon vos préférences." %>
 <%= form_for @location, url: location_path(@location), method: :patch do |f| %>
   <!-- Vos champs de formulaire -->
   <div class="form-group">
