@@ -1,45 +1,21 @@
 /* -------------- FOOTER -------------- */
 #footer {
-  display: flex;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
+  position: relative;
   width: 100%;
   background-color: rgba(252, 177, 207, 0.5);
-  padding: 10px 0;
   color: white;
-  height: 60px;
-  z-index: 1000;
+  text-align: center;
 }
 
-#footer {
-  margin-top: 0;
-}
-
-.footer-left,
-.footer-right {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-}
-
-.footer-center {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  margin-left: calc(440px);
-  /* Ajustez cette valeur en fonction du contenu du conteneur de gauche */
-  margin-right: calc(200px);
-  /* Ajustez cette valeur en fonction du contenu du conteneur de droite */
-}
-
-.content-wrapper {
-  margin-bottom: 60px;
-  min-height: 100vh;
-}
-
-.footer-link:hover {
+#footer a:hover,
+#footer .footer-link:hover,
+#footer .btn:hover {
   color: #fcb1cf !important;
   background-color: rgb(59, 59, 59) !important;
   transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Ajout de styles pour les icônes */
+#footer i {
+  margin-right: 5px;
 }
