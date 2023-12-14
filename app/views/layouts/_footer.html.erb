@@ -1,32 +1,44 @@
 <div class="container-fluid" id="footer">
-  <!-- Left links (GitHub) -->
-  <div class="footer-left">
-    <%= link_to "https://www.github.com/LLRMF", class: "btn me-2 footer-link socials-btn", target: "_blank", rel: "noopener noreferrer" do %>
-      <i class="fab fa-github"></i> GitHub
-    <% end %>
-  </div>
-  <!-- Center Links (About, Contact, Feedback) -->
-  <div class="footer-center">
-    <%= button_to about_path, class: "btn me-2 footer-link" do %>
-      <i class="fas fa-info-circle"></i> Qui sommes-nous ?
-    <% end %>
-    <%= button_to contact_path, class: "btn me-2 footer-link" do %>
-      <i class="fas fa-envelope"></i> Contact
-    <% end %>
-    <%= button_to feedback_path, class: "btn me-2 footer-link" do %>
-      <i class="fas fa-comments"></i> Feedback
-    <% end %>
-  </div>
-  <!-- Right Links (FAQ, CGU, Politique de confidentialité) -->
-  <div class="footer-right">
-    <%= button_to faq_path, class: "btn me-2 footer-link" do %>
-      <i class="fas fa-question-circle"></i> FAQ
-    <% end %>
-    <%= button_to terms_path, class: "btn me-2 footer-link" do %>
-      <i class="fas fa-file-alt"></i> CGU
-    <% end %>
-    <%= button_to privacy_path, class: "btn me-2 footer-link" do %>
-      <i class="fas fa-lock"></i> Politique de confidentialité
-    <% end %>
+  <div class="d-flex justify-content-between">
+    <!-- Left Link (GitHub) -->
+    <div class="text-start me-2">
+      <%= link_to "https://www.github.com/LLRMF", class: "btn footer-link", target: "_blank", rel: "noopener noreferrer" do %>
+        <i class="fab fa-github"></i> GitHub
+      <% end %>
+    </div>
+
+    <!-- Center Links (About, Contact, Feedback) -->
+    <div class="text-center me-2">
+      <%= button_to about_path, class: "btn footer-link" do %>
+        <i class="fas fa-info-circle"></i> Qui sommes-nous ?
+      <% end %>
+    </div>
+    <div class="text-center me-2">
+      <%= button_to contact_path, class: "btn footer-link" do %>
+        <i class="fas fa-envelope"></i> Contact
+      <% end %>
+    </div>
+    <div class="text-center me-2">
+      <%= button_to feedback_path, class: "btn footer-link" do %>
+        <i class="fas fa-comments"></i> Feedback
+      <% end %>
+    </div>
+
+    <!-- Right Links (FAQ, CGU, Politique de confidentialité) -->
+    <div class="text-end">
+      <%= button_to faq_path, class: "btn footer-link" do %>
+        <i class="fas fa-question-circle"></i> FAQ
+      <% end %>
+    </div>
+    <div class="text-end">
+      <%= button_to terms_path, class: "btn footer-link" do %>
+        <i class="fas fa-file-alt"></i> CGU
+      <% end %>
+    </div>
+    <div class="text-end">
+      <%= button_to privacy_path, class: "btn footer-link" do %>
+        <i class="fas fa-lock"></i> Politique de confidentialité
+      <% end %>
+    </div>
   </div>
 </div>
