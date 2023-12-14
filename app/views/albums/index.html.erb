@@ -3,32 +3,67 @@
 <div class="bkg-album animate-bottom">
   <%# affichage de toutes les albums %>
 
-  <h1>albums</h1>
-  <br><br>
 
-  <div class="background-content">
-    <h4 class="eventlisttitre">Créez, éditez, gérez vos albums photos comme vous le souhaitez !</h4>
-    <br><br>
-
-    <% if @albums.empty? %>
-      <h2>Vous n'avez pas encore d'album photo</h2>
-    <% end %>
-
-    <%= link_to 'Créer ton album', new_event_album_path(@event), class: 'btn sweetButton' %>
-    <%= link_to 'Retour', event_path(@event), class: 'btn sweetButton' %>
-
-    <br>
-
-    <% @albums.each do |album| %>
-      <br>
-      <div>
-        <h3 class="eventlisttitre">titre de l'album :</h3>
-        <h5 class="h5-album"><%= album.title %></h5><br>
-        <div class="btn-group">
-          <%= link_to 'Voir Album', event_album_images_path(@event, album.id), class: 'btn sweetButton' %><br>
-          <%= button_to 'Supprimer Album', event_album_path(@event, album.id), method: :delete, class: 'btn btn-danger sweetButton'  %>
-        </div>
+  <div class="container-fluid">
+    <div class="row d-flex align-items-center">
+      <div class="col-9 d-flex justify-content-center">
+        <h1>ALBUMS</h1>
       </div>
-    <% end %>
+      <div class="col-2 mt-3 d-flex justify-content-end ">
+        <%= link_to 'Retour Détails de l Evément', event_path(@event), class: 'btn sweetButton' %>
+      </div>
+    <div>
   </div>
+  <div class="row mt-3 mb-5">
+    <div class="background-content">
+      <h3 class="eventlisttitre">Créez, éditez, gérez vos albums photos comme vous le souhaitez !</h3>
+    </div>
+  </div>
+
+  <div class="container pt-3">
+    <div class="row d-flex justify-content-around" >
+      <div class="col-3 d-flex align-self-center justify-content-center">
+       <%= link_to 'Créer ton album', new_event_album_path(@event), class: 'btn sweetButton' , style: 'height: 100px; line-height: 50px;'  %>
+      </div>
+      <div class="col-7 d-flex align-content-center justify-content-center">
+        <% if @albums.empty? %>
+          <h2>Vous n'avez pas encore d'album photo</h2>
+        <%else%>
+          <div class="table" style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc; border-radius: 5px;">
+            <table class="table table-hover text-center w-100">
+              <thead>
+                <tr>
+                  <th>Titre</th>
+                  <th>Description</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              </tbody>
+                <% @albums.each do |album| %>
+                  <tr>
+                    <td class="col-3 align-middle">
+                      <%= album.title %>
+                    </td>
+                    <td class="col-6 align-middle">
+                      <%= album.description %>
+                    </td>
+                    <td class="col-1 pt-4">
+                      <%= link_to 'Voir', event_album_images_path(@event, album.id), class: 'btn sweetButton'%>
+                    </td>
+                    <td class="col-1 align-middle">
+                      <%= button_to 'Supprimer', event_album_path(@event, album.id), method: :delete, class: 'btn sweetButton' %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>
 </div>
