@@ -3,7 +3,9 @@ class ImagesController < ApplicationController
 #une image est rattaché à un album, qui est lui-même attaché à un event
 #on les appels en before_action
 
-    before_action :set_event_and_album 
+    before_action :authenticate_user!
+    before_action :set_event_and_album
+    before_action :authorize_organizer, only: [:destroy]
     
     
     def index
@@ -60,5 +62,15 @@ class ImagesController < ApplicationController
     def image_params
       params.require(:image).permit(:title, :description, :image)
     end
+
+    def authorize_organizer
+      @event = Event.find(params[:event_id])
+
+      unless current_user && current_user.organizer?
+          redirect_to '/'
+      end
+
   end
-  
+
+  end
+  # http://127.0.0.1:3000/events/3/albums/3/images/7

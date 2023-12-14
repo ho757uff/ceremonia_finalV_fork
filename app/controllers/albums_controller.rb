@@ -1,6 +1,8 @@
 class AlbumsController < ApplicationController
 
     # un album est attaché à un event, cf: routes, il est nécessaire d'appeler l'event à chaque action
+    before_action :authenticate_user!
+    before_action :authorize_organizer
 
     def index
         @event = Event.find(params[:event_id])
@@ -48,11 +50,33 @@ class AlbumsController < ApplicationController
     end
 
 
-end
+
 
 private
 
     def album_params
         params.require(:album).permit(:title, :description, images: [])
     end
+
+    def authorize_organizer
+        @event = Event.find(params[:event_id])
+    
+        if params[:id].present?
+          @album = Album.find(params[:id])
+    
+          unless current_user && (current_user == @event.organizer || current_user.organizer?)
+            redirect_to '/'
+          end
+
+        else
+          redirect_to '/'
+
+        end
+      rescue ActiveRecord::RecordNotFound
+        redirect_to '/'
+      end
+   
+
+
+end
 
