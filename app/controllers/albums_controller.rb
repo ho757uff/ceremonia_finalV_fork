@@ -60,23 +60,39 @@ private
 
     def authorize_organizer
         @event = Event.find(params[:event_id])
-    
+      
         if params[:id].present?
           @album = Album.find(params[:id])
-    
-          unless current_user && (current_user == @event.organizer || current_user.organizer?)
-            redirect_to '/'
-          end
-
+      
+          # Vérifier si l'utilisateur actuel a le rôle d'organisateur (role_id spécifique, par exemple 1) pour l'événement OU
+          # s'il est l'organisateur de l'album
+          redirect_to '/' unless current_user && (is_organizer?(current_user, @event) || current_user.id == @album.user_id)
         else
-          redirect_to '/'
-
+          # Vérifier si l'utilisateur actuel a le rôle d'organisateur (role_id spécifique, par exemple 1) pour l'événement
+          redirect_to '/' unless current_user && is_organizer?(current_user, @event)
         end
+      
       rescue ActiveRecord::RecordNotFound
+        # Rediriger vers la page d'accueil si l'événement n'est pas trouvé
         redirect_to '/'
       end
+      
+      private
+      
+      def is_organizer?(user, event)
+        user_event = UserEvent.find_by(user: user, event: event)
+        user_event&.role_id == 1 # Assurez-vous que 1 correspond au role_id d'organisateur dans votre application
+      end
+            
+            
+      
+      
+      
    
 
 
 end
+
+
+# http://127.0.0.1:3000/events/4/albums/2/images/2
 
