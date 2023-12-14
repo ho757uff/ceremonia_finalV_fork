@@ -7,7 +7,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
     @guest_users = User.guests(@event)
     @event_locations = @event.event_locations
     render :event_details_only unless @event.organizer?(current_user)
@@ -20,7 +19,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(event_params)
     if @event.save
-      current_user.user_events.create(event_id: @event.id, role_id: 1)
+      current_user.user_events.create(event_id: @event.id, role_id: 1, user_id: current_user.id)
       redirect_to @event
     else
       render :new
