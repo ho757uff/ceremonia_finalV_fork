@@ -7,12 +7,6 @@
   white-space: nowrap;
 }
 
-.larger-font {
-  font-size: 29px;
-  /* Ajustez la taille de la police selon vos préférences*/
-  color: #0D0000;
-}
-
 /*card accueil*/
 /* Ajoutez cette classe pour le style des images dans les colonnes */
 .grid-img-accueil {
