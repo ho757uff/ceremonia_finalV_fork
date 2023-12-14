@@ -1,0 +1,201 @@
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  color: #ebaecd;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.actions {
+  text-align: center;
+}
+
+input[type="submit"] {
+  background-color: #ffc107;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #ffdb58;
+}
+
+
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  color: #ebaecd;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.actions {
+  text-align: center;
+}
+
+input[type="submit"] {
+  background-color: #ffc107;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #ffdb58;
+}
+
+/* ---------------*/
+
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  color: #ebaecd;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.actions {
+  text-align: center;
+}
+
+input[type="submit"] {
+  background-color: #ffc107;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #ffdb58;
+}
+
+/* ------- FORMULAIRE AJOUTER UNE PHOTO  --------*/
+
+.upload-form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  /* Ajustez la marge selon vos préférences */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.form-title {
+  text-align: center;
+  color: #ebaecd;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.form-control-file {
+  margin-top: 5px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.formalbumcolor {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* Ajoutez ces styles pour la mise en page des images */
+
+
+
+.centered-form {
+  text-align: center;
+}
+
+.centered-form form {
+  display: inline-block;
+  text-align: left;
+}
+
+.centered-form-container {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.custom-comment-form .form-group {
+  margin-bottom: 15px;
+}
+
+.custom-comment-form {
+  position: relative;
+  /* Ajoutez d'autres styles nécessaires */
+
+}
+
+.custom-comment-form::before {
+  content: '';
+  background-image: url('https://images.unsplash.com/photo-1611258763073-9b45e3534ca7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGNvdWxldXIlMjBub2lyJTIwZXQlMjBibGFuY3xlbnwwfHwwfHx8MA%3D%3D');
+  opacity: 0.1;
+  /* Ajustez la valeur d'opacité selon vos préférences (entre 0 et 1) */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.image-list {
+  float: right;
+  /* Ajout de cette ligne pour placer les images à droite */
+}

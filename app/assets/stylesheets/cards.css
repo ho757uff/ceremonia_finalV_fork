@@ -1,0 +1,316 @@
+/* -------------- ACCUEIL -------------- */
+
+.cards-accueil-style {
+  background-color: rgba(248, 249, 250, 0.8);
+  border: 1px solid #dee2e6;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+  animation: slideIn 0.5s ease-in-out;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 10px 20px 10px;
+  box-sizing: border-box;
+}
+
+.image-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.image-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-item:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.image-actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-item:hover .image-actions {
+  opacity: 1;
+}
+
+/* -------------- EVENTS -------------- */
+
+.newevent {
+  margin: 0;
+  padding: 0;
+  height: 50vh;
+  background: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center center fixed;
+  background-size: cover;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.event-card {
+  background-image: url('https://m.media-amazon.com/images/I/31SBtnz7u+L._AC_.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.event-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.event-card h2 {
+  color: rgb(49, 48, 49);
+  margin: 0;
+  text-decoration: underline;
+  text-decoration-color: #fcb1cf;
+}
+
+.event-card:hover {
+  background-color: rgba(255, 192, 203, 0.5);
+}
+
+
+/* -------------- LOCATIONS -------------- */
+
+.location-card {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+/*--- A REVOIR : 2 TAILLES DIFFERENTES ---*/
+/*--- A REVOIR : 2 TAILLES DIFFERENTES ---*/
+/*--- A REVOIR : 2 TAILLES DIFFERENTES ---*/
+
+.location-card {
+  background-color: rgba(248, 249, 250, 0.8);
+  border: 1px solid #dee2e6;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+  animation: slideIn 0.5s ease-in-out;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.location-card {
+  background-color: rgba(248, 249, 250, 0.8);
+  border: 1px solid #dee2e6;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+  animation: slideIn 0.5s ease-in-out;
+  max-width: 300px;
+  /* Réglez la largeur maximale de la carte */
+  width: 100%;
+  /* Pour s'assurer qu'il prend toute la largeur du contenant */
+  margin: 0 10px 20px 10px;
+  /* Ajoutez une marge pour l'espacement entre les cartes */
+  box-sizing: border-box;
+  /* Assurez-vous que la largeur et la hauteur incluent le rembourrage et la bordure */
+}
+
+/*--- A REVOIR : 2 TAILLES DIFFERENTES ---*/
+/*--- A REVOIR : 2 TAILLES DIFFERENTES ---*/
+/*--- A REVOIR : 2 TAILLES DIFFERENTES ---*/
+
+
+
+.location-card {
+  height: 300px;
+  /* Ajoutez la hauteur souhaitée */
+  /* Le reste de vos styles... */
+}
+
+.location-heading {
+  color: #ebaecd;
+}
+
+.h5-album {
+  color: #ffdb58;
+}
+
+.location-content-card {
+  color: #f2f2f2;
+}
+
+.eventlisttitre {
+  color: #f2f2f2;
+}
+
+.rounded-image {
+  max-width: 300px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.location-heading {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.location-details {
+  font-size: 16px;
+  color: #495057;
+}
+
+.btn-view-detail {
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+
+/* -------------- PROFILE -------------- */
+
+.profile-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.profile-section img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.todo-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-section ul {
+  list-style: none;
+}
+
+.avatar {
+  background-image: url("https://images.unsplash.com/photo-1589645858872-647d43ae8ce6?q=80&w=2926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+
+
+/* -------------- ABOUT -------------*/
+
+.custom-card {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  color: #000;
+}
+
+.card {
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #ccc;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  text-align: center;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-img-top {
+  border-radius: 8px 8px 0 0;
+}
+
+#page_title {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+#div-a-masquer {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+#div-a-masquer .btn {
+  background: none;
+  color: black;
+  width: 48%;
+  height: fit-content;
+  border: none;
+  border: none;
+  text-transform: lowercase;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-weight: bolder;
+}
+
+#div-a-masquer a:hover,
+#div-a-masquer button:hover {
+  transform: scale(1) !important;
+  background: black;
+  color: white;
+  transition: all 0.5s;
+}
+
+#div-a-masquer .add-to-cart {
+  width: 100% !important;
+  border-right: none;
+  background: #E7BCDE;
+  border-radius: 20px;
+  color: black;
+  border: none;
+}
+
+#div-a-masquer .form-inline {
+  width: 48%;
+}

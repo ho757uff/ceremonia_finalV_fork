@@ -12,7 +12,18 @@
  *
  *= require litera
  *= require style
- *= require navbar_footer
+ *= require responsive
+ *= require navbar
+ *= require footer
+ *= require sidebar
+ *= require containers
+ *= require cards
+ *= require buttons
+ *= require animations
+ *= require forms
+ *= require front_mathieu
+ *= require front_lala
+ *= require front_louis
  *= require front_flo
  *= require front_robin
  *= require_self

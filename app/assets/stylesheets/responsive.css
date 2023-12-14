@@ -1,0 +1,30 @@
+/* -------- RESPONSIVE STYLES ---------- */
+@media (max-width: 768px) {
+
+  h1,
+  h2,
+  h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
