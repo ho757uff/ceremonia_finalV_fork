@@ -48,7 +48,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_13_112620) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "event_id"
-    t.json "images"
     t.index ["event_id"], name: "index_albums_on_event_id"
   end
 
