@@ -1,8 +1,9 @@
+<% content_for :title, "Détails d'un lieu " %>
+<% content_for :meta_description, "Explorez les détails d'un lieu qui vous tient à cœur. Découvrez la place et l'adresse, et prenez des actions telles que l'édition et la suppression." %>
 <div class="mt-5">
   <div id="location_show" class="text-center">
     <h2>Un endroit qui vous tient à cœur</h2>
   </div>
-
   <div class="container mt-4">
     <div class="card col-md-6 mx-auto newevent">
       <div class="card-header">
@@ -11,7 +12,6 @@
       <div class="card-header">
         <h5 class="location-content-card">Address : <%= @location.address %></h5>
       </div>
-      
       <div class="card-footer text-center">
         <%= button_to "Editer", edit_location_path(@location), class: "btn btn-success mr-2", method: :get %>
         <%= link_to "Retour à la liste", locations_path, class: "btn btn-info mr-2" %>
