@@ -47,6 +47,19 @@
   display: block;
 }
 
+.events-container-bg {
+  display: grid;
+  background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  opacity: 0;
+  transform: translateX(-20px);
+  background-size: cover;
+  background-position: center;
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
 .events-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -94,18 +107,6 @@
 }
 
 
-.events-container-bg {
-  display: grid;
-  background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  opacity: 0;
-  transform: translateX(-20px);
-  background-size: cover;
-  background-position: center;
-  animation: slideInFromRight 1s ease-out forwards;
-}
 
 .carrejaune_accueil div {
   background: rgba(255, 255, 255, 0.2);
