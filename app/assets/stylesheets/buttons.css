@@ -1,0 +1,215 @@
+/* -------------- BUTTONS -------------- */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background-color: #d48aa0;
+}
+
+.btn-sm {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.create-event-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fcb1cf;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.create-event-link:hover {
+  background-color: #FFB7B7;
+}
+
+.btn-light {
+  background-color: #fcb1cf;
+}
+
+.rounded-button {
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.unforgettable-button {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.new-event-button {
+  max-width: auto;
+  margin: 0 auto;
+}
+
+.sweetButton {
+  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+  background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+  background-color: #fc8d83;
+  border-radius: 6px;
+  border: 1px solid #d83526;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b23e35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sweetButton:hover {
+  background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+  background-color: #e4685d;
+}
+
+.sweetButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.sign_outButton {
+  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+  background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+  background-color: #fc8d83;
+  border-radius: 6px;
+  border: 1px solid #d83526;
+  display: inline-block;
+  cursor: pointer;
+  color: gray;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b23e35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign_out:hover {
+  background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+  background-color: #e4685d;
+}
+
+.sign_out:active {
+  position: relative;
+  top: 1px;
+}
+
+.coolButton {
+  background-color: #5DAFE4;
+  border-radius: 6px;
+  border: 1px solid #2A7EB1;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 6px 24px;
+  text-decoration: none;
+}
+
+.coolButton:hover {
+  background-color: #2A7EB1;
+}
+
+.coolButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.successButton {
+  box-shadow: inset 0px 1px 0px 0px #c0f7c5;
+  background: linear-gradient(to bottom, #83fc8d 5%, #5de468 100%);
+  background-color: #83fc8d;
+  border-radius: 6px;
+  border: 1px solid #26d835;
+  display: inline-block;
+  cursor: pointer;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #35b23e;
+}
+
+.successButton:hover {
+  background: linear-gradient(to bottom, #5de468 5%, #83fc8d 100%);
+  background-color: #5de468;
+}
+
+.successButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.warningButton {
+  box-shadow: inset 0px 1px 0px 0px #f7f2c0;
+  background: linear-gradient(to bottom, #f2e883 5%, #e4d45d 100%);
+  background-color: #f2e883;
+  border-radius: 6px;
+  border: 1px solid #d8c335;
+  display: inline-block;
+  cursor: pointer;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b2a935;
+}
+
+.warningButton:hover {
+  background: linear-gradient(to bottom, #e4d45d 5%, #f2e883 100%);
+  background-color: #e4d45d;
+}
+
+.warningButton:active {
+  position: relative;
+  top: 1px;
+}
