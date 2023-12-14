@@ -72,9 +72,6 @@ input[type="submit"]:hover {
 }
 
 /* -------------- ANIMATIONS -------------- */
-#jumbotron {
-  animation: slideInFromLeft 1.5s ease-out forwards;
-}
 
 #home-text {
   animation: slideInFromRight 1.5s ease-out forwards;
@@ -443,9 +440,7 @@ input[type="submit"]:hover {
   border-radius: 50%;
 }
 
-.location-card:hover {
-  transform: translateX(20px);
-}
+
 
 .avatar {
   background-image: url("https://images.unsplash.com/photo-1589645858872-647d43ae8ce6?q=80&w=2926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
@@ -541,42 +536,10 @@ input[type="submit"]:hover {
 
 
 /*----------------------------------------*/
-.bkg-album {
-  position: relative;
-  border-radius: 10px;
-}
-.animate-bottom {
-  position: relative;
-  animation: animateBottom 1s ease-out;
-}
-
-@keyframes animateBottom {
-  from {
-    bottom: -100px;
-    opacity: 0;
-  }
-
-  to {
-    bottom: 0;
-    opacity: 1;
-  }
-}
 
 
-.bkg-album::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: url('https://images.unsplash.com/photo-1509316554658-04f9287cdb78?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGFsYnVtJTIwcGhvdG8lMjBtYXJpYWdlfGVufDB8fDB8fHww');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.5; /* Ajustez l'opacité selon vos préférences */
-  border-radius: 10px;
-  z-index: -1;
-}
+
+
 
 .background-content {
   padding: 90px;
@@ -586,14 +549,14 @@ input[type="submit"]:hover {
 /*albumaddphoto----------------------*/
 .upload-form-container {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 50px auto; /* Ajustez la marge selon vos préférences */
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f8f9fa;
-  float: left; 
-  
+  text-align: center;
 }
+
 
 .form-title {
   text-align: center;
@@ -644,4 +607,124 @@ input[type="submit"]:hover {
   display: table;
 }
 .formalbumcolor{color:rgba(0, 0, 0, 0.5);}
+
+
+/* Ajoutez ces styles pour la mise en page des images */
+.image-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.image-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-item:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.image-actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-item:hover .image-actions {
+  opacity: 1;
+}
+
+.btn-sm {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+.centered-form {
+  text-align: center;
+}
+
+.centered-form form {
+  display: inline-block;
+  text-align: left;
+}
+.centered-form-container {
+  margin: 0 auto;
+  display: inline-block;
+}
+.custom-comment-form .form-group {
+  margin-bottom: 15px;
+}
+
+.custom-comment-form {
+  position: relative;
+  /* Ajoutez d'autres styles nécessaires */
+
+}
+
+.custom-comment-form::before {
+  content: '';
+  background-image: url('https://images.unsplash.com/photo-1611258763073-9b45e3534ca7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGNvdWxldXIlMjBub2lyJTIwZXQlMjBibGFuY3xlbnwwfHwwfHx8MA%3D%3D');
+  opacity: 0.1; /* Ajustez la valeur d'opacité selon vos préférences (entre 0 et 1) */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+/*page d'accueil img eglise-police-etc-----------debut-----------------------*/
+.img-fluid{border-radius: 15px;}
+.no-wrap {
+  white-space: nowrap;
+}
+.larger-font {
+  font-size: 29px; /* Ajustez la taille de la police selon vos préférences */
+  color: #0D0000;
+}
+
+.cards-accueil-style {
+  background-color: rgba(248, 249, 250, 0.8);
+  border: 1px solid #dee2e6;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+  animation: slideIn 0.5s ease-in-out;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 10px 20px 10px;
+  box-sizing: border-box;
+}
+
+
+
 
