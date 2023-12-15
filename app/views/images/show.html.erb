@@ -9,14 +9,14 @@
 
 <div class="container-fluid">
   <div class="row d-flex justify-content-around align-items-center">
-    <div class="col-8 d-flex align-items-center justify-content-center">
+    <div class="col-md-8 d-flex align-items-center justify-content-center">
       <div class="container-fluid mt-2 mb-0" style="height: 100%">
         <a data-fancybox="gallery" href="<%= url_for(@image.image) %>">
           <img src="<%= url_for(@image.image) %>" alt="<%= @image.title %>" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
         </a>
       </div>
     </div>
-    <div class="col-3 d-flex align-self-start">
+    <div class="col-md-3 d-flex align-self-start">
       <div class="container-fluid p-5 mr-2">
         <div class="row">
           <%= link_to 'Retourner à l Album', event_album_images_path(@event, @album), class: 'btn sweetButton' %>
@@ -24,7 +24,7 @@
         <div class="row m-3">
           <h6><%= @image.comments.count %></strong> commentaire(s)</h6>
         </div>
-        <div class="row" style="max-height: 150px; overflow-y: auto; border: 1px solid #ccc; border-radius: 5px;">
+        <div class="row" style="max-height: 150px; overflow-y: auto;">
           <% @comments.each do |comment| %>
             <div class="comment-container">
               <p class="text-black">"<%= comment.content %>"</p>
@@ -39,7 +39,7 @@
         </div>
         <div class="row mt-5">
           <div class="d-flex justify-content-center">
-            <%= form_with(model: [ @event, @album, @image, @image.comments.build ], url: event_album_image_comments_path(@event, @album, @image), method: :post, local: true) do |form| %>
+            <%= form_with(model: [ @event, @album, @image, @image.comments.build ], url: event_album_image_comments_path(@event, @album, @image), method: :post, remote: true) do |form| %>
               <%= form.text_area :content, placeholder: 'Ajouter un commentaire' %>
             </div>
             <div class="d-flex justify-content-center">
@@ -54,3 +54,4 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+

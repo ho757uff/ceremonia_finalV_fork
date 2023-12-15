@@ -6,15 +6,15 @@
 
   <div class="container-fluid">
     <div class="row d-flex align-items-center">
-      <div class="col-9 d-flex justify-content-center">
+      <div class="col-md-9 d-flex justify-content-center">
         <h1>ALBUMS</h1>
       </div>
-      <div class="col-2 mt-3 d-flex justify-content-end ">
-        <%= link_to 'Retour Détails de l Evément', event_path(@event), class: 'btn sweetButton' %>
+      <div class="col-md-2 mt-3 d-flex justify-content-end ">
+        <%= link_to 'Retour à l événement', event_path(@event), class: 'btn sweetButton' %>
       </div>
     <div>
   </div>
-  <div class="row mt-3 mb-5">
+  <div class="row-md mt-3 mb-5">
     <div class="background-content">
       <h3 class="eventlisttitre">Créez, éditez, gérez vos albums photos comme vous le souhaitez !</h3>
     </div>
@@ -22,37 +22,37 @@
 
   <div class="container pt-3">
     <div class="row d-flex justify-content-around" >
-      <div class="col-3 d-flex align-self-center justify-content-center">
+      <div class="col-md-3 d-flex align-self-center justify-content-center">
        <%= link_to 'Créer ton album', new_event_album_path(@event), class: 'btn sweetButton' , style: 'height: 100px; line-height: 50px;'  %>
       </div>
-      <div class="col-7 d-flex align-content-center justify-content-center">
+      <div class="col-md-7 d-flex align-content-center justify-content-center">
         <% if @albums.empty? %>
           <h2>Vous n'avez pas encore d'album photo</h2>
         <%else%>
-          <div class="table" style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc; border-radius: 5px;">
+          <div class="table-md" style="max-height: 300px; overflow-y: auto;">
             <table class="table table-hover text-center w-100">
-              <thead>
+              <thead >
                 <tr>
-                  <th>Titre</th>
-                  <th>Description</th>
-                  <th></th>
-                  <th></th>
+                  <th id="album-line" style="background-color: #f9f0f0;">Titre</th>
+                  <th style="background-color: #f9f0f0;">Description</th>
+                  <th style="background-color: #f9f0f0;"></th>
+                  <th style="background-color: #f9f0f0;"></th>
                 </tr>
               </thead>
               </tbody>
                 <% @albums.each do |album| %>
-                  <tr>
-                    <td class="col-3 align-middle">
+                  <tr style="background-color: #f9f0f0;">
+                    <td class="col-md-3 align-middle" style="background-color: #f9f0f0;">
                       <%= album.title %>
                     </td>
-                    <td class="col-6 align-middle">
+                    <td class="col-md-6 align-middle" style="background-color: #f9f0f0;">
                       <%= album.description %>
                     </td>
-                    <td class="col-1 pt-4">
+                    <td class="col-md-1 pt-4" style="background-color: #f9f0f0;">
                       <%= link_to 'Voir', event_album_images_path(@event, album.id), class: 'btn sweetButton'%>
                     </td>
-                    <td class="col-1 align-middle">
-                      <%= button_to 'Supprimer', event_album_path(@event, album.id), method: :delete, class: 'btn sweetButton' %>
+                    <td class="col-md-1 align-middle" style="background-color: #f9f0f0;">
+                      <%= button_to 'Supprimer', event_album_path(@event, album.id), method: :delete, class: 'btn sweetButton',style: 'background-color: transparent;'  %>
                     </td>
                   </tr>
                 <% end %>
