@@ -1,7 +1,5 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-
-
+<% content_for :title, "Détails de l'image - #{@image.title}" %>
+<% content_for :meta_description, "Consultez les détails de l'image #{@image.title} dans l'album #{@album.title} de l'événement #{@event.title}.Explorez les commentaires associés et ajoutez votre propre commentaire." %>
 
 <div class="container-fluid">
   <div class="row">
@@ -29,10 +27,10 @@
         <div class="row" style="max-height: 150px; overflow-y: auto; border: 1px solid #ccc; border-radius: 5px;">
           <% @comments.each do |comment| %>
             <div class="comment-container">
-              <h7>"<%= comment.content %>"</h7>
+              <p class="text-black">"<%= comment.content %>"</p>
               <div class="d-flex mt-1 justify-content-end">
-                <h7><%= comment.user.first_name.presence || comment.user.email %></h7>
-                <br>&nbsp&nbsp
+                <p class="text-black"><%= comment.user.first_name.presence || comment.user.email %></p>
+                <br>&nbsp;&nbsp;
                 <%= button_to 'x', event_album_image_comment_path(@event, @album, @image, comment), method: :delete, class: 'btn btn-light', style:'border: 0px solid #ccc; padding: 0.005rem 0.05rem;'%>
               </div>
               <br><br>
@@ -42,14 +40,17 @@
         <div class="row mt-5">
           <div class="d-flex justify-content-center">
             <%= form_with(model: [ @event, @album, @image, @image.comments.build ], url: event_album_image_comments_path(@event, @album, @image), method: :post, local: true) do |form| %>
-            <%= form.text_area :content, placeholder: 'Ajouter un commentaire' %>
-          </div>
-          <div class="d-flex justify-content-center">
-            <%= form.submit 'Ajouter Commentaire', class: 'btn btn-light' %>
-          </div>
-        <% end %>
+              <%= form.text_area :content, placeholder: 'Ajouter un commentaire' %>
+            </div>
+            <div class="d-flex justify-content-center">
+              <%= form.submit 'Ajouter Commentaire', class: 'btn btn-light' %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>

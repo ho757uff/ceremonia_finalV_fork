@@ -34,6 +34,8 @@
   }
 }
 
+/* ----------------------------- FADE INs --------------------------- */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -45,6 +47,21 @@
     transform: translateY(0);
   }
 }
+
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ----------------------------- SLIDE INs --------------------------- */
+
 
 /* -------------- SLIDE IN FROM LEFT -------------- */
 
@@ -72,19 +89,7 @@
   }
 }
 
-@keyframes fadeInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* ------------- SLIDE IN FROM RIGHT ------------- */
+/* -------------- SLIDE IN FROM RIGHT -------------- */
 
 @keyframes slideInFromRight {
   from {
@@ -110,12 +115,9 @@
   }
 }
 
-.animate-bottom {
-  position: relative;
-  animation: animateBottom 1s;
-}
+/* -------------- SLIDE IN FROM BOTTOM -------------- */
 
-@keyframes animateBottom {
+@keyframes slideInFromBottom {
   from {
     bottom: -100px;
     opacity: 0;
@@ -127,11 +129,19 @@
   }
 }
 
-/* ------------- PROFIL ------------- */
+.slide-in-from-bottom {
+  position: relative;
+  animation: animateBottom 1s;
+}
 
+/* ------------- PROFILE ------------- */
 
 .apparitionprofil {
   opacity: 0;
   transform: translateX(100%);
   animation: apparition 1.5s ease-out forwards;
 }
+
+
+
+
