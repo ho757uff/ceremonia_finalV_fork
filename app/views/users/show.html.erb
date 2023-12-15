@@ -1,42 +1,12 @@
-<style>
-    #avatar-form {
-      position: relative;
-    }
-
-    #avatar-input {
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-    }
-
-    #custom-avatar-button {
-      /* Ajoutez ici les styles pour personnaliser votre bouton */
-      padding: 10px 15px;
-      background-color: #FFB7B7;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
-
-
-
-
-
-
 <div class="container">
   <div class="row apparitionprofil">
     <!-- Profile Section -->
     <div class="col-md-4">
-      <div class="profile-section rounded-border avatar" >
+      <div class="todo-section rounded-border mb-4 newevent" >
         <% if @user.avatar.attached? %>
           <%= image_tag @user.avatar, alt: 'avatar', class: 'img-fluid rounded-circle' %>
         <% else %>
-          <img src="https://images.unsplash.com/photo-1645389411992-e9ec49b158e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D" alt="Photo de profil" class="img-fluid rounded-image">
+          <%# <img src="https://images.unsplash.com/photo-1645389411992-e9ec49b158e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D" alt="Photo de profil" class="img-fluid rounded-image"> %>
         <% end %>
         <%= form_tag user_avatars_path(@user), multipart: true, id: 'avatar-form' do %>
           <label id="custom-avatar-button" for="avatar-input">Changer Photo de Profil</label>
@@ -46,20 +16,17 @@
       <br>
     </div>
     <!-- Events Section -->
-    <div class="col-md-4">
-      <div class="events-section rounded-border newevent mb-4">
-        <h6 class="eventlisttitre">Ma liste d'événements</h6>
-        
-        <%= link_to new_event_path, class: 'nav-link sweetButton' do %>
-          <h6 class="m-0 ">Créer un nouvel évènement</h6>
+    <div class="col-md-8">
+      <div class="todo-section rounded-border mb-4 newevent">
+        <h5 class="card-title">Mes informations utilisateur</h5>
+        <p class="card-text"><strong>Email:</strong> <%= @user.email %></p>
+        <p class="card-text"><strong>Prenom:</strong> <%= @user.first_name %></p>
+        <p class="card-text"><strong>Nom:</strong> <%= @user.last_name %></p>
+        <% if current_user == @user %>
+          <div class="d-flex justify-content">
+            <%= button_to "Editer", edit_user_registration_path(@user.id), class: "btn sweetButton d-flex justify-content-center mr-2", method: :get %>
+          </div>
         <% end %>
-      </div>
-    </div>
-    <!-- To-Do List Section -->
-    <div class="col-md-4">
-      <div class="todo-section rounded-border newevent mb-4">
-        <h6 class="eventlisttitre">To-Do Liste</h6>
-        
       </div>
     </div>
   </div>

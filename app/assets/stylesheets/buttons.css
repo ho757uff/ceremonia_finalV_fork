@@ -50,7 +50,6 @@
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
-  margin-top: 20px;
   transition: background-color 0.3s ease;
 }
 
@@ -89,7 +88,6 @@
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 100;
-  padding: 6px 24px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #b23e35;
   display: flex;
@@ -212,4 +210,8 @@
 .warningButton:active {
   position: relative;
   top: 1px;
+}
+
+.max-width-btn {
+  max-width: 200px; /* ou la valeur que vous préférez */
 }

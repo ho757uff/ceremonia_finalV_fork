@@ -1,22 +1,22 @@
 <% content_for :title, "Liste de Vos Événements" %>
 <% content_for :meta_description, "Consultez la liste de vos événements et créez de nouveaux événements pour célébrer vos moments spéciaux." %>
 
-<header>
-  <h2 class="eventlisttitre apparitionprofil">Liste de vos événements</h2>
-</header>
-
-<% if @events != nil %>
-  <div class="events-container apparitionprofil">
-    <% @events.each do |event| %>
-      <div class="event-card apparitionprofil">
-        <%= link_to event_path(event) do %>
-          <h2><%= event.title %></h2>
-        <% end %>
-      </div>
+<div class="row d-flex justify-content-center">
+  <h2 class="apparitionprofil">Liste de vos événements</h2>
+  <% if @events != nil %>
+    <div class="events-container apparitionprofil col-md-8" style="border-radius: 5px;">
+      <% @events.each do |event| %>
+        <div class="event-card apparitionprofil align-items-center">
+          <%= link_to event_path(event) do %>
+            <h2><%= event.title %></h2>
+          <% end %>
+        </div>
+    <% end %>
+        <div class="event-card apparitionprofil align-items-center">
+          <%= link_to 'Créer un nouvel événement', new_event_path, class: 'sweetButton create-event-link apparitionprofil align-items-center' %>
+        </div>
+    </div>
+  <% else %>
+    <p class="apparitionprofil">Aucun événement à afficher pour le moment.</p>
   <% end %>
-
-  </div>
-<% else %>
-  <p class="apparitionprofil">Aucun événement à afficher pour le moment.</p>
-<% end %>
-<%= link_to 'Créer un nouvel événement', new_event_path, class: 'sweetButton create-event-link apparitionprofil' %>
+</div>

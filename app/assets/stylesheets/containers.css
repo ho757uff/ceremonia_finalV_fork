@@ -12,7 +12,6 @@
 }
 
 .container form {
-  background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
@@ -85,6 +84,7 @@
   background-image: inherit;
   opacity: inherit;
   z-index: -1;
+  border-radius: 25px;
 }
 
 /*--- A REVOIR : 2 TAILLES DIFFERENTES ---*/
