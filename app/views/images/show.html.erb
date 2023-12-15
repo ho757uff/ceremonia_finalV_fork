@@ -8,8 +8,8 @@
 </div>
 
 <div class="container-fluid">
-  <div class="row d-flex justify-content-between align-items-center">
-    <div class="col-9 d-flex align-items-center justify-content-center">
+  <div class="row d-flex justify-content-around align-items-center">
+    <div class="col-8 d-flex align-items-center justify-content-center">
       <div class="container-fluid mt-2 mb-0" style="height: 100%">
         <a data-fancybox="gallery" href="<%= url_for(@image.image) %>">
           <img src="<%= url_for(@image.image) %>" alt="<%= @image.title %>" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
@@ -19,7 +19,7 @@
     <div class="col-3 d-flex align-self-start">
       <div class="container-fluid p-5 mr-2">
         <div class="row">
-          <%= link_to 'Retourner à l Album', event_album_images_path(@event, @album), class: 'btn btn-light' %>
+          <%= link_to 'Retourner à l Album', event_album_images_path(@event, @album), class: 'btn sweetButton' %>
         </div>
         <div class="row m-3">
           <h6><%= @image.comments.count %></strong> commentaire(s)</h6>
