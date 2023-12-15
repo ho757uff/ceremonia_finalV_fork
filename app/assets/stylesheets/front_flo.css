@@ -3,10 +3,6 @@
   border-radius: 15px;
 }
 
-.no-wrap {
-  white-space: nowrap;
-}
-
 /*card accueil*/
 /* Ajoutez cette classe pour le style des images dans les colonnes */
 .grid-img-accueil {

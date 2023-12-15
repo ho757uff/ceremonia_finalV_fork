@@ -43,7 +43,6 @@ button {
   font-family: var(--main-font);
   color: var(--primary-color);
   text-align: center;
-  margin-bottom: 20px;
 }
 
 h1,
@@ -66,7 +65,6 @@ textarea {
 h1 {
   color: #ebaecd;
   text-align: center;
-  font-size: 70px;
 }
 
 h2 {
@@ -99,6 +97,3 @@ h2 {
   list-style: none;
 }
 
-.no-wrap {
-  white-space: nowrap;
-}
