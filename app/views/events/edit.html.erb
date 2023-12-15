@@ -1,27 +1,10 @@
 <% content_for :title, "Modifier un Événement" %>
 <% content_for :meta_description, "Modifiez les détails de cet événement, y compris le titre, la description, et la date." %>
 
-<h1>Modifier un événement</h1>
 
-<%= form_with(model: @event, url: event_path(@event), method: :patch, local: true) do |form| %>
-  <div>
-    <%= form.label :title, 'Titre' %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :description, 'Description' %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :date, 'Date' %>
-    <%= form.date_field :date %>
-  </div>
-
-  <div>
-    <%= form.submit 'Mettre à jour l\'événement' %>
-  </div>
-<% end %>
+<div class="container-custom events-container-bg">
+  <h2>Modifier un événement</h2>
+  <%= render "form", event: @event %>
+</div>
 
 <%= link_to 'Retour à la liste des événements', events_path %>
