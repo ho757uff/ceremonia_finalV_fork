@@ -3,20 +3,20 @@
 
 <div class="clearfix">                
   
-    <div class="container mb-2">
+    <div class="container">
       <div class="row">
-        <div class="col-9 d-flex justify-content-start">
+        <div class="col-md-9 d-flex justify-content-start">
           <h2> Album : <%= @album.title %> </h2>
         </div>
-        <div class="col-3 d-flex align-content-end">
-        <%= link_to 'Retour A La Liste Des Albums', event_albums_path(@event, @album), class: 'btn sweetButton'%>
+        <div class="col-md-3 d-flex align-content-end">
+        <%= link_to 'Retour Aux Albums', event_albums_path(@event, @album), class: 'btn sweetButton'%>
         </div>
       </div>
     </div>
 
 
     <div class="row d-flex">
-      <div class="col-5 mt-3 d-flex align-content-center">
+      <div class="col-md-5 d-flex align-content-center">
         <div class="upload-form-container newevent centered-form-container">
           <h2 class="form-title ">Ajoutez une Image</h2>
           <%= form_with(model: [@event, @album, Image.new], local: true, html: { multipart: true }) do |form| %>
@@ -37,7 +37,7 @@
           <% end %>
         </div>
       </div>
-      <div class="col-6 mr-5 d-flex align-self-center justify-content-center" style="max-height: 450px; overflow-y: auto; border: 1px solid #ccc; border-radius: 5px;">
+      <div class="col-md-6 mr-5 d-flex align-self-center justify-content-center" style="max-height: 450px; overflow-y: auto; ">
         <% if @images.empty? %>
           <h2> Vous n'avez pas encore de photo dans cet album </h2>
         <% else %>
@@ -45,14 +45,14 @@
             <% @images.each do |image| %>
               <% if image.album == @album %>
                 <% attached_image = image.image %>
-                <div class="col-3 mb-2 d-flex justify-content-center">
+                <div class="col-md-3 mb-2 d-flex justify-content-center">
                   <div class="image-item text-center">
                     <a data-fancybox="gallery" href="<%= url_for(image.image) %>">
                       <%= image_tag url_for(attached_image), style: 'height: 100%; max-width: auto; ', class: 'thumbnail' %>
                     </a>
                     <div class="image-actions">
                       <%= link_to 'Voir image', event_album_image_path(@event, @album, image), class: 'btn sweetButton btn-sm' %>
-                      <%= button_to 'Supprimer image', event_album_image_path(@event, @album, image), method: :delete, class: 'btn btn-danger btn-sm rounded-pill' %>
+                      <%= button_to 'Supprimer image', event_album_image_path(@event, @album, image), method: :delete, class: 'btn sweetButton btn-sm rounded-pill' %>
                     </div>
                   </div>
                 </div>
