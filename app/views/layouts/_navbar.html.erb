@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid glass">
     <div class="navbar-brand">
       <%= link_to root_path do %>
@@ -11,17 +11,17 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item" style="animation: fadeIn 1s forwards;">
-          <%= link_to root_path, class: 'nav-link text-white rounded-button' do %>
+          <%= link_to root_path, class: 'nav-link rounded-button' do %>
             <i class="fas fa-home"></i> Accueil
           <% end %>
         </li>
         <li class="nav-item" style="animation: fadeIn 1s forwards;">
-          <%= link_to new_event_path, class: 'nav-link text-white rounded-button' do %>
+          <%= link_to new_event_path, class: 'nav-link rounded-button' do %>
             <i class="fas fa-calendar-plus"></i> Créer un événement
           <% end %>
           <% if user_signed_in? %>
             <li class="nav-item" style="animation: fadeIn 1s forwards;">
-              <%= link_to events_path, class: 'nav-link text-white rounded-button' do %>
+              <%= link_to events_path, class: 'nav-link rounded-button' do %>
                 <i class="fas fa-calendar-alt"></i> Mes événements
               <% end %>
             </li>
@@ -30,23 +30,25 @@
         <ul class="navbar-nav">
           <% if user_signed_in? %>
             <li class="nav-item" style="animation: fadeIn 1s forwards;">
-              <%= link_to user_path(current_user), class: 'nav-link text-white rounded-button' do %>
+              <%= link_to user_path(current_user), class: 'nav-link rounded-button' do %>
                 <i class="fas fa-user"></i> Bienvenue, <%= current_user.email %>
               <% end %>
             </li>
-            <li class="nav-item" style="animation: fadeIn 1s forwards;">
-              <%= button_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete, confirm: "Êtes-vous sûr de vouloir vous déconnecter ?" }, class: "nav-link btn sweetButton text-white rounded-button" do %>
-                <i class="fas fa-sign-out-alt"></i> Déconnexion
-              <% end %>
+            <li class="nav-item d-flex justify-content-center" style="animation: fadeIn 1s forwards;">
+              <div>
+                <%= button_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete, confirm: "Êtes-vous sûr de vouloir vous déconnecter ?" }, class: "nav-link btn sweetButton rounded-button" do %>
+                  <i class="fas fa-sign-out-alt"></i> Déconnexion
+                <% end %>
+              </div>
             </li>
           <% else %>
-            <li class="nav-item" style="animation: fadeIn 1s forwards;">
-              <%= button_to new_user_session_path, class: "nav-link text-white rounded-button" do %>
+            <li class="nav-item text-center" style="animation: fadeIn 1s forwards;">
+              <%= link_to new_user_session_path, class: "nav-link rounded-button" do %>
                 <i class="fas fa-sign-in-alt"></i> Se connecter
               <% end %>
             </li>
             <li class="nav-item" style="animation: fadeIn 1s forwards;">
-              <%= link_to new_user_registration_path, class: 'nav-link text-white rounded-button' do %>
+              <%= link_to new_user_registration_path, class: 'nav-link rounded-button' do %>
                 <i class="fas fa-user-plus"></i> S'inscrire
               <% end %>
             </li>
@@ -54,4 +56,5 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
