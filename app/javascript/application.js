@@ -3,3 +3,6 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 
 //= require lightbox
+
+import "trix"
+import "@rails/actiontext"

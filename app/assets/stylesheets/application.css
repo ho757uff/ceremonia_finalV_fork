@@ -25,6 +25,7 @@
  *= require front_louis
  *= require front_flo
  *= require front_robin
+ *= require actiontext
  *= require_self
  *= require_tree .
  */
