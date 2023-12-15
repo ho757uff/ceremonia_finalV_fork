@@ -55,15 +55,24 @@
 }
 
 /* -------------- EVENTS -------------- */
+.todo-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fcb1cf;
+}
 
 .newevent {
   margin: 0;
   padding: 0;
   height: 50vh;
-  background: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center center fixed;
   background-size: cover;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .event-card {
@@ -71,8 +80,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 20px;
-  margin-bottom: 20px;
   color: #fff;
 }
 
@@ -166,13 +173,6 @@
   color: #ffdb58;
 }
 
-.location-content-card {
-  color: #f2f2f2;
-}
-
-.eventlisttitre {
-  color: #f2f2f2;
-}
 
 .rounded-image {
   max-width: 300px;
@@ -224,16 +224,13 @@
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .todo-section ul {
   list-style: none;
 }
 
-.avatar {
-  background-image: url("https://images.unsplash.com/photo-1589645858872-647d43ae8ce6?q=80&w=2926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-}
 
 
 

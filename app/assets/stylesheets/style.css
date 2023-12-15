@@ -6,7 +6,7 @@ body {
   padding: 0;
   min-height: 100vh;
   line-height: 1.6;
-  background-color: #f9f0f0;
+  background-color: #ffffff;
   /* background-image: image("app/assets/images/background_sepia.jpg");*/
   /* background-image: url("https://images.unsplash.com/photo-1595662000432-f8cdba893fa4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
   /* background-size: cover; */
@@ -16,7 +16,7 @@ body {
 }
 .content {
   padding-top: 60px;
-  padding-bottom: 200px;
+
 }
 /* ----------------------- GLOBAL FONTS & COLORS -------------------- */
 
@@ -54,12 +54,12 @@ button {
   text-align: center;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 li {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
+} */
 
 body,
 div,
@@ -74,6 +74,7 @@ textarea {
 h1 {
   color: #ebaecd;
   text-align: center;
+  font-weight: bolder;
 }
 
 h2 {
