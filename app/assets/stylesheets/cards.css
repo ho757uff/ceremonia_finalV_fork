@@ -1,19 +1,5 @@
 /* -------------- ACCUEIL -------------- */
 
-.cards-accueil-style {
-  background-color: rgba(248, 249, 250, 0.8);
-  border: 1px solid #dee2e6;
-  border-radius: 15px;
-  padding: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  transition: transform 0.5s ease-in-out;
-  animation: slideIn 0.5s ease-in-out;
-  max-width: 300px;
-  width: 100%;
-  margin: 0 10px 20px 10px;
-  box-sizing: border-box;
-}
 
 .image-list {
   display: grid;
@@ -93,10 +79,8 @@
 }
 
 .event-card h2 {
-  color: rgb(49, 48, 49);
-  margin: 0;
-  text-decoration: underline;
-  text-decoration-color: #fcb1cf;
+  color: #000;
+  text-decoration: none;
 }
 
 .event-card:hover {
@@ -236,10 +220,6 @@
 
 /* -------------- ABOUT -------------*/
 
-.custom-card {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  color: #000;
-}
 
 .card {
   margin-bottom: 20px;
@@ -264,14 +244,14 @@
   border-radius: 8px 8px 0 0;
 }
 
-#page_title {
+/* #page_title {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
-}
+} */
 
-#div-a-masquer {
+/* #div-a-masquer {
   background-color: rgba(255, 255, 255, 0);
   border: none;
   box-shadow: none;
@@ -310,4 +290,18 @@
 
 #div-a-masquer .form-inline {
   width: 48%;
-}
+} */
+/* .cards-accueil-style {
+  background-color: rgba(248, 249, 250, 0.8);
+  border: 1px solid #dee2e6;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+  animation: slideIn 0.5s ease-in-out;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 10px 20px 10px;
+  box-sizing: border-box;
+} */

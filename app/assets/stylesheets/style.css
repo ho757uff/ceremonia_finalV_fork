@@ -81,29 +81,3 @@ h2 {
   color: #ebaecd;
   text-align: center;
 }
-
-.larger-font {
-  font-size: 16px;
-}
-
-/* -------------- SPACING -------------- */
-.mb-20 {
-  margin-bottom: 20px;
-}
-
-/* -------------- A REVOIR -------------- */
-
-.events-section {
-  text-align: center;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-.events-section ul {
-  list-style: none;
-}
-
