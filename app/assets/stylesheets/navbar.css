@@ -99,11 +99,3 @@
 .navbar-brand {
   animation: fadeIn 1s forwards;
 }
-
-.separator {
-  width: 1px;
-  height: 24px;
-  background-color: #fcb1cf;
-  margin: 0 10px;
-  display: inline-block;
-}
