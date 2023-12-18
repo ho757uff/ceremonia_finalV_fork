@@ -26,6 +26,7 @@
  *= require front_flo
  *= require front_robin
  *= require actiontext
+ *= require album
  *= require_self
  *= require_tree .
  */

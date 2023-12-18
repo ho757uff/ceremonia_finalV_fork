@@ -4,7 +4,7 @@
   <%# affichage de toutes les albums %>
 
 
-  <div class="container-fluid">
+  <div class="container-fluid" id="album">
     <div class="row d-flex align-items-center">
       <div class="col-md-9 d-flex justify-content-center">
         <h1>ALBUMS</h1>
@@ -33,25 +33,25 @@
             <table class="table table-hover text-center w-100">
               <thead >
                 <tr>
-                  <th id="album-line" style="background-color: #f9f0f0;">Titre</th>
-                  <th style="background-color: #f9f0f0;">Description</th>
-                  <th style="background-color: #f9f0f0;"></th>
-                  <th style="background-color: #f9f0f0;"></th>
+                  <th id="album-line">Titre</th>
+                  <th id="album-line">Description</th>
+                  <th id="album-line"></th>
+                  <th id="album-line"></th>
                 </tr>
               </thead>
               </tbody>
                 <% @albums.each do |album| %>
-                  <tr style="background-color: #f9f0f0;">
-                    <td class="col-md-3 align-middle" style="background-color: #f9f0f0;">
+                  <tr>
+                    <td class="col-md-3 align-middle" id="album-line">
                       <%= album.title %>
                     </td>
-                    <td class="col-md-6 align-middle" style="background-color: #f9f0f0;">
+                    <td class="col-md-6 align-middle" id="album-line">
                       <%= album.description %>
                     </td>
-                    <td class="col-md-1 pt-4" style="background-color: #f9f0f0;">
+                    <td class="col-md-1 pt-4" id="album-line">
                       <%= link_to 'Voir', event_album_images_path(@event, album.id), class: 'btn sweetButton'%>
                     </td>
-                    <td class="col-md-1 align-middle" style="background-color: #f9f0f0;">
+                    <td class="col-md-1 align-middle" id="album-line">
                       <%= button_to 'Supprimer', event_album_path(@event, album.id), method: :delete, class: 'btn sweetButton',style: 'background-color: transparent;'  %>
                     </td>
                   </tr>
