@@ -70,15 +70,22 @@ class EventsController < ApplicationController
   end
 
   def add_guest
-    @role = Role.find_by(role_name: 'guest') 
-    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: 'password123', password_confirmation: 'password123')
-    if @user.save
-      UserEvent.create(user: @user, event: @event, role: @role)
-      redirect_to guest_list_event_path(@event), notice: 'Guest was successfully added.'
+    @role = Role.find_by(role_name: 'guest')
+    existing_user = User.find_by(email: params[:email])
+    if existing_user
+      UserEvent.create(user: existing_user, event: @event, role: @role)
+      redirect_to guest_list_event_path(@event), notice: 'User already exists. Added to the event.'
     else
-      render :guest_list
+      @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: 'password123', password_confirmation: 'password123')
+      if @user.save
+        UserEvent.create(user: @user, event: @event, role: @role)
+        redirect_to guest_list_event_path(@event), notice: 'Guest was successfully added.'
+      else
+        redirect_to guest_list_event_path(@event), alert: 'Failed to add guest. Please check the details.'
+      end
     end
   end
+  
   
   def remove_guest
     @user = User.find(params[:user_id])
