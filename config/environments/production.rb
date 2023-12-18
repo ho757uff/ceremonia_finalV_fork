@@ -116,6 +116,8 @@ Rails.application.configure do
   #   :enable_starttls_auto => true
   # }
 
+  # Active Storage configuration for production
+  config.active_storage.variant_processor = :vips
 
   config.action_mailer.default_url_options = { :host => 'https://the-wedding-project-1b83c5344eda.herokuapp.com/' }
   config.action_mailer.delivery_method = :smtp
