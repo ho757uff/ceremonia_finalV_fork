@@ -2,9 +2,8 @@
 <% content_for :meta_description, "Explorez tous les lieux disponibles pour votre mariage. Créez de nouveaux lieux pour rendre votre événement unique. Découvrez les détails de chaque lieu, y compris l'adresse et d'autres informations importantes." %>
 <div id="location_index" class="text-center">
 
-  <h2>Tous les lieux que vous pouvez ajouté</h2>
+  <h2>Tous les lieux que vous pouvez ajouter à vos événements</h2>
 
-  <%= link_to "Créer", new_location_path, class: "btn sweetButton" %>
 
   <div class="location-cards-container">
     <% @public_locations.each do |public_location|%>
@@ -27,5 +26,7 @@
       </div>
     <% end %>
   </div>
+
+  <%= link_to "Créer un nouveau lieu", new_location_path, class: "btn sweetButton" %>
 
 </div>

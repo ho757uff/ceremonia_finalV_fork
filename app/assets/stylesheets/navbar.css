@@ -5,8 +5,10 @@
   z-index: 1000;
   color: #fcb1cf;
   margin-top: -0.5rem;
-  display: flex; /* Ajout de flexbox */
-  align-items: center; /* Centrer verticalement */
+  display: flex;
+  /* Ajout de flexbox */
+  align-items: center;
+  /* Centrer verticalement */
 }
 
 
@@ -94,9 +96,14 @@
   color: #fcb1cf !important;
 }
 
-
-
 .navbar-brand {
   animation: fadeIn 1s forwards;
 }
 
+.separator {
+  width: 1px;
+  height: 24px;
+  background-color: #fcb1cf;
+  margin: 0 10px;
+  display: inline-block;
+}
