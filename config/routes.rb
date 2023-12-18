@@ -27,12 +27,12 @@ Rails.application.routes.draw do
   end
 
   # Static pages
-  post "about", to: "static_pages#about"
-  post "contact", to: "static_pages#contact"
-  post "feedback", to: "static_pages#feedback"
-  post "terms", to: "static_pages#terms"
-  post "privacy", to: "static_pages#privacy"
-  post "faq", to: "static_pages#faq"
+  get "about", to: "static_pages#about"
+  get "contact", to: "static_pages#contact"
+  get "feedback", to: "static_pages#feedback"
+  get "terms", to: "static_pages#terms"
+  get "privacy", to: "static_pages#privacy"
+  get "faq", to: "static_pages#faq"
   get "experience", to: "static_pages#experience"
 
   # # Users show routes:
