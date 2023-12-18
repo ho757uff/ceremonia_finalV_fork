@@ -9,6 +9,10 @@ class Event < ApplicationRecord
   has_rich_text :description
   has_rich_text :program
 
+  validates :title, presence: true
+  validates :date, presence: true
+
+
   def organizer?(current_user)
     user_events.exists?(role_id: 1, user_id: current_user.id)
   end
