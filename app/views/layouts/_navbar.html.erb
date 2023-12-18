@@ -25,36 +25,42 @@
                 <i class="fas fa-calendar-alt"></i> Mes événements
               <% end %>
             </li>
-          <% end %>
-        </ul>
-        <ul class="navbar-nav">
-          <% if user_signed_in? %>
             <li class="nav-item" style="animation: fadeIn 1s forwards;">
-              <%= link_to user_path(current_user), class: 'nav-link rounded-button' do %>
-                <i class="fas fa-user"></i> Bienvenue, <%= current_user.email %>
+              <%= link_to locations_path, class: 'nav-link rounded-button' do %>
+                <i class="fas fa-map-marker-alt"></i> Mes lieux
               <% end %>
             </li>
-            <li class="nav-item d-flex justify-content-center" style="animation: fadeIn 1s forwards;">
-              <div>
-                <%= button_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete, confirm: "Êtes-vous sûr de vouloir vous déconnecter ?" }, class: "nav-link btn sweetButton rounded-button" do %>
-                  <i class="fas fa-sign-out-alt"></i> Déconnexion
-                <% end %>
-              </div>
-            </li>
-          <% else %>
-            <li class="nav-item text-center" style="animation: fadeIn 1s forwards;">
-              <%= link_to new_user_session_path, class: "nav-link rounded-button" do %>
-                <i class="fas fa-sign-in-alt"></i> Se connecter
+          </li>
+        <% end %>
+      </ul>
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item" style="animation: fadeIn 1s forwards;">
+            <%= link_to user_path(current_user), class: 'nav-link rounded-button' do %>
+              <i class="fas fa-user"></i> Bienvenue, <%= current_user.email %>
+            <% end %>
+          </li>
+          <li class="nav-item d-flex justify-content-center" style="animation: fadeIn 1s forwards;">
+            <div>
+              <%= button_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete, confirm: "Êtes-vous sûr de vouloir vous déconnecter ?" }, class: "nav-link btn sweetButton rounded-button" do %>
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
               <% end %>
-            </li>
-            <li class="nav-item" style="animation: fadeIn 1s forwards;">
-              <%= link_to new_user_registration_path, class: 'nav-link rounded-button' do %>
-                <i class="fas fa-user-plus"></i> S'inscrire
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item text-center" style="animation: fadeIn 1s forwards;">
+            <%= link_to new_user_session_path, class: "nav-link rounded-button" do %>
+              <i class="fas fa-sign-in-alt"></i> Se connecter
+            <% end %>
+          </li>
+          <li class="nav-item" style="animation: fadeIn 1s forwards;">
+            <%= link_to new_user_registration_path, class: 'nav-link rounded-button' do %>
+              <i class="fas fa-user-plus"></i> S'inscrire
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
+</div>
 </nav>

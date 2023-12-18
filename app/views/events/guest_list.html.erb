@@ -4,10 +4,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>prenom</th>
-      <th>nom</th>
+      <th>Prénom</th>
+      <th>Nom</th>
       <th>Email</th>
-      <th>supprimé inviter</th>
+      <th>Supprimer cet invité</th>
     </tr>
   </thead>
   <tbody>
@@ -26,7 +26,7 @@
 <!-- Formulaire pour ajouter un invité -->
 <div id="add-guest-form">
   <%= form_with url: add_guest_event_path(@event), method: :post do |form| %>
-    <%= form.label :first_name, "Prenom" %>
+    <%= form.label :first_name, "Prénom" %>
     <%= form.text_field :first_name %>
     <%= form.label :last_name, "nom" %>
     <%= form.text_field :last_name %>
