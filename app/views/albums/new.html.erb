@@ -1,8 +1,8 @@
 <% content_for :title, "Créer un nouvel album photo" %>
 <% content_for :meta_description, "Partagez vos souvenirs en créant un nouvel album photo. Ajoutez un titre et une description pour capturer chaque moment." %>
 
-<div class="mt-5 d-flex align-items-center justify-content-center">
-  <div class="container-custom newevent">
+<div class=" d-flex align-items-center justify-content-center">
+  <div class="container-custom" id="newalbum">
     <h2 class="form-title ">Créer un nouvel album photo</h2>
     <%= form_for [@event, @album], url: event_albums_path(@event, @album) do |form| %>
       <div class="form-group">

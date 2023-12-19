@@ -17,6 +17,7 @@ after_create :welcome_send
 
   has_one_attached :avatar
 
+  has_many :images
   has_many :comments
 
   # def password_reset

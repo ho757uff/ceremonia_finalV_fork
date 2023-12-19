@@ -14,20 +14,28 @@
       </div>
     <div>
   </div>
-  <div class="row-md mt-3 mb-5">
+  <div class="row-md mt-5 mb-5">
     <div class="background-content">
-      <h3 class="eventlisttitre">Créez, éditez, gérez vos albums photos comme vous le souhaitez !</h3>
+      <% if current_user.organizer? %>
+        <h3 class="eventlisttitre">Créez, éditez, gérez vos albums photos comme vous le souhaitez !</h3>
+      <% end %>
     </div>
   </div>
 
   <div class="container pt-3">
     <div class="row d-flex justify-content-around" >
       <div class="col-md-3 d-flex align-self-center justify-content-center">
-       <%= link_to 'Créer ton album', new_event_album_path(@event), class: 'btn sweetButton' , style: 'height: 100px; line-height: 50px;'  %>
+        <% if current_user.organizer? %>
+          <%= link_to 'Créer ton album', new_event_album_path(@event), class: 'btn sweetButton' , style: 'height: 100px; line-height: 50px;'  %>
+        <% end %>
       </div>
-      <div class="col-md-7 d-flex align-content-center justify-content-center">
+      <div class="col-md-9 d-flex align-content-center justify-content-center">
         <% if @albums.empty? %>
-          <h2>Vous n'avez pas encore d'album photo</h2>
+          <% if current_user.organizer? %>
+            <h2>Vous n'avez pas encore d'album photo</h2>
+          <% else %>
+            <h2>Aucun Album n'a été créé pour l'événement</h2>
+          <% end %>
         <%else%>
           <div class="table-md" style="max-height: 300px; overflow-y: auto;">
             <table class="table table-hover text-center w-100">
@@ -42,17 +50,19 @@
               </tbody>
                 <% @albums.each do |album| %>
                   <tr>
-                    <td class="col-md-3 align-middle" id="album-line">
+                    <td class="col-md-4 align-middle" id="album-line">
                       <%= album.title %>
                     </td>
-                    <td class="col-md-6 align-middle" id="album-line">
+                    <td class="col-md-4 align-middle" id="album-line">
                       <%= album.description %>
                     </td>
                     <td class="col-md-1 pt-4" id="album-line">
                       <%= link_to 'Voir', event_album_images_path(@event, album.id), class: 'btn sweetButton'%>
                     </td>
                     <td class="col-md-1 align-middle" id="album-line">
-                      <%= button_to 'Supprimer', event_album_path(@event, album.id), method: :delete, class: 'btn sweetButton',style: 'background-color: transparent;'  %>
+                      <% if current_user.organizer? %>
+                        <%= button_to 'Supprimer', event_album_path(@event, album.id), method: :delete, class: 'btn sweetButton',style: 'background-color: transparent;'  %>
+                      <% end %>
                     </td>
                   </tr>
                 <% end %>

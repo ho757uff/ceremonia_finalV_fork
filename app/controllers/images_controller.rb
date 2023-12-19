@@ -4,8 +4,9 @@ class ImagesController < ApplicationController
 #on les appels en before_action
 
     before_action :authenticate_user!
-    before_action :set_event_and_album
-    before_action :authorize_organizer, only: [:destroy]
+    before_action :set_event_and_album                                   #permet de filtrerl'événement et l'album associés à une image
+    before_action :authorize_organizer, only: [:destroy]                 #seul l'organisateur peut supprimer des photos
+    before_action :authorize_event_access                                #permet de vérifier
     
     
     def index
@@ -25,11 +26,12 @@ class ImagesController < ApplicationController
   
     def create
       @image = @album.images.build(image_params)
+      @image.user = current_user
       if @image.save
         redirect_to event_album_images_path(@event, @album)
       else
         render :new
-      end
+      end      
     end
   
     def edit
@@ -63,6 +65,17 @@ class ImagesController < ApplicationController
       params.require(:image).permit(:title, :description, :image)
     end
 
+    def authorize_event_access
+      @event = Event.find(params[:event_id])
+      @album = Album.find(params[:album_id])
+      user_event = current_user.user_events.find_by(event_id: @event.id)
+  
+      unless user_event
+        redirect_to '/'
+      end
+    end
+
+
     def authorize_organizer
       @event = Event.find(params[:event_id])
 
@@ -70,6 +83,7 @@ class ImagesController < ApplicationController
           redirect_to '/'
       end
 
+      
   end
 
   end
