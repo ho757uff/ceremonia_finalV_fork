@@ -1,0 +1,82 @@
+  .edo-cover {
+    background: url('/assets/cover_overlay.png') no-repeat center/100%, url('/assets/cover.jpg') no-repeat center/cover;
+    height: 360px;
+    display: grid;
+    align-items: center;
+    margin-top: -68px;
+  }
+
+  .edo-cover h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 50px;
+  }
+
+  .edo-cover p {
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+  }
+
+  .edo-content {
+    margin: 15px;
+  }
+
+  .edo-content h3 {
+    text-align: center;
+    border: 4px solid var(--primary-color);
+    padding: 10px;
+    margin-bottom: 50px;
+  }
+
+  .edo-button {
+    margin: 15px;
+    padding: 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+    .event-description {
+    margin-bottom: 50px;
+  }
+    .event-program {
+    margin-bottom: 50px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .edo-cover h1 {
+    font-size: 90px;
+    text-align: center;
+    margin-top: 50px;
+    }
+
+    .edo-content {
+      margin: 15px;
+      padding: 15px;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+
+    .event-description {
+    margin: 15px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+  }
+    .event-program {
+    margin: 15px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+  }
+}
