@@ -19,11 +19,11 @@ Rails.application.routes.draw do
     get 'remove_guest', on: :member
     delete 'remove_guest', on: :member
     
-    resources :albums do
-      resources :images do
-        resources :comments
+    resources :albums do            #créer les routes CRUD pour les albums. Les albums sont imbriqués dans un event
+      resources :images do          # est imbriqué à l'intérieur d'un album. Ce sont les routes spécifiques à un album. Ce qui permet de manipuler les images pour un album spécifique
+        resources :comments         # est imbriqué à l'intérieur d'une image. Pour manipuler les commentaires pour une image spécifique
       end
-    end
+    end                             # on gère de manière hiérarchique
   end
 
   # Static pages

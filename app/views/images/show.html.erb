@@ -31,7 +31,9 @@
               <div class="d-flex mt-1 justify-content-end">
                 <p class="text-black"><%= comment.user.first_name.presence || comment.user.email %></p>
                 <br>&nbsp;&nbsp;
-                <%= button_to 'x', event_album_image_comment_path(@event, @album, @image, comment), method: :delete, class: 'btn btn-light', style:'border: 0px solid #ccc; padding: 0.005rem 0.05rem;'%>
+                <% if current_user.organizer? %>
+                  <%= button_to 'x', event_album_image_comment_path(@event, @album, @image, comment), method: :delete, class: 'btn btn-light', style:'border: 0px solid #ccc; padding: 0.005rem 0.05rem;'%>
+                <% end %>
               </div>
               <br><br>
             </div>

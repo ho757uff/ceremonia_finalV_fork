@@ -5,10 +5,13 @@
   
     <div class="container">
       <div class="row">
-        <div class="col-md-9 d-flex justify-content-start">
-          <h2> Album : <%= @album.title %> </h2>
+        <div class="col-md-2">
+          <h6>Image(s) : <%= @images.select { |image| image.album == @album }.count %></h6>
         </div>
-        <div class="col-md-3 d-flex align-content-end">
+        <div class="col-md-7 d-flex justify-content-center">
+          <h2> Album : <%= @album.title %></h2>
+        </div>
+        <div class="col-md-3 d-flex justify-content-end">
         <%= link_to 'Retour Aux Albums', event_albums_path(@event, @album), class: 'btn sweetButton'%>
         </div>
       </div>
@@ -17,7 +20,7 @@
 
     <div class="row d-flex">
       <div class="col-md-5 d-flex align-content-center">
-        <div class="upload-form-container newevent centered-form-container">
+        <div class="upload-form-container newevent centered-form-container" id="newalbum">
           <h2 class="form-title ">Ajoutez une Image</h2>
           <%= form_with(model: [@event, @album, Image.new], local: true, html: { multipart: true }) do |form| %>
             <div class="form-group">
@@ -39,7 +42,7 @@
       </div>
       <div class="col-md-6 mr-5 d-flex align-self-center justify-content-center" style="max-height: 450px; overflow-y: auto; ">
         <% if @images.empty? %>
-          <h2> Vous n'avez pas encore de photo dans cet album </h2>
+          <h2> Il n'y a pas encore de photo dans cette album </h2>
         <% else %>
           <div class="image-list row d-flex align-items-center">
             <% @images.each do |image| %>
@@ -52,9 +55,18 @@
                     </a>
                     <div class="image-actions">
                       <%= link_to 'Voir image', event_album_image_path(@event, @album, image), class: 'btn sweetButton btn-sm' %>
-                      <%= button_to 'Supprimer image', event_album_image_path(@event, @album, image), method: :delete, class: 'btn sweetButton btn-sm rounded-pill' %>
+                      <% if current_user.organizer? %>
+                        <%= button_to 'Supprimer image', event_album_image_path(@event, @album, image), method: :delete, class: 'btn sweetButton btn-sm rounded-pill' %>
+                      <% end %>
                     </div>
-                  </div>
+<% if image.user.present? %>
+  <p class="text-black">
+    Posté par : <%= image.user.first_name.presence || image.user.email %>
+  </p>
+<% else %>
+  <p class="text-black">Auteur inconnu</p>
+<% end %>     
+  </div>
                 </div>
               <% end %>
             <% end %>
