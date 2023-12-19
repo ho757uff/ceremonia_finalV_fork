@@ -3,15 +3,15 @@
 
 <div class="clearfix">                
   
-    <div class="container">
-      <div class="row">
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-around">
         <div class="col-md-2">
           <h6>Image(s) : <%= @images.select { |image| image.album == @album }.count %></h6>
         </div>
         <div class="col-md-7 d-flex justify-content-center">
           <h2> Album : <%= @album.title %></h2>
         </div>
-        <div class="col-md-3 d-flex justify-content-end">
+        <div class="col-md-2 d-flex justify-content-start">
         <%= link_to 'Retour Aux Albums', event_albums_path(@event, @album), class: 'btn sweetButton'%>
         </div>
       </div>
@@ -40,6 +40,8 @@
           <% end %>
         </div>
       </div>
+
+      
       <div class="col-md-6 mr-5 d-flex align-self-center justify-content-center" style="max-height: 450px; overflow-y: auto; ">
         <% if @images.empty? %>
           <h2> Il n'y a pas encore de photo dans cette album </h2>
@@ -58,17 +60,17 @@
                       <% if current_user.organizer? %>
                         <%= button_to 'Supprimer image', event_album_image_path(@event, @album, image), method: :delete, class: 'btn sweetButton btn-sm rounded-pill' %>
                       <% end %>
-                    </div>
-<% if image.user.present? %>
-  <p class="text-black">
-    Posté par : <%= image.user.first_name.presence || image.user.email %>
-  </p>
-<% else %>
-  <p class="text-black">Auteur inconnu</p>
-<% end %>     
-  </div>
+                    </div>       
+                  </div>
                 </div>
               <% end %>
+              <div class="text-center">
+                <% if image.user.present? %>
+                  <small><small><p class="text-black">Posté par : <%= image.user.first_name.presence || image.user.email %></p></small></small>
+                <% else %>
+                  <p class="text-black">Auteur inconnu</p>
+                <% end %>
+              </div>
             <% end %>
           </div>
         <% end %>
