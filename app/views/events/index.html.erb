@@ -20,3 +20,19 @@
     <p class="apparitionprofil">Aucun événement à afficher pour le moment.</p>
   <% end %>
 </div>
+<div class="row d-flex justify-content-center">
+  <h2 class="apparitionprofil mb-5">Liste de vos événements en tant qu'inviter</h2>
+  <% if @guest_events != nil %>
+    <div class="d-flex events-container apparitionprofil col-md-8" style="border-radius: 5px;">
+      <% @guest_events.each do |guest_event| %>
+        <div class="event-card apparitionprofil align-items-center">
+          <%= link_to event_path(guest_event) do %>
+            <h2><%= guest_event.title %></h2>
+          <% end %>
+        </div>
+    <% end %>
+    </div>
+  <% else %>
+    <p class="apparitionprofil">Aucun événement à afficher pour le moment.</p>
+  <% end %>
+</div>
