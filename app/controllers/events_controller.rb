@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   before_action :require_organizer, only: [:edit, :update, :destroy, :add_location, :create_association, :destroy_association, :guest_list, :remove_guest]
   def index
     @events = Event.joins(:user_events).where(user_events: { user_id: current_user.id, role_id: 1 })
+    @guest_events = Event.joins(:user_events).where(user_events: { user_id: current_user.id, role_id: 2 })
   end
 
   def show
