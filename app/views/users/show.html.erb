@@ -1,41 +1,56 @@
+<% content_for :title, "Votre profil" %>
+<% content_for :meta_description, "Consultez les informations de votre profil. Modifiez votre photo de profil et mettez à jour vos informations utilisateur." %>
 <div class="container">
   <div class="row apparitionprofil">
     <!-- Profile Section -->
-    <div class="col-md-4">
-      <div class="todo-section rounded-border mb-4 newevent" >
+    <div class="col-md-5 d-flex justify-content-center">
+      <div class="user-section rounded-border mb-4" >
         <% if @user.avatar.attached? %>
           <%= image_tag @user.avatar, alt: 'avatar', class: 'img-fluid rounded-circle' %>
         <% else %>
-          <%# <img src="https://images.unsplash.com/photo-1645389411992-e9ec49b158e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D" alt="Photo de profil" class="img-fluid rounded-image"> %>
+          <img src="https://images.unsplash.com/photo-1645389411992-e9ec49b158e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D" alt="Photo de profil" class="img-fluid rounded-image"> %>
         <% end %>
         <%= form_tag user_avatars_path(@user), multipart: true, id: 'avatar-form' do %>
-          <label class="btn sweetButton" for="avatar-input">Changer ma Photo de Profil</label>
+          <label class="btn sweetButton mx-auto" for="avatar-input">Changer ma photo de profil</label>
           <%= file_field_tag :avatar, id: 'avatar-input', onchange: 'submitForm()' %>
         <% end %>
       </div>
-      <br>
     </div>
     <!-- Events Section -->
-    <div class="col-md-8">
-      <div class="todo-section rounded-border mb-4 newevent">
-        <h5 class="card-title">Mes informations</h5>
-        <p class="card-text"><strong>Email:</strong> <%= @user.email %></p>
-        <p class="card-text"><strong>Prénom:</strong> <%= @user.first_name %></p>
-        <p class="card-text"><strong>Nom:</strong> <%= @user.last_name %></p>
-        <% if current_user == @user %>
-          <div class="d-flex justify-content-center mt-5 mx-auto">
-            <%= button_to "Editer mes informations", edit_user_registration_path(@user.id), class: "btn sweetButton d-flex justify-content-center mr-2", method: :get %>
+    <div class="col-md-7">
+      <div class="mb-4">
+        <div class="user-section">
+          <h3 class="card-header mb-3">Mes informations utilisateur</h3>
+          <div class="card-body">
+            <p class="card-text text-black">
+              Email:<%= @user.email %>
+            </p>
+            <p class="card-text text-black">
+              <% if @user.first_name.present? %>
+                Prénom: <%= @user.first_name %></p>
+              <% else %>
+                Nous ne connaissons pas votre prénom, mais vous pouvez le renseigner si vous le souhaitez.</p> 
+              <% end %>
+            <p class="card-text text-black">
+              <% if @user.last_name.present? %>
+                Nom: <%= @user.last_name %></p>
+              <% else %>
+                Nous ne connaissons pas votre nom, mais vous pouvez le renseigner si vous le souhaitez</p> 
+              <% end %>
+            <% if current_user == @user %>
+              <div class="d-flex justify-content-center mt-5 mx-auto">
+                <%= button_to "Editer mes informations", edit_user_registration_path(@user.id), class: "btn sweetButton d-flex justify-content-center", method: :get %>
+              </div>
+            <% end %>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
-
-
-
-  <script>
-    function submitForm() {
-      document.getElementById('avatar-form').submit();
-    }
-  </script>
 </div>
+
+<script>
+  function submitForm() {
+    document.getElementById('avatar-form').submit();
+  }
+</script>

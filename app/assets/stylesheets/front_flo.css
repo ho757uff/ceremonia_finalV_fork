@@ -1,8 +1,3 @@
-/* -----------page d'accueil img eglise-police-etc-----------debut----------------------- */
-.img-fluid {
-  border-radius: 15px;
-}
-
 /*card accueil*/
 /* Ajoutez cette classe pour le style des images dans les colonnes */
 .grid-img-accueil {
@@ -17,7 +12,6 @@
 }
 
 /*page d'accueil img eglise-police-etc-----------debut-----------------------*/
-.img-fluid{border-radius: 15px;}
 .no-wrap {
   white-space: nowrap;
 }
@@ -77,12 +71,7 @@
   margin-bottom: 20px;
 }
 
-/* Ajoutez ces styles pour l'image à droite */
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
-}
+
 
 /* Ajoutez ces styles pour centrer les cartes sur le côté gauche */
 .row.justify-content-center {

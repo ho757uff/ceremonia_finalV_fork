@@ -41,15 +41,6 @@
 }
 
 /* -------------- EVENTS -------------- */
-.todo-section {
-  text-align: center;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  color: #fcb1cf;
-}
 
 .newevent {
   margin: 0;
@@ -186,7 +177,36 @@
 
 
 /* -------------- PROFILE -------------- */
+.user-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fcb1cf;
+  min-height: 50vh;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  background-size: cover;
+}
+.card-body,.card-title,.card-text {
+  text-align: center;
+  padding: 10px;
+  background-color: #fff;
+  color: #fcb1cf;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+.card-body {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
 
+.img-fluid {
+  border-radius: 15px;
+  max-height: 300px;
+}
 .profile-section {
   text-align: center;
   padding: 20px;
@@ -200,15 +220,6 @@
 .profile-section img {
   border-radius: 50%;
   margin-bottom: 10px;
-}
-
-.todo-section {
-  text-align: center;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .todo-section ul {
