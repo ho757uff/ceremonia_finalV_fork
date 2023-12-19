@@ -22,17 +22,17 @@
   </tbody>
 </table>
 <!-- Bouton "Add Guest" -->
-<button id="add-guest-button">Add Guest</button>
+<button id="add-guest-button">Ajouter un invité</button>
 <!-- Formulaire pour ajouter un invité -->
 <div id="add-guest-form">
   <%= form_with url: add_guest_event_path(@event), method: :post do |form| %>
     <%= form.label :first_name, "Prénom" %>
     <%= form.text_field :first_name %>
-    <%= form.label :last_name, "nom" %>
+    <%= form.label :last_name, "Nom" %>
     <%= form.text_field :last_name %>
     <%= form.label :email, "Email" %>
     <%= form.text_field :email %>
-    <%= form.submit "Add Guest" %>
+    <%= form.submit "Ajouter cet invité" %>
   <% end %>
 </div>
 <!-- JavaScript pour afficher le formulaire -->

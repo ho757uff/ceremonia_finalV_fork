@@ -6,7 +6,7 @@
           <% content_for :title, "Édition de Profil" %>
           <% content_for :meta_description, "Modifier les détails de votre profil utilisateur." %>
 
-          <h2 class="text-center">Modifier utilisateur</h2>
+          <h2 class="text-center">Modifier mes informations</h2>
 
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>

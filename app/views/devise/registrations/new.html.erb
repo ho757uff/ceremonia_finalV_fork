@@ -1,28 +1,32 @@
 <% content_for :title, "Inscription sur Ceremonia" %>
 <% content_for :meta_description, "Rejoignez Ceremonia et créez votre compte dès maintenant. Inscrivez-vous pour accéder à toutes les fonctionnalités et bénéficier d'une expérience personnalisée." %>
-<div class="container-custom events-container-bg">
-  <h2>Inscription</h2>
+<div class="container-custom events-container-bg apparitionprofil">
+  <h2 style="color: #fc8d83; text-shadow: 2px 2px 20px rgba(0, 0, 0, 1), -2px -2px 20px rgba(0, 0, 0, 1);">S'inscrire</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "needs-validation", novalidate: true }) do |f| %>
     <div class="mb-3">
-      <%= f.label :email, class: "form-label" %>
+      <%= f.label :email %>
       <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", required: true %>
     </div>
     <div class="mb-3">
-      <%= f.label :mot_de_passe, class: "form-label" %>
+      <%= f.label :mot_de_passe %>
       <%= f.password_field :password, class: "form-control", autocomplete: "new-password", required: true %>
     </div>
     <div class="mb-3">
-      <%= f.label :mot_de_passe_confirmation, class: "form-label" %>
+      <%= f.label :confirmation_du_mot_de_passe %>
       <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password", required: true %>
     </div>
     <div class="action d-flex justify-content-center">
-      <%= f.submit "Valider mon inscription", class: "btn btn-success" %>
+      <%= f.submit "Valider mon inscription", class: "sweetButton btn-lg", style: "color: #ffffff; background-color: #e4685d;" %>
     </div>
   <% end %>
-  <div class="text-center mt-4" style="color: #fcb1cf;">
-    <br>
-    <p>Vous avez déjà un compte sur Ceremonia ?</p>
-    <%= link_to "Se connecter", new_session_path(resource_name), class: "sweetButton btn-lg mt-1" %>
-    <%# <%= render "devise/shared/links" %>
+  <br>
+  <div class="text-center mt-4">
+    <h6 class= "d-flex justify-content-center text-center mt-4" style = "text-color: #e4685d;">
+      Vous avez déjà un compte sur Ceremonia ?
+    </h6>
+    <div class=" d-flex justify-content-center text-center">
+      <%= button_to "Se connecter", new_session_path(resource_name), class: "sweetButton btn-lg mt-1" %>
+      <%# <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>

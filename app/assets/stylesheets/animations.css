@@ -34,7 +34,7 @@
   }
 }
 
-/* ----------------------------- FADE INs --------------------------- */
+/* ----------------------------- FADE-INs --------------------------- */
 
 @keyframes fadeIn {
   from {
@@ -60,10 +60,10 @@
   }
 }
 
-/* ----------------------------- SLIDE INs --------------------------- */
+/* ----------------------------- SLIDE-INs --------------------------- */
 
 
-/* -------------- SLIDE IN FROM LEFT -------------- */
+/* -------------- SLIDE-IN FROM LEFT -------------- */
 
 @keyframes slideInFromLeft {
   from {
@@ -89,7 +89,7 @@
   }
 }
 
-/* -------------- SLIDE IN FROM RIGHT -------------- */
+/* -------------- SLIDE-IN FROM RIGHT -------------- */
 
 @keyframes slideInFromRight {
   from {
@@ -115,7 +115,7 @@
   }
 }
 
-/* -------------- SLIDE IN FROM BOTTOM -------------- */
+/* -------------- SLIDE-IN FROM BOTTOM -------------- */
 
 @keyframes slideInFromBottom {
   from {

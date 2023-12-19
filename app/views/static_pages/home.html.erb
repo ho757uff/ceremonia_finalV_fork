@@ -10,93 +10,51 @@
 <div class="container" id="home-text">
   <div class="row justify-content-center">
     <div class="col-md-6 pl-md-5 d-flex align-items-center">
-      <p class="text-center">Organiser son mariage est une aventure exaltante qui demande une planification minutieuse et une attention particulière aux détails. Tout commence par la vision que vous avez pour votre journée spéciale.</p>
+      <div class="text-center">Organiser son mariage est une aventure exaltante qui demande une planification minutieuse et une attention particulière aux détails. <br><br><br>
+        Tout commence par la vision que vous avez pour votre journée spéciale.</div>
     </div>
     <div class="col-md-2 d-flex align-items-center justify-content-center text-center">
       <%= image_tag('background_b&w.jpg', class: 'img-fluid', alt: "alliance", style: "max-width: 100%; height: auto;") %>
     </div>
   </div>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <!-- Contenu de la colonne -->
-          <%= link_to experience_path, class: "btn sweetButton mt-3 rounded-button mx-auto" do %>
-          <h6 class="m-0 text-white">Un Jour Inoubliable</h6>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
-<div class="container text-center mb-5">
+<div class="container text-center mx-auto mt-5">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <!-- Première carte -->
     <div class="col-md-4">
-      <div class="card h-100">
-        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHdlZGRpbmclMjBoYW5kfGVufDB8fDB8fHww" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Connectez-vous</h5>
-          <div class="card-text">Le jour J c'est maintenant.</div>
+      <%= link_to new_user_session_path, class: "text-decoration-none" do %>
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHdlZGRpbmclMjBoYW5kfGVufDB8fDB8fHww" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Connectez-vous</h5>
+            <div class="card-text">Le jour J c'est maintenant</div>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
-
     <!-- Deuxième carte -->
     <div class="col-md-4">
-      <div class="card h-100">
-        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Organisez votre mariage</h5>
-          <div class="card-text">Facile et ludique</div>
+      <%= link_to experience_path, class: "text-decoration-none" do %>
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Organisez votre mariage</h5>
+            <div class="card-text">Ceremonia vous permet de le faire de manière facile et ludique</div>
+          </div>
         </div>
+      <% end %>
       </div>
-    </div>
-
-    <!-- Troisième carte  -->
-    <div class="col-md-4">
-      <div class="card h-100">
-        <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Inspirez-vous</h5>
-          <div class="card-text">Découvrez de vrais mariages réalisés via notre site.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container text-center mb-5">
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    <!-- Quatrième carte -->
-    <div class="col-md-4">
-      <div class="card h-100">
-        <img src="https://images.unsplash.com/photo-1500900173725-e0978c945e23?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGJlZm9yZSUyMHdlZGRpbmd8ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Titre de la quatrième carte</h5>
-          <div class="card-text">Description de la quatrième carte.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cinquième carte -->
-    <div class="col-md-4">
-      <div class="card h-100">
-        <img src="https://cdn0.mariages.net/article-vendor/9064/3_2/1280/jpg/90400915_3_189064-167405848350748.webp" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Titre de la cinquième carte</h5>
-          <div class="card-text">Description de la cinquième carte.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sixième carte -->
-    <div class="col-md-4">
-      <div class="card h-100">
-        <img src="https://images.unsplash.com/photo-1616499377689-9f2bd6d28edf?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHJvYmVzJTIwZGUlMjBtYXJpJUMzJUE5fGVufDB8MHwwfHx8MA%3D%3D" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Inspirez-vous</h5>
-          <div class="card-text">Description de la sixième carte.</div>
-        </div>
+      <!-- Troisième carte  -->
+      <div class="col-md-4">
+        <%= link_to experience_path, class: "text-decoration-none" do %>
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Inspirez-vous</h5>
+              <div class="card-text">Découvrez de vrais mariages réalisés via notre site</div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
