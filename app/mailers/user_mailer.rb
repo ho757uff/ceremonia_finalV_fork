@@ -9,13 +9,5 @@ class UserMailer < ApplicationMailer
 
         mail(to: @user.email, subject: "Votre inscription sur Ceremonia")
     end
-
-    def password_reset(user)
-        @user = user
-
-        @url = 'http://monsite.fr/login'
-
-        mail(to: @user.email, subject: "Nouveau Mot de Passe")
-    end
     
 end

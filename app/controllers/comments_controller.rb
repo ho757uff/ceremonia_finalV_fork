@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
     
-  before_action :set_event_and_album_and_image
+  before_action :set_event_and_album_and_image                                                         #filtre qui permet de définir, l'événement, l'album et l'image associé au
 
   def create
     @comment = @image.comments.build(comment_params.merge(user: current_user))
@@ -13,8 +13,12 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = @image.comments.find(params[:id])
-    @comment.destroy
-    redirect_to event_album_image_path(@event, @album, @image), notice: 'Commentaire supprimé.'
+
+    if current_user.organizer?
+      @comment.destroy
+      redirect_to event_album_image_path(@event, @album), notice: 'Photo supprimée.'
+    else
+    end
   end
 
   private
