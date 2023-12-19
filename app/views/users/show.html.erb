@@ -9,7 +9,7 @@
           <%# <img src="https://images.unsplash.com/photo-1645389411992-e9ec49b158e6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D" alt="Photo de profil" class="img-fluid rounded-image"> %>
         <% end %>
         <%= form_tag user_avatars_path(@user), multipart: true, id: 'avatar-form' do %>
-          <label id="custom-avatar-button" for="avatar-input">Changer Photo de Profil</label>
+          <label class="btn sweetButton" for="avatar-input">Changer ma Photo de Profil</label>
           <%= file_field_tag :avatar, id: 'avatar-input', onchange: 'submitForm()' %>
         <% end %>
       </div>
@@ -18,13 +18,13 @@
     <!-- Events Section -->
     <div class="col-md-8">
       <div class="todo-section rounded-border mb-4 newevent">
-        <h5 class="card-title">Mes informations utilisateur</h5>
+        <h5 class="card-title">Mes informations</h5>
         <p class="card-text"><strong>Email:</strong> <%= @user.email %></p>
-        <p class="card-text"><strong>Prenom:</strong> <%= @user.first_name %></p>
+        <p class="card-text"><strong>Prénom:</strong> <%= @user.first_name %></p>
         <p class="card-text"><strong>Nom:</strong> <%= @user.last_name %></p>
         <% if current_user == @user %>
-          <div class="d-flex justify-content">
-            <%= button_to "Editer", edit_user_registration_path(@user.id), class: "btn sweetButton d-flex justify-content-center mr-2", method: :get %>
+          <div class="d-flex justify-content-center mt-5 mx-auto">
+            <%= button_to "Editer mes informations", edit_user_registration_path(@user.id), class: "btn sweetButton d-flex justify-content-center mr-2", method: :get %>
           </div>
         <% end %>
       </div>
