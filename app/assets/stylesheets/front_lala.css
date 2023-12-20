@@ -111,4 +111,33 @@
     text-align: center;
     width: 50%;
   }
+
+  .container-custom {
+    max-width: 730px;
+    
+    margin: 20px auto;
+    background-color:#f9f0f0;
+    border: 2px solid #f9f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: slideInFromRightLight 1s ease-out;
+  }
+  
+  /* ----------------   FORMS  ---------------------*/
+  
+  .couple-bg-container { 
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInFromRightLight 1s ease-out forwards;
+  }
+
 }

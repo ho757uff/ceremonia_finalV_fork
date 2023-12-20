@@ -1,11 +1,7 @@
 <% content_for :title, "Modifier un Événement" %>
 <% content_for :meta_description, "Modifiez les détails de cet événement, y compris le titre, la description, et la date." %>
 
-
-<div class="container-custom events-container-bg">
-  <h2>Modifier un événement</h2>
+<div class="container-custom couple-bg-container">
+  <h2 style="color: #ffffff; text-shadow: 1px 1px 20px #000000;">Modifier votre évenement</h2>
   <%= render "form", event: @event %>
-  <%= link_to "Annuler", event_path, class: 'warningButton' %>
 </div>
-
-<%= link_to 'Retour à la liste des événements', events_path %>

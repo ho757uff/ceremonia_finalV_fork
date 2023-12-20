@@ -35,7 +35,6 @@
     <%= form.submit "Ajouter cet invité" %>
   <% end %>
 </div>
-<!-- JavaScript pour afficher le formulaire -->
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -43,7 +42,7 @@
     const addGuestForm = document.getElementById('add-guest-form');
 
     addGuestButton.addEventListener('click', function() {
-      addGuestForm.style.display = 'block';
+      addGuestForm.style.display = (addGuestForm.style.display === 'block') ? 'none' : 'block';
     });
   });
 </script>
