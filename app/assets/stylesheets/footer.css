@@ -3,6 +3,26 @@
   background-color: rgba(252, 177, 207, 0.5);
   color: white;
   text-align: center;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer .d-md-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 42px;
+}
+
+#footer .footer-link {
+  padding: 3px 8px;
+  margin: 0 3px;
+  display: inline-block;
 }
 
 #footer a:hover,

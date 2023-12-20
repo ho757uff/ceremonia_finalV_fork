@@ -4,22 +4,25 @@
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.container form {
+.animated-container form {
   transition: transform 0.3s ease-in-out;
 }
 
-.container form:hover {
+.animated-container form:hover {
   transform: scale(1.05);
 }
 
-/* ------------- JUMBO ------------- */
-
-#jumbotron {
-  animation: slideInFromLeft 1.5s ease-out forwards;
+.slide-in-from-bottom {
+  position: relative;
+  animation: animateBottom 1s;
 }
 
-#home-text {
-  animation: slideInFromRight 1.5s ease-out forwards;
+/* ------------- PROFILE ------------- */
+
+.apparitionprofil {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: apparition 1.5s ease-out forwards;
 }
 
 @keyframes apparition {
@@ -34,7 +37,122 @@
   }
 }
 
-/* ----------------------------- FADE-INs --------------------------- */
+
+/* ----------------------------- SLIDE INs --------------------------- */
+
+/* -------------- SLIDE IN FROM RIGHT LIGHT -------------- */
+
+@keyframes slideInFromRightLight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* -------------- SLIDE IN FROM RIGHT FULL -------------- */
+
+@keyframes slideInFromRightFull {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* -------------- SLIDE IN FROM LEFT LIGHT -------------- */
+
+@keyframes slideInFromLeftLight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* -------------- SLIDE IN FROM LEFT FULL -------------- */
+
+@keyframes slideInFromLeftFull {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* -------------- SLIDE IN FROM BOTTOM LIGHT -------------- */
+
+@keyframes slideInFromBottomLight {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------- SLIDE IN FROM BOTTOM FULL -------------- */
+
+@keyframes slideInFromBottomFull {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------- SLIDE IN FROM TOP LIGHT -------------- */
+
+@keyframes slideInFromTopLight {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------- SLIDE IN FROM TOP FULL -------------- */
+
+@keyframes slideInFromTopFull {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------------- FADE INs --------------------------- */
 
 @keyframes fadeIn {
   from {
@@ -59,89 +177,3 @@
     transform: translateX(0);
   }
 }
-
-/* ----------------------------- SLIDE-INs --------------------------- */
-
-
-/* -------------- SLIDE-IN FROM LEFT -------------- */
-
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* -------------- SLIDE-IN FROM RIGHT -------------- */
-
-@keyframes slideInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* -------------- SLIDE-IN FROM BOTTOM -------------- */
-
-@keyframes slideInFromBottom {
-  from {
-    bottom: -100px;
-    opacity: 0;
-  }
-
-  to {
-    bottom: 0;
-    opacity: 1;
-  }
-}
-
-.slide-in-from-bottom {
-  position: relative;
-  animation: animateBottom 1s;
-}
-
-/* ------------- PROFILE ------------- */
-
-.apparitionprofil {
-  opacity: 0;
-  transform: translateX(100%);
-  animation: apparition 1.5s ease-out forwards;
-}
-
-
-
-

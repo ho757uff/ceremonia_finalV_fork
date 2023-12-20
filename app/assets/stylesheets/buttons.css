@@ -216,3 +216,7 @@
 .max-width-btn {
   max-width: 200px;
 }
+
+.trix-button {
+  color: rgb(255, 255, 255);
+}

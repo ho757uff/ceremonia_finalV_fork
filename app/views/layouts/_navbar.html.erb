@@ -42,7 +42,7 @@
           </li>
           <li class="nav-item d-flex justify-content-center" style="animation: fadeIn 1s forwards;">
             <div>
-              <%= button_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete, confirm: "Êtes-vous sûr de vouloir vous déconnecter ?" }, class: "nav-link btn sweetButton rounded-button" do %>
+              <%= button_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete, confirm: "Êtes-vous sûr de vouloir vous déconnecter ?" }, class: "nav-link sweetButton border: 0.5px" do %>
                 <i class="fas fa-sign-out-alt"></i> Déconnexion
               <% end %>
             </div>
