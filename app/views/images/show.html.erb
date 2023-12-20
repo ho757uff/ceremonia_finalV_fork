@@ -1,5 +1,5 @@
 <% content_for :title, "Détails de l'image - #{@image.title}" %>
-<% content_for :meta_description, "Consultez les détails de l'image #{@image.title} dans l'album #{@album.title} de l'événement #{@event.title}.Explorez les commentaires associés et ajoutez votre propre commentaire." %>
+<% content_for :meta_description, "Consultez les détails de l'image #{@image.title} dans l'album #{@album.title} de l'événement #{@event.title}. Explorez les commentaires associés et ajoutez votre propre commentaire." %>
 
 <div class="container-fluid">
   <div class="row">
@@ -16,7 +16,7 @@
         </a>
         <br><br>
           <div class="text-center">
-            <small><small><small>cliquer sur l'image</small></small></small>
+            <small><small><small>Cliquez sur l'image</small></small></small>
           </div>
       </div>
     </div>
@@ -63,7 +63,7 @@
 
 
 
-<script>                                                                   //ajout/surpression de commentaire sans recharger la page
+<script>                                                                   // ajout/supression de commentaire sans recharger la page
 const commentsContainer = document.querySelector('.comments-container');   // Sélection de l'élément où ajouter les commentaires
 
 const newCommentDiv = document.createElement('div');       // Création du nouvel élément commentaire
@@ -80,8 +80,8 @@ const deleteButtons = document.querySelectorAll('.delete-comment-btn');
 
 deleteButtons.forEach(button => {                                         // Ajoutez un gestionnaire d'événement à chaque bouton de suppression
   button.addEventListener('click', () => {
-                                                                             // Sélectionnez l'élément parent à supprimer (le commentaire entier)
-    const commentToDelete = button.closest('.comment-container');
+    
+    const commentToDelete = button.closest('.comment-container');          // Sélectionnez l'élément parent à supprimer (le commentaire entier)
     
     if (commentToDelete) {                                                // Supprimez l'élément du DOM
       commentToDelete.remove();

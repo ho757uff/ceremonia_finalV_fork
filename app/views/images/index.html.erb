@@ -44,7 +44,7 @@
       
       <div class="col-md-6 mr-5 d-flex align-self-center justify-content-center" style="max-height: 450px; overflow-y: auto; ">
         <% if @images.empty? %>
-          <h2> Il n'y a pas encore de photo dans cette album </h2>
+          <h2> Il n'y a pas encore de photo dans cette album. </h2>
         <% else %>
           <div class="image-list row d-flex align-items-center">
             <% @images.each do |image| %>
@@ -85,7 +85,7 @@
 
 
 
-<script>                                                            // Script JavaScript pour la gestion de l ajout et la suppression d images 
+<script>                                                            // Script JavaScript pour la gestion de l'ajout et la suppression d'images 
 document.addEventListener('DOMContentLoaded', () => {                            
   const uploadForm = document.querySelector('#newalbum form');      // Gestion de l'ajout d'une nouvelle image
 
