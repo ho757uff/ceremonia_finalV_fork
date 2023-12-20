@@ -1,16 +1,18 @@
 <% content_for :title, "Page d'Accueil" %>
 <% content_for :meta_description, "Bienvenue sur Ceremonia, votre partenaire pour la planification de mariage. De la vision à la réalité, nous vous accompagnons dans cette aventure exaltante. Créez des souvenirs durables avec une planification facile et ludique." %>
-<div class="container" id="jumbotron">
-  <div class="row">
-    <h1 class="text-center">CEREMONIA</h1>
-    <br>
-    <h2 class="text-center no-wrap"> La planification de mon mariage facile et ludique.</h2>
+<div class="banner">
+  <div class="banner-content slide-in-from-left mb-1">
+    <h1 class="text-center" style="color: white; font-size: 70px; text-shadow: 1px 1px 10px #000000;">CEREMONIA</h1>
+    <h2 class="text-center" style="color: white;  text-shadow: 1px 1px 10px #000000;">La planification de mon mariage.<br>
+      Facile et ludique.</p>
   </div>
 </div>
-<div class="container" id="home-text">
+<div class="container slide-in-from-right">
   <div class="row justify-content-center">
     <div class="col-md-6 pl-md-5 d-flex align-items-center">
-      <div class="text-center">Organiser son mariage est une aventure exaltante qui demande une planification minutieuse et une attention particulière aux détails. <br><br><br>
+      <div class="text-center">Organiser son mariage est une aventure exaltante qui demande une planification minutieuse et une attention particulière aux détails. <br>
+        <br>
+        <br>
         Tout commence par la vision que vous avez pour votre journée spéciale.</div>
     </div>
     <div class="col-md-2 d-flex align-items-center justify-content-center text-center">
@@ -18,43 +20,43 @@
     </div>
   </div>
 </div>
-<div class="container text-center mx-auto mt-5">
+<div class="container text-center mx-auto mt-1">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <!-- Première carte -->
     <div class="col-md-4">
-      <%= link_to new_user_session_path, class: "text-decoration-none" do %>
+      <%= link_to current_user ? user_path(current_user) : new_user_session_path, class: "text-decoration-none" do %>
         <div class="card h-100">
-          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHdlZGRpbmclMjBoYW5kfGVufDB8fDB8fHww" class="card-img-top" alt="...">
+          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHdlZGRpbmclMjBoYW5kfGVufDB8fDB8fHww" class="card-img-top" alt="Je me lance">
           <div class="card-body">
-            <h5 class="card-title">Connectez-vous</h5>
-            <div class="card-text">Le jour J c'est maintenant</div>
+            <h5>Connectez-vous</h5>
+            <div>Le jour J c'est maintenant</div>
           </div>
         </div>
       <% end %>
     </div>
     <!-- Deuxième carte -->
     <div class="col-md-4">
-      <%= link_to experience_path, class: "text-decoration-none" do %>
+      <%= link_to events_path, class: "text-decoration-none" do %>
         <div class="card h-100">
-          <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="...">
+          <img src="https://cdn0.mariages.net/article-vendor/9064/3_2/1280/jpg/90400915_3_189064-167405848350748.webp" class="card-img-top" alt="Je m'organise">
           <div class="card-body">
-            <h5 class="card-title">Organisez votre mariage</h5>
-            <div class="card-text">Ceremonia vous permet de le faire de manière facile et ludique</div>
+            <h5>Organisez votre mariage</h5>
+            <div>Ceremonia vous permet de le faire de manière facile et ludique</div>
           </div>
         </div>
       <% end %>
-      </div>
-      <!-- Troisième carte  -->
-      <div class="col-md-4">
-        <%= link_to experience_path, class: "text-decoration-none" do %>
-          <div class="card h-100">
-            <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Inspirez-vous</h5>
-              <div class="card-text">Découvrez de vrais mariages réalisés via notre site</div>
-            </div>
+    </div>
+    <!-- Troisième carte  -->
+    <div class="col-md-4">
+      <%= link_to experience_path, class: "text-decoration-none" do %>
+        <div class="card h-100">
+          <img src="https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg" class="card-img-top" alt="Je m'inspire">
+          <div class="card-body">
+            <h5>Inspirez-vous</h5>
+            <div>Découvrez de vrais mariages réalisés via notre site</div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
+</div>

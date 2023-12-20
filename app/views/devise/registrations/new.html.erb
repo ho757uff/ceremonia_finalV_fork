@@ -1,8 +1,8 @@
 <% content_for :title, "Inscription sur Ceremonia" %>
 <% content_for :meta_description, "Rejoignez Ceremonia et créez votre compte dès maintenant. Inscrivez-vous pour accéder à toutes les fonctionnalités et bénéficier d'une expérience personnalisée." %>
-<div class="container-custom events-container-bg apparitionprofil">
-  <h2 style="color: #fc8d83; text-shadow: 2px 2px 20px rgba(0, 0, 0, 1), -2px -2px 20px rgba(0, 0, 0, 1);">S'inscrire</h2>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "needs-validation", novalidate: true }) do |f| %>
+<div class="container-custom couple-bg-container apparitionprofil">
+  <h2 style="color: #ffffff; text-shadow: 1px 1px 20px #000000;">S'inscrire</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "needs-validation", novalidate: true, onsubmit: "return validateTermsCheckbox()" }) do |f| %>
     <div class="mb-3">
       <%= f.label :email %>
       <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", required: true %>
@@ -15,6 +15,10 @@
       <%= f.label :confirmation_du_mot_de_passe %>
       <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password", required: true %>
     </div>
+    <div class="mb-3">
+      <%= check_box_tag :terms_of_use, '1', false, id: "terms_of_use_checkbox", class: "form-check-input" %>
+      <label class="form-check-label" for="terms_of_use_checkbox">J'ai lu et j'accepte les <a href="/terms">Termes d'Utilisation</a></label>
+    </div>
     <div class="action d-flex justify-content-center">
       <%= f.submit "Valider mon inscription", class: "sweetButton btn-lg", style: "color: #ffffff; background-color: #e4685d;" %>
     </div>
@@ -26,7 +30,16 @@
     </h6>
     <div class=" d-flex justify-content-center text-center">
       <%= button_to "Se connecter", new_session_path(resource_name), class: "sweetButton btn-lg mt-1" %>
-      <%# <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
+<script>
+  function validateTermsCheckbox() {
+    var checkbox = document.getElementById('terms_of_use_checkbox');
+    if (!checkbox.checked) {
+      alert("Vous devez accepter les Termes d'Utilisation pour vous inscrire.");
+      return false;
+    }
+    return true;
+  }
+</script>

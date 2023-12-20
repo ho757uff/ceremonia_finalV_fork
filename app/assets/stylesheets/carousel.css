@@ -1,17 +1,63 @@
+/* Default styles for smaller screens */
+.my-custom-carousel {
+  max-height: 400px; /* Adjust the height as needed for smaller screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.img-fluid {
+  border-radius: 15px;
+  max-height: 300px; 
+}
+
+/* Larger screens (e.g., screens wider than 768px) */
+@media (min-width: 768px) {
   .my-custom-carousel {
-    max-height: 400px;
-    /* Adjust the height as needed */
+    max-height: 800px; /* Adjust the height as needed for larger screens */
   }
 
-  .my-custom-carousel .carousel-inner {
-    text-align: center;
+  .img-fluid {
+    max-height: 600px; /* Adjust the max height for larger screens */
   }
+}
 
-  .my-custom-carousel img {
-    width: 100%;
-    /* Ensures the image takes the full width of the container */
-    height: 100%;
-    /* Ensures the image takes the full height of the container */
-    object-fit: contain;
-    /* Resizes the image to fit within the container while maintaining its aspect ratio */
-  }
+.carousel-inner {
+  text-align: center;
+}
+
+.carousel-image {
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  max-height: 50px;
+  max-width: 50px;
+  top: 50%;
+  background: #fcb1cf; /* Adjust the background color as needed */
+  border: none;
+  border-radius: 10%;
+  padding: 10px;
+  z-index: 1; /* Ensure buttons are above the images */
+  transform: translateY(-50%); /* Vertically center the arrows */
+}
+
+.carousel-control-prev {
+  left: 20px; /* Adjust the distance from the left */
+}
+
+.carousel-control-next {
+  right: 20px; /* Adjust the distance from the right */
+}
+
+/* Style for the navigation button icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  font-size: 24px; /* Adjust the font size as needed */
+  color: #333; /* Adjust the color as needed */
+}

@@ -1,6 +1,5 @@
 /* -------------- ACCUEIL -------------- */
 
-
 .image-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -78,7 +77,6 @@
   background-color: rgba(255, 192, 203, 0.5);
 }
 
-
 /* -------------- LOCATIONS -------------- */
 
 .location-card {
@@ -131,8 +129,6 @@
 /*--- A REVOIR : 2 TAILLES DIFFERENTES ---*/
 /*--- A REVOIR : 2 TAILLES DIFFERENTES ---*/
 /*--- A REVOIR : 2 TAILLES DIFFERENTES ---*/
-
-
 
 .location-card {
   height: 300px;
@@ -190,7 +186,10 @@
   font-weight: 300;
   background-size: cover;
 }
-.card-body,.card-title,.card-text {
+
+.card-body,
+.card-title,
+.card-text {
   text-align: center;
   padding: 10px;
   background-color: #fff;
@@ -198,15 +197,12 @@
   font-family: 'Lato', sans-serif;
   font-weight: 300;
 }
+
 .card-body {
   border: 1px solid #ddd;
   border-radius: 10px;
 }
 
-.img-fluid {
-  border-radius: 15px;
-  max-height: 300px;
-}
 .profile-section {
   text-align: center;
   padding: 20px;
@@ -225,8 +221,6 @@
 .todo-section ul {
   list-style: none;
 }
-
-
 
 
 /* -------------- ABOUT -------------*/

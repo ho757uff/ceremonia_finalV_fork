@@ -1,42 +1,35 @@
 <% content_for :title, "Création d'un lieu pour votre cérémonie de mariage" %>
 <% content_for :meta_description, "Proposez un lieu unique pour votre événement. Ajoutez des détails tels que le nom, l'adresse et la date. Sélectionnez l'événement associé, et partagez une description pour rendre cet endroit spécial." %>
-
 <h2>Création d'un lieu de rencontre pour une partie de la cérémonie</h2>
-<div class="container">
-  <h2 class="text-center mt-4">Proposez un événement</h2>
-
+<div class="container-custom couple-bg-container apparitionprofil">
+  <h2 style="color: #ffffff; text-shadow: 1px 1px 20px #000000;">Proposez un événement</h2>
   <%= form_for @location, html: { class: 'mt-4' } do |f| %>
     <div class="form-group">
       <%= f.label :place, class: 'mb-2' %>
       <%= f.text_field :place, class: 'form-control', placeholder: 'Nom du lieu' %>
     </div>
-
     <div class="form-group">
       <%= f.label :address, class: 'mb-2' %>
       <%= f.text_field :address, class: 'form-control', placeholder: 'Adresse du lieu' %>
     </div>
-
     <div class="form-group">
       <%= f.fields_for :event_locations do |event_location_form| %>
         <div class="mb-3">
           <%= event_location_form.label :event_id, "Sélectionnez un événement", class: 'mb-2' %>
           <%= event_location_form.collection_select :event_id, @events, :id, :title, {}, { class: 'form-control' } %>
         </div>
-
         <div class="mb-3">
           <%= event_location_form.label :date, class: 'mb-2' %>
           <%= event_location_form.datetime_field :date, class: 'form-control' %>
         </div>
-
         <div class="mb-3">
           <%= event_location_form.label :description, class: 'mb-2' %>
           <%= event_location_form.text_area :description, class: 'form-control', placeholder: 'Description de l\'événement' %>
         </div>
       <% end %>
     </div>
-
-    <div class="form-group text-center">
-      <%= f.submit 'Créer le lieu', class: 'btn btn-primary' %>
+    <div class=" d-flex justify-content-center text-center">
+      <%= f.submit 'Créer le lieu', class: 'sweetButton' %>
     </div>
   <% end %>
 </div>
