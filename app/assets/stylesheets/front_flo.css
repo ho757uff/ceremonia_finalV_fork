@@ -1,7 +1,5 @@
 /* Ajoutez ces styles pour l'espace entre les cartes */
-.row {
-  margin-bottom: 20px;
-}
+
 
 .team-card {
   background: rgba(255, 182, 193, 0.1); /* Ajustez la valeur alpha pour plus ou moins de transparence */
