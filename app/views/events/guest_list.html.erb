@@ -36,8 +36,14 @@
   <% end %>
 </div>
 <!-- JavaScript pour afficher le formulaire -->
+
 <script>
-  document.getElementById('add-guest-button').addEventListener('click', function() {
-    document.getElementById('add-guest-form').style.display = 'block';
+  document.addEventListener('DOMContentLoaded', function() {
+    const addGuestButton = document.getElementById('add-guest-button');
+    const addGuestForm = document.getElementById('add-guest-form');
+
+    addGuestButton.addEventListener('click', function() {
+      addGuestForm.style.display = 'block';
+    });
   });
 </script>

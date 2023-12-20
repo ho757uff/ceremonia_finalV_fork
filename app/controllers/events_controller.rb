@@ -19,6 +19,10 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
+    if @event.date < Date.today
+      redirect_to new_event_path, alert: "La date de l'événement est déjà passée."
+      return
+    end  
     if @event.save
       current_user.user_events.create(event_id: @event.id, role_id: 1, user_id: current_user.id)
       redirect_to @event
@@ -40,6 +44,7 @@ class EventsController < ApplicationController
   
   def destroy
     @event.destroy
+    redirect_to events_path
   end
   
   def add_location
@@ -92,13 +97,14 @@ class EventsController < ApplicationController
     @user = User.find(params[:user_id])
     user_event = UserEvent.find_by(user: @user, event: @event, role: Role.find_by(role_name: 'guest'))
     user_event.destroy if user_event
-    redirect_to @event, notice: 'Guest was successfully removed.'
+    redirect_to guest_list_event_path(@event), notice: 'Guest was successfully removed.'
   end
 
   def join_as_guest
-    @event.user_events.create(user_id: current_user.id, role_id: 2)
+    @event.user_events.create(user_id: current_user.id, role_id: 2) if !@event.user_events.exists?(role_id: 2, user_id: current_user.id)
     redirect_to @event
   end
+  
   
 
   private
