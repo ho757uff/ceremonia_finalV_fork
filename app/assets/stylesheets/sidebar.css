@@ -44,6 +44,12 @@
   list-style: none;
 }
 
+.nav-item.sign-in,
+.nav-item.sign-up {
+  list-style-type: none;
+}
+
+
 .nav_link {
   display: flex;
   align-items: center;
@@ -53,6 +59,8 @@
   transition: background-color 0.3s ease;
 }
 
+
+/*
 .nav_link i {
   font-size: 20px;
   margin-right: 10px;
@@ -62,6 +70,9 @@
   background-color: #fcb1cf;
   color: #333;
 }
+
+*/
+
 
 /* Styles pour le lien de déconnexion */
 .nav_link.logout {
