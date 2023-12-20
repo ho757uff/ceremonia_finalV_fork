@@ -80,5 +80,71 @@
 </div>
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />            <!-- Inclusion de la feuille de style et du script pour fancybox -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+<script>                                                            // Script JavaScript pour la gestion de l ajout et la suppression d images 
+document.addEventListener('DOMContentLoaded', () => {                            
+  const uploadForm = document.querySelector('#newalbum form');      // Gestion de l'ajout d'une nouvelle image
+
+  if (uploadForm) {
+    uploadForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(uploadForm);
+      try {
+        const response = await fetch(uploadForm.action, {
+          method: uploadForm.method,
+          body: formData
+        });
+
+        if (!response.ok) {
+          throw new Error('Erreur lors du téléchargement de l\'image');
+        }
+
+        const imagesListContainer = document.querySelector('.image-list');
+        if (imagesListContainer) {
+          const newImages = await response.text();
+          imagesListContainer.innerHTML = newImages;
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  }
+});
+</script>
+
+<script>
+  const deleteButtons = document.querySelectorAll('.image-actions form');           // Gestion de la suppression d'une image
+
+  if (deleteButtons) {
+    deleteButtons.forEach(button => {
+      button.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        try {
+          const response = await fetch(button.action, {
+            method: button.method
+          });
+
+          if (!response.ok) {
+            throw new Error('Erreur lors de la suppression de l\'image');
+          }
+
+          const imagesListContainer = document.querySelector('.image-list');
+          if (imagesListContainer) {
+            const newImages = await response.text();
+            imagesListContainer.innerHTML = newImages;
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      });
+    });
+  }
+});
+
+</script>

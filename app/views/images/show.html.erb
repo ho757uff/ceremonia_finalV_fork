@@ -11,9 +11,13 @@
   <div class="row d-flex justify-content-around align-items-center">
     <div class="col-md-8 d-flex align-items-center justify-content-center">
       <div class="container-fluid mt-2 mb-0" style="height: 100%">
-        <a data-fancybox="gallery" href="<%= url_for(@image.image) %>">
+        <a data-fancybox="gallery" href="<%= url_for(@image.image) %>">                                                                                      <%# La balise <img> est utilisée pour afficher l'image liée à l'objet @image dans une fenêtre modale en utilisant Fancybox, ce qui permet une vue agrandie de l'image lorsqu'elle est cliquée. %>
           <img src="<%= url_for(@image.image) %>" alt="<%= @image.title %>" style="max-height: 500px; width: auto; display: block; margin: 0 auto;">
         </a>
+        <br><br>
+          <div class="text-center">
+            <small><small><small>cliquer sur l'image</small></small></small>
+          </div>
       </div>
     </div>
     <div class="col-md-3 d-flex align-self-start">
@@ -22,7 +26,7 @@
           <%= link_to 'Retourner à l Album', event_album_images_path(@event, @album), class: 'btn sweetButton' %>
         </div>
         <div class="row m-3">
-          <h6><%= @image.comments.count %></strong> commentaire(s)</h6>
+          <h6><%= @image.comments.count %></strong> commentaire(s)</h6>                      <%# Les commentaires associés à cette image sont affichés dans une section dédiée. Chaque commentaire est contenu dans une div avec une classe comment-container, affichant le contenu du commentaire ainsi que l'utilisateur qui l'a posté. De plus, les organisateurs ont la possibilité de supprimer un commentaire grâce à un bouton "x" associé à chaque commentaire s'ils sont connectés en tant qu'organisateur. %>
         </div>
         <div class="row" style="max-height: 150px; overflow-y: auto;">
           <% @comments.each do |comment| %>
@@ -32,7 +36,7 @@
                 <p class="text-black"><%= comment.user.first_name.presence || comment.user.email %></p>
                 <br>&nbsp;&nbsp;
                 <% if current_user.organizer? %>
-                  <%= button_to 'x', event_album_image_comment_path(@event, @album, @image, comment), method: :delete, class: 'btn btn-light', style:'border: 0px solid #ccc; padding: 0.005rem 0.05rem;'%>
+                  <%= button_to 'x', event_album_image_comment_path(@event, @album, @image, comment), method: :delete, class: 'btn btn-light delete-comment-btn', style:'border: 0px solid #ccc; padding: 0.005rem 0.05rem;'%>
                 <% end %>
               </div>
               <br><br>
@@ -45,7 +49,7 @@
               <%= form.text_area :content, placeholder: 'Ajouter un commentaire' %>
             </div>
             <div class="d-flex justify-content-center">
-              <%= form.submit 'Ajouter Commentaire', class: 'btn btn-light' %>
+              <%= form.submit 'Ajouter Commentaire', class: 'btn btn-light' %>                 <%# Un formulaire est présent en bas de la section des commentaires pour permettre aux utilisateurs d'ajouter de nouveaux commentaires. Ce formulaire est configuré avec form_with pour créer de nouveaux commentaires en utilisant AJAX (remote: true). Lorsque le formulaire est soumis, il envoie les données sans recharger la page entière. %>
             </div>
           <% end %>
         </div>
@@ -56,4 +60,35 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+<script>                                                                   //ajout/surpression de commentaire sans recharger la page
+const commentsContainer = document.querySelector('.comments-container');   // Sélection de l'élément où ajouter les commentaires
+
+const newCommentDiv = document.createElement('div');       // Création du nouvel élément commentaire
+newCommentDiv.classList.add('comment-container');
+
+const newCommentText = document.createElement('p');       // Remplissage du contenu du commentaire
+newCommentText.textContent = "Nouveau commentaire";
+newCommentDiv.appendChild(newCommentText);
+
+commentsContainer.appendChild(newCommentDiv);            // Ajout du nouvel élément dans le conteneur de commentaires
+
+const deleteButtons = document.querySelectorAll('.delete-comment-btn');
+
+
+deleteButtons.forEach(button => {                                         // Ajoutez un gestionnaire d'événement à chaque bouton de suppression
+  button.addEventListener('click', () => {
+                                                                             // Sélectionnez l'élément parent à supprimer (le commentaire entier)
+    const commentToDelete = button.closest('.comment-container');
+    
+    if (commentToDelete) {                                                // Supprimez l'élément du DOM
+      commentToDelete.remove();
+    }
+  });
+});
+</script>
+
+
 
