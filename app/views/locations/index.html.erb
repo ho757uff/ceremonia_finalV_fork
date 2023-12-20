@@ -1,31 +1,43 @@
 <% content_for :title, "Lieux du Mariage" %>
 <% content_for :meta_description, "Explorez tous les lieux disponibles pour votre mariage. Créez de nouveaux lieux pour rendre votre événement unique. Découvrez les détails de chaque lieu, y compris l'adresse et d'autres informations importantes." %>
-<div id="location_index" class="text-center apparitionprofil">
-  <h2 class= mb-5>Les lieux de mes événements</h2>
-  <div class="location-cards-container mt-5">
+<div id="location_index" class="text-center apparitionprofil ">
+  <h2 class="mb-5">Les lieux de mes événements</h2>
+  <div class="location-cards-container mt-5 mx-auto d-flex flex-wrap justify-content-center">
     <% if @public_locations.empty? && @private_locations.empty? %>
-      <div class="message mt-5">Vous n'avez pas encore ajouté de lieu d'événement à votre liste.
+      <div class="message mt-5">
+        Vous n'avez pas encore ajouté de lieu d'événement à votre liste.
         <br>
-        <br>Vous pouvez créer un lieu afin de l'ajouter à vos événements en cliquant sur le lien ci-dessous.</div>
+        <br>
+        <p>Vous pouvez créer un lieu afin de l'ajouter à vos événements en cliquant sur le lien ci-dessous.</p>
+      </div>
     <% else %>
-      <% @public_locations.each do |public_location|%>
-        <div class="location-card">
-          <h5 class="location-heading">Lieu :</h5>
-          <p class="location-details"><%= public_location.place %></p>
-          <h5 class="location-heading">Adresse :</h5>
-          <p class="location-details"><%= public_location.address %></p>
-          <%= link_to "Voir détail", location_path(public_location), class: "btn sweetButton" %>
-        </div>
-      <% end %>
-      <% @private_locations.each do |private_location|%>
-        <div class="location-card">
-          <h5 class="location-heading">Lieu :</h5>
-          <p class="location-details"><%= private_location.place %></p>
-          <h5 class="location-heading">Adresse :</h5>
-          <p class="location-details"><%= private_location.address %></p>
-          <%= link_to "Voir détail", location_path(private_location), class: "btn sweetButton" %>
-        </div>
-      <% end %>
+      <div class="row">
+        <% @public_locations.each do |public_location|%>
+          <div class="col-md-4">
+            <div class="location-card">
+              <h5 class="location-heading">Lieu :</h5>
+              <p class="location-details"><%= public_location.place %></p>
+              <h5 class="location-heading">Adresse :</h5>
+              <p class="location-details"><%= public_location.address %></p>
+              <%= link_to "Voir détail", location_path(public_location), class: "btn sweetButton" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="row">
+        <% @private_locations.each do |private_location|%>
+          <div class="col-md-4">
+            <div class="location-card">
+              <h5 class="location-heading">Lieu :</h5>
+              <p class="location-details"><%= private_location.place %></p>
+              <h5 class="location-heading">Adresse :</h5>
+              <p class="location-details"><%= private_location.address %></p>
+              <%= link_to "Voir détail", location_path(private_location), class: "btn sweetButton" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
   <div>
