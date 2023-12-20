@@ -65,7 +65,7 @@ class ImagesController < ApplicationController
       params.require(:image).permit(:title, :description, :image)
     end
 
-    def authorize_event_access
+    def authorize_event_access                       # Vérifie si l'utilisateur a accès à l'événement, sinon redirige vers la page d'accueil.
       @event = Event.find(params[:event_id])
       @album = Album.find(params[:album_id])
       user_event = current_user.user_events.find_by(event_id: @event.id)
@@ -76,7 +76,7 @@ class ImagesController < ApplicationController
     end
 
 
-    def authorize_organizer
+    def authorize_organizer                               # Vérifie si l'utilisateur est un organisateur pour autoriser la suppression d'une image.
       @event = Event.find(params[:event_id])
 
       unless current_user && current_user.organizer?
@@ -86,5 +86,4 @@ class ImagesController < ApplicationController
       
   end
 
-  end
-  # http://127.0.0.1:3000/events/3/albums/3/images/7
+end

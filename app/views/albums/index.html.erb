@@ -56,12 +56,12 @@
                     <td class="col-md-4 align-middle" id="album-line">
                       <%= album.description %>
                     </td>
-                    <td class="col-md-1 pt-4" id="album-line">
+                    <td class="col-md-1 align-middle" id="album-line">
                       <%= link_to 'Voir', event_album_images_path(@event, album.id), class: 'btn sweetButton'%>
                     </td>
                     <td class="col-md-1 align-middle" id="album-line">
                       <% if current_user.organizer? %>
-                        <%= button_to 'Supprimer', event_album_path(@event, album.id), method: :delete, class: 'btn sweetButton',style: 'background-color: transparent;'  %>
+                        <%= button_to 'Supprimer', event_album_path(@event, album.id), method: :delete, class: 'btn sweetButton', style: 'background-color: transparent;'  %>
                       <% end %>
                     </td>
                   </tr>
@@ -75,5 +75,4 @@
   </div>
 
   </div>
-</div>
 </div>
