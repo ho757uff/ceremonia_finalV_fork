@@ -16,5 +16,5 @@
     transform: translateX(-20px);
     background-size: cover;
     background-position: center;
-    animation: slideInFromRight 1s ease-out forwards;
+    animation: slideInFromRightLight 1s ease-out forwards;
   }

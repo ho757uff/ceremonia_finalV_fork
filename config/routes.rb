@@ -28,8 +28,8 @@ Rails.application.routes.draw do
 
   # Static pages
   get "about", to: "static_pages#about"
-  get "contact", to: "static_pages#contact"
-  get "feedback", to: "static_pages#feedback"
+  # get "contact", to: "static_pages#contact"
+  # get "feedback", to: "static_pages#feedback"
   get "terms", to: "static_pages#terms"
   get "privacy", to: "static_pages#privacy"
   get "faq", to: "static_pages#faq"
