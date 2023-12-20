@@ -1,5 +1,15 @@
 /* -------------- ACCUEIL -------------- */
 
+.img-fluid {
+  border-radius: 15px;
+  max-height: 300px; 
+}
+
+.img-fluid-avatar {
+  border-radius: 15px;
+  max-height: 300px; 
+}
+
 .image-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -143,7 +153,6 @@
 .h5-album {
   color: #ffdb58;
 }
-
 
 .rounded-image {
   max-width: 300px;

@@ -7,10 +7,6 @@
   position: relative;
 }
 
-.img-fluid {
-  border-radius: 15px;
-  max-height: 300px; 
-}
 
 /* Larger screens (e.g., screens wider than 768px) */
 @media (min-width: 768px) {
@@ -18,8 +14,9 @@
     max-height: 800px; /* Adjust the height as needed for larger screens */
   }
 
-  .img-fluid {
+  .img-fluid-carousel {
     max-height: 600px; /* Adjust the max height for larger screens */
+    border-radius: 15px;
   }
 }
 
