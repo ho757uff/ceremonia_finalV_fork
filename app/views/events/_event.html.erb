@@ -1,5 +1,5 @@
 <div class="event-cover mb-3">
-  <h1><%= @event.title %></h1>
+  <h1><%= @event.title %></h1><br>
   <h3>L'événement aura lieu le <%= @event.date.strftime('%d-%m-%Y') %></h3>
 </div>
 <div class="container">
@@ -29,7 +29,7 @@
         <p class="text-center">Vous n'avez pas encore ajouté d'invité à cet événement.</p>
       <% end %>
       <div class="d-flex justify-content-center mt-2 mx-auto">
-        <%= link_to "voir la liste d'inviter", guest_list_event_path, class: "btn sweetButton mx-auto" %>
+        <%= link_to "Voir la liste d'invités", guest_list_event_path, class: "btn sweetButton mx-auto" %>
       </div>
     </div>
   </div>

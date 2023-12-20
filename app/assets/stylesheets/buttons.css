@@ -5,7 +5,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
-  
+
 }
 
 .btn:hover {
@@ -137,11 +137,14 @@
 }
 
 .dangerButton {
-  box-shadow: inset 0px 1px 0px 0px #d9534f; /* darker red for shadow */
-  background: linear-gradient(to bottom, #d9534f 5%, #c12e2a 100%); /* gradient from lighter to darker red */
+  box-shadow: inset 0px 1px 0px 0px #d9534f;
+  /* darker red for shadow */
+  background: linear-gradient(to bottom, #d9534f 5%, #c12e2a 100%);
+  /* gradient from lighter to darker red */
   background-color: #d9534f;
   border-radius: 6px;
-  border: 1px solid #a71d2a; /* dark red border */
+  border: 1px solid #a71d2a;
+  /* dark red border */
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -149,14 +152,16 @@
   font-size: 18px;
   font-weight: 100;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #961f23; /* slightly darker red for text shadow */
+  text-shadow: 0px 1px 0px #961f23;
+  /* slightly darker red for text shadow */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .dangerButton:hover {
-  background: linear-gradient(to bottom, #c12e2a 5%, #d9534f 100%); /* reverse gradient on hover */
+  background: linear-gradient(to bottom, #c12e2a 5%, #d9534f 100%);
+  /* reverse gradient on hover */
   background-color: #c12e2a;
 }
 
@@ -164,7 +169,6 @@
   position: relative;
   top: 1px;
 }
-
 
 .coolButton {
   background-color: #5DAFE4;
@@ -247,6 +251,22 @@
   max-width: 200px;
 }
 
-.trix-button {
-  color: rgb(255, 255, 255);
+.trix-button-row {
+  .trix-button-group {
+    border-color: #0f172a;
+
+    .trix-button {
+      background-color: #eb95b8;
+      border-color: #0f172a;
+
+      &.trix-active {
+        background-color: lighten(#eb95b8, 30%);
+      }
+    }
+  }
 }
+  /* 
+  .trix-content {
+    background-color: #0f172a00;
+    border-color: #344155;
+  } */

@@ -5,11 +5,11 @@
   <h2 style="color: #ffffff; text-shadow: 1px 1px 20px #000000;">Proposez un événement</h2>
   <%= form_for @location, html: { class: 'mt-4' } do |f| %>
     <div class="form-group">
-      <%= f.label :place, class: 'mb-2' %>
+      <%= f.label :lieu, class: 'mb-2' %>
       <%= f.text_field :place, class: 'form-control', placeholder: 'Nom du lieu' %>
     </div>
     <div class="form-group">
-      <%= f.label :address, class: 'mb-2' %>
+      <%= f.label :addresse, class: 'mb-2' %>
       <%= f.text_field :address, class: 'form-control', placeholder: 'Adresse du lieu' %>
     </div>
     <div class="form-group">
