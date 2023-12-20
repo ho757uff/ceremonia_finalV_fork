@@ -5,6 +5,7 @@
 <div class="container-custom events-container-bg">
   <h2>Modifier un événement</h2>
   <%= render "form", event: @event %>
+  <%= link_to "Annuler", event_path, class: 'warningButton' %>
 </div>
 
 <%= link_to 'Retour à la liste des événements', events_path %>
