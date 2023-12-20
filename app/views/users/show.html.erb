@@ -34,30 +34,34 @@
                 <div>
                   <%= @user.first_name %>
                 </div>
-              </div>
-            <% else %>
-              Nous ne connaissons pas votre prénom, mais vous pouvez le renseigner si vous le souhaitez.</div>
-          <% end %>
-            <div class="card-text primary-color">
-            <% if @user.last_name.present? %>
-              Nom: 
-              <div>
-                <%= @user.last_name %>
+              <% else %>
+                <div>
+                  Nous ne connaissons pas votre prénom, mais vous pouvez le renseigner si vous le souhaitez.
+                </div>
+              <% end %>
+              <div class="card-text primary-color">
+                <% if @user.last_name.present? %>
+                  Nom: 
+                  <div>
+                    <%= @user.last_name %>
+                  </div>
+                <% else %>
+                  <div>
+                    Nous ne connaissons pas votre nom, mais vous pouvez le renseigner si vous le souhaitez.
+                  </div>
+                <% end %>
+                <% if current_user == @user %>
+                  <div class="d-flex justify-content-center mt-5 mx-auto">
+                    <%= button_to "Editer mes informations", edit_user_registration_path(@user.id), class: "btn sweetButton d-flex justify-content-center", method: :get %>
+                  </div>
+                <% end %>
               </div>
             </div>
-          <% else %>
-            Nous ne connaissons pas votre nom, mais vous pouvez le renseigner si vous le souhaitez.</div>
-        <% end %>
-        <% if current_user == @user %>
-          <div class="d-flex justify-content-center mt-5 mx-auto">
-            <%= button_to "Editer mes informations", edit_user_registration_path(@user.id), class: "btn sweetButton d-flex justify-content-center", method: :get %>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
 </div>
 <script>
   function submitForm() {

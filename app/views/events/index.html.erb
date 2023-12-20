@@ -1,27 +1,26 @@
 <% content_for :title, "Liste de Vos Événements" %>
 <% content_for :meta_description, "Consultez la liste de vos événements et créez de nouveaux événements pour célébrer vos moments spéciaux." %>
-
 <div class="row d-flex justify-content-center">
-  <h2 class="apparitionprofil mb-5">Liste de vos événements</h2>
+  <h2 class="apparitionprofil mb-5">Les événements que j'organise</h2>
   <% if @events != nil %>
-    <div class="d-flex events-container apparitionprofil col-md-8" style="border-radius: 5px;">
+    <div class="d-flex events-container apparitionprofil col-md-8 mb-5" style="border-radius: 5px;">
       <% @events.each do |event| %>
         <div class="event-card apparitionprofil align-items-center">
           <%= link_to event_path(event) do %>
             <h2><%= event.title %></h2>
           <% end %>
         </div>
-    <% end %>
-        <div class="event-card apparitionprofil align-items-center">
-          <%= link_to 'Créer un nouvel événement', new_event_path, class: 'sweetButton create-event-link apparitionprofil align-items-center' %>
-        </div>
+      <% end %>
+      <div class="event-card apparitionprofil align-items-center">
+        <%= link_to 'Créer un nouvel événement', new_event_path, class: 'sweetButton create-event-link apparitionprofil align-items-center' %>
+      </div>
     </div>
   <% else %>
     <p class="apparitionprofil">Aucun événement à afficher pour le moment.</p>
   <% end %>
 </div>
 <div class="row d-flex justify-content-center">
-  <h2 class="apparitionprofil mb-5">Liste de vos événements en tant qu'invité</h2>
+  <h2 class="apparitionprofil mt-5 mb-5">Les événements auxquels je suis invité</h2>
   <% if @guest_events != nil %>
     <div class="d-flex events-container apparitionprofil col-md-8" style="border-radius: 5px;">
       <% @guest_events.each do |guest_event| %>
@@ -30,7 +29,7 @@
             <h2><%= guest_event.title %></h2>
           <% end %>
         </div>
-    <% end %>
+      <% end %>
     </div>
   <% else %>
     <p class="apparitionprofil">Aucun événement à afficher pour le moment.</p>

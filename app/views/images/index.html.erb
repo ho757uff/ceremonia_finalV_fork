@@ -1,124 +1,116 @@
 <% content_for :title, "Album : #{@album.title}" %>
 <% content_for :meta_description, "Découvrez les images de l'album #{@album.title} et ajoutez de nouvelles images pour enrichir votre collection." %>
-
-<div class="clearfix">                
-  
-    <div class="container-fluid">
-      <div class="row d-flex justify-content-around">
-        <div class="col-md-2">
-          <h6>Image(s) : <%= @images.select { |image| image.album == @album }.count %></h6>
-        </div>
-        <div class="col-md-7 d-flex justify-content-center">
-          <h2> Album : <%= @album.title %></h2>
-        </div>
-        <div class="col-md-2 d-flex justify-content-start">
+<div class="clearfix">
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-around">
+      <div class="col-md-2">
+        <h6>Image(s) : <%= @images.select { |image| image.album == @album }.count %></h6>
+      </div>
+      <div class="col-md-7 d-flex justify-content-center">
+        <h2> Album : <%= @album.title %></h2>
+      </div>
+      <div class="col-md-2 d-flex justify-content-start">
         <%= link_to 'Retour Aux Albums', event_albums_path(@event, @album), class: 'btn sweetButton'%>
-        </div>
       </div>
     </div>
-
-
-    <div class="row d-flex">
-      <div class="col-md-5 d-flex align-content-center">
-        <div class="upload-form-container newevent centered-form-container" id="newalbum">
-          <h2 class="form-title ">Ajoutez une Image</h2>
-          <%= form_with(model: [@event, @album, Image.new], local: true, html: { multipart: true }) do |form| %>
-            <div class="form-group">
-              <%= form.label :image, class: 'form-label' %>
-              <%= form.file_field :image, accept: 'image/*', class: 'form-control-file' %>
-            </div>
-            <div class="form-group">
-              <%= form.label :titre, class: 'form-label' %>
-              <%= form.text_field :title, class: 'form-control', placeholder: 'Titre de l\'image' %>
-            </div>
-            <div class="form-group">
-              <%= form.label :description, class: 'form-label' %>
-              <%= form.text_field :description, class: 'form-control', placeholder: 'Description de l\'image' %>
-            </div>
-            
-            <%= form.submit 'Télécharger', class: 'btn btn-success' %>
-          <% end %>
-        </div>
-      </div>
-
-      
-      <div class="col-md-6 mr-5 d-flex align-self-center justify-content-center" style="max-height: 450px; overflow-y: auto; ">
-        <% if @images.empty? %>
-          <h2> Il n'y a pas encore de photo dans cette album. </h2>
-        <% else %>
-          <div class="image-list row d-flex align-items-center">
-            <% @images.each do |image| %>
-              <% if image.album == @album %>
-                <% attached_image = image.image %>
-                <div class="col-md-3 mb-2 d-flex justify-content-center">
-                  <div class="image-item text-center">
-                    <a data-fancybox="gallery" href="<%= url_for(image.image) %>">
-                      <%= image_tag url_for(attached_image), style: 'height: 100%; max-width: auto; ', class: 'thumbnail' %>
-                    </a>
-                    <div class="image-actions">
-                      <%= link_to 'Voir image', event_album_image_path(@event, @album, image), class: 'btn sweetButton btn-sm' %>
-                      <% if current_user.organizer? %>
-                        <%= button_to 'Supprimer image', event_album_image_path(@event, @album, image), method: :delete, class: 'btn sweetButton btn-sm rounded-pill' %>
-                      <% end %>
-                    </div>       
-                  </div>
-                </div>
-              <% end %>
-              <div class="text-center">
-                <% if image.user.present? %>
-                  <small><small><p class="text-black">Posté par : <%= image.user.first_name.presence || image.user.email %></p></small></small>
-                <% else %>
-                  <p class="text-black">Auteur inconnu</p>
-                <% end %>
-              </div>
-            <% end %>
+  </div>
+  <div class="row d-flex">
+    <div class="col-md-5 d-flex align-content-center">
+      <div class="upload-form-container newevent centered-form-container" id="newalbum">
+        <h2 class="form-title ">Ajoutez une Image</h2>
+        <%= form_with(model: [@event, @album, Image.new], local: true, html: { multipart: true }) do |form| %>
+          <div class="form-group">
+            <%= form.label :image, class: 'form-label' %>
+            <%= form.file_field :image, accept: 'image/*', class: 'form-control-file' %>
+          </div>
+          <div class="form-group">
+            <%= form.label :titre, class: 'form-label' %>
+            <%= form.text_field :title, class: 'form-control', placeholder: 'Titre de l\'image' %>
+          </div>
+          <div class="form-group">
+            <%= form.label :description, class: 'form-label' %>
+            <%= form.text_field :description, class: 'form-control', placeholder: 'Description de l\'image' %>
+          </div>
+          <div class=" d-flex justify-content-center text-center">
+            <%= form.submit 'Ajouter ma photo', class: 'sweetButton' %>
           </div>
         <% end %>
       </div>
-    </div>    
+    </div>
+    <div class="col-md-6 mr-5 d-flex align-self-center justify-content-center" style="max-height: 450px; overflow-y: auto; ">
+      <% if @images.empty? %>
+        <h2> Il n'y a pas encore de photo dans cetalbum. </h2>
+      <% else %>
+        <div class="image-list row d-flex align-items-center">
+          <% @images.each do |image| %>
+            <% if image.album == @album %>
+              <% attached_image = image.image %>
+              <div class="col-md-3 mb-2 d-flex justify-content-center">
+                <div class="image-item text-center">
+                  <a data-fancybox="gallery" href="<%= url_for(image.image) %>">
+                    <%= image_tag url_for(attached_image), style: 'height: 100%; max-width: auto; ', class: 'thumbnail' %>
+                  </a>
+                  <div class="image-actions">
+                    <%= link_to 'Voir image', event_album_image_path(@event, @album, image), class: 'btn sweetButton btn-sm' %>
+                    <% if current_user.organizer? %>
+                      <%= button_to 'Supprimer image', event_album_image_path(@event, @album, image), method: :delete, class: 'btn sweetButton btn-sm rounded-pill' %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <div class="text-center">
+              <% if image.user.present? %>
+                <small><small>
+                    <p class="text-black">Posté par : <%= image.user.first_name.presence || image.user.email %></p>
+                  </small></small>
+              <% else %>
+                <p class="text-black">Auteur inconnu</p>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
+</div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />            <!-- Inclusion de la feuille de style et du script pour fancybox -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-
-
-
-<script>                                                            // Script JavaScript pour la gestion de l'ajout et la suppression d'images 
-document.addEventListener('DOMContentLoaded', () => {                            
-  const uploadForm = document.querySelector('#newalbum form');      // Gestion de l'ajout d'une nouvelle image
-
-  if (uploadForm) {
-    uploadForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const formData = new FormData(uploadForm);
-      try {
-        const response = await fetch(uploadForm.action, {
-          method: uploadForm.method,
-          body: formData
-        });
-
-        if (!response.ok) {
-          throw new Error('Erreur lors du téléchargement de l\'image');
-        }
-
-        const imagesListContainer = document.querySelector('.image-list');
-        if (imagesListContainer) {
-          const newImages = await response.text();
-          imagesListContainer.innerHTML = newImages;
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    });
-  }
-});
-</script>
-
 <script>
-  const deleteButtons = document.querySelectorAll('.image-actions form');           // Gestion de la suppression d'une image
+  // Script JavaScript pour la gestion de l'ajout et la suppression d'images
+  document.addEventListener('DOMContentLoaded', () => {
+    const uploadForm = document.querySelector('#newalbum form');      // Gestion de l'ajout d'une nouvelle image
+
+    if (uploadForm) {
+      uploadForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(uploadForm);
+        try {
+          const response = await fetch(uploadForm.action, {
+            method: uploadForm.method,
+            body: formData
+          });
+
+          if (!response.ok) {
+            throw new Error('Erreur lors du téléchargement de l\'image');
+          }
+
+          const imagesListContainer = document.querySelector('.image-list');
+          if (imagesListContainer) {
+            const newImages = await response.text();
+            imagesListContainer.innerHTML = newImages;
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      });
+    }
+  });
+</script>
+<script>
+  const deleteButtons = document.querySelectorAll('.image-actions form'); // Gestion de la suppression d'une image
 
   if (deleteButtons) {
     deleteButtons.forEach(button => {
@@ -145,6 +137,4 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-});
-
 </script>
