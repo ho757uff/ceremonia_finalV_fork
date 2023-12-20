@@ -1,0 +1,28 @@
+<div class="event-guest">
+  <h2>Liste des invités</h2>
+  <p>Nombre d'invités : <%= @guest_users.size %></p>
+  <% if @guest_users.present? %>
+<table>
+  <thead>
+    <tr>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Supprimer cet invité</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @guest_users.each do |guest| %>
+      <tr>
+        <td><%= guest.first_name %></td>
+        <td><%= guest.last_name %></td>
+        <td><%= guest.email %></td>
+        <td><%= link_to 'Remove Guest', remove_guest_event_path(id: @event.id, user_id: guest.id), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  <% else %>
+    <p>Aucun invité pour cet événement.</p>
+  <% end %>
+</div>

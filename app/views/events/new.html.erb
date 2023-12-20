@@ -4,4 +4,5 @@
 <div class="container-custom couple-bg-container">
   <h2 style="color: #ffffff; text-shadow: 1px 1px 20px #000000;">Créer un nouvel évènement </h2>
   <%= render "form", event: @event %>
+  <%= link_to "Annuler", events_path, class: 'warningButton' %>
 </div>
