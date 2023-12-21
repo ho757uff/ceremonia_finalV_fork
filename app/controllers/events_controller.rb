@@ -59,16 +59,16 @@ class EventsController < ApplicationController
         permitted_params = event_location_params(location_params)
         EventLocation.create(permitted_params.merge(event_id: @event.id, location_id: location_id)) if params[:location_ids].include?(location_id)
       end
-      redirect_to @event, notice: 'Locations were successfully added to the event.'
+      redirect_to @event
     else
-      redirect_to @event, alert: 'No locations were selected to be added.'
+      redirect_to @event
     end
   end
 
   def destroy_association
     @event_location = EventLocation.find(params[:id])
     @event_location.destroy
-    redirect_to @event, notice: 'Location was successfully removed from the event.'
+    redirect_to @event, notice: "le lieux a bien était supprimé de l'événement."
   end
 
   def guest_list
@@ -80,14 +80,14 @@ class EventsController < ApplicationController
     existing_user = User.find_by(email: params[:email])
     if existing_user
       UserEvent.create(user: existing_user, event: @event, role: @role)
-      redirect_to guest_list_event_path(@event), notice: 'User already exists. Added to the event.'
+      redirect_to guest_list_event_path(@event), notice: "un invité a bien était ajouté à l'événement."
     else
       @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: 'password123', password_confirmation: 'password123')
       if @user.save
         UserEvent.create(user: @user, event: @event, role: @role)
-        redirect_to guest_list_event_path(@event), notice: 'Guest was successfully added.'
+        redirect_to guest_list_event_path(@event), notice: "un invité a bien était ajouté à l'événement."
       else
-        redirect_to guest_list_event_path(@event), alert: 'Failed to add guest. Please check the details.'
+        redirect_to guest_list_event_path(@event), alert: "une erreur s'est produite, vérifiez les informations."
       end
     end
   end
@@ -97,12 +97,12 @@ class EventsController < ApplicationController
     @user = User.find(params[:user_id])
     user_event = UserEvent.find_by(user: @user, event: @event, role: Role.find_by(role_name: 'guest'))
     user_event.destroy if user_event
-    redirect_to guest_list_event_path(@event), notice: 'Guest was successfully removed.'
+    redirect_to guest_list_event_path(@event), notice: "invité supprimée de l'événement."
   end
 
   def join_as_guest
     @event.user_events.create(user_id: current_user.id, role_id: 2) if !@event.user_events.exists?(role_id: 2, user_id: current_user.id)
-    redirect_to @event
+    redirect_to @event, notice: "Vous avez bien rejoins l'événement."
   end
   
   
