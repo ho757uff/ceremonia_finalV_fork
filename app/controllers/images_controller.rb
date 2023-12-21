@@ -25,15 +25,19 @@ class ImagesController < ApplicationController
     end
   
     def create
+      if image_params[:image].present?
       @image = @album.images.build(image_params)
       @image.user = current_user
-      if @image.save
-        redirect_to event_album_images_path(@event, @album)
+        if @image.save
+          redirect_to event_album_images_path(@event, @album)
+        else
+          render :new
+        end
       else
-        render :new
-      end      
+        redirect_to new_event_album_image_path(@event, @album), alert: "Veuillez sélectionner une image."
+      end
     end
-  
+
     def edit
       @image = @album.images.find(params[:id])
     end

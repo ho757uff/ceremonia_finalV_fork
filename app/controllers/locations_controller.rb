@@ -32,10 +32,6 @@ class LocationsController < ApplicationController
   # Crée un lieux avec les paramètres fournis
   def create
     @location = Location.new(location_params)
-    if @location.date < Date.today
-      redirect_to new_location_path, alert: "La date est déjà passée."
-      return
-    end
     if @location.save
       redirect_to locations_path
     else
