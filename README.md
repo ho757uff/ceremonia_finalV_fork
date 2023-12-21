@@ -11,15 +11,15 @@ For now, the main purpose of the website is centered around the possibility to e
 
 
 ## Website :
-
-
-## Setup instructions :
+https://the-wedding-project-1b83c5344eda.herokuapp.com/
 
 
 ## User Journey :
 
 Users have to register on the platform to enjoy the services it provides.
 Once signed-up and logged-in, create a wedding event, and access various features.
+
+## Features :
 
 - Creating events
 - Inviting other users to participate in events they organize
@@ -31,6 +31,10 @@ Once signed-up and logged-in, create a wedding event, and access various feature
 - Adding pictures in each photo album
 - Commenting on pictures of an album
 
+## The Photo Album
+
+Organizer and guest can access to a photo album. Organizer can create several Album for an event. Organizer and guest can add photos and comments. Only organizers can delete photo and comments.
+Albums and photos are protected from outside intrusion. Only people who belong to an event can access.
 
 ## Future Features to be implemented :
 
@@ -41,12 +45,10 @@ Once signed-up and logged-in, create a wedding event, and access various feature
 - Meal planning
 
 
-### Credits :
+## Credits :
 
 https://github.com/orgs/LLRMF/people
 
-### Feedback :
+## Feedback :
 
 Feel free to reach any of the person working on Ceremonia™
-
-
