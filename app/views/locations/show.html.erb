@@ -7,10 +7,10 @@
   <div class="container mt-4">
     <div class="card col-md-6 mx-auto newevent">
       <div class="card-header">
-        <h5 class="location-content-card">Place : <%= @location.place %></h5>
+        <h5 class="location-content-card">Lieu: <%= @location.place %></h5>
       </div>
       <div class="card-header">
-        <h5 class="location-content-card">Address : <%= @location.address %></h5>
+        <h5 class="location-content-card">Addresse : <%= @location.address %></h5>
       </div>
       <div class="card-footer text-center">
         <%= button_to "Editer", edit_location_path(@location), class: "btn btn-success mr-2", method: :get %>

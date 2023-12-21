@@ -2,17 +2,15 @@
 <% content_for :meta_description, "Créez et gérez vos albums photos comme vous le souhaitez. Explorez vos souvenirs avec facilité." %>
 <div class="bkg-album animate-bottom">
   <%# affichage de toutes les albums %>
-
-
   <div class="container-fluid" id="album">
     <div class="row d-flex align-items-center">
-      <div class="col-md-9 d-flex justify-content-center">
-        <h1>ALBUMS</h1>
+      <div class="d-flex justify-content-center text-center">
+        <h1>Mes albums photos</h1>
       </div>
-      <div class="col-md-2 mt-3 d-flex justify-content-end ">
-        <%= link_to 'Retour à l événement', event_path(@event), class: 'btn sweetButton' %>
-      </div>
-    <div>
+    </div>
+    <div class="col-md-2 mt-3 d-flex justify-content-end ">
+      <%= link_to "Retour à l'événement", event_path(@event), class: 'warningButton' %>
+    </div>
   </div>
   <div class="row-md mt-5 mb-5">
     <div class="background-content">
@@ -21,20 +19,19 @@
       <% end %>
     </div>
   </div>
-
   <div class="container pt-3">
     <div class="row d-flex justify-content-around" >
       <div class="col-md-3 d-flex align-self-center justify-content-center">
         <% if current_user.organizer? %>
-          <%= link_to 'Créer ton album', new_event_album_path(@event), class: 'btn sweetButton' , style: 'height: 100px; line-height: 50px;'  %>
+          <%= link_to 'Créer un album photos', new_event_album_path(@event), class: 'btn sweetButton' , style: 'height: 100px; line-height: 50px;'  %>
         <% end %>
       </div>
       <div class="col-md-9 d-flex align-content-center justify-content-center">
         <% if @albums.empty? %>
           <% if current_user.organizer? %>
-            <h2>Vous n'avez pas encore d'album photo</h2>
+            <div>Vous n'avez pas encore d'album photo. Vous pouvez un créer un afin qu'il s'affiche sur cette page.</div>
           <% else %>
-            <h2>Aucun Album n'a été créé pour l'événement</h2>
+            <h2>Aucun Album n'a encore été créé par l'organisateur de cet événement.</h2>
           <% end %>
         <%else%>
           <div class="table-md" style="max-height: 300px; overflow-y: auto;">
@@ -47,32 +44,30 @@
                   <th id="album-line"></th>
                 </tr>
               </thead>
-              </tbody>
-                <% @albums.each do |album| %>
-                  <tr>
-                    <td class="col-md-4 align-middle" id="album-line">
-                      <%= album.title %>
-                    </td>
-                    <td class="col-md-4 align-middle" id="album-line">
-                      <%= album.description %>
-                    </td>
-                    <td class="col-md-1 align-middle" id="album-line">
-                      <%= link_to 'Voir', event_album_images_path(@event, album.id), class: 'btn sweetButton'%>
-                    </td>
-                    <td class="col-md-1 align-middle" id="album-line">
-                      <% if current_user.organizer? %>
-                        <%= button_to 'Supprimer', event_album_path(@event, album.id), method: :delete, class: 'btn sweetButton', style: 'background-color: transparent;'  %>
-                      <% end %>
-                    </td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
-        <% end %>
+            </tbody>
+            <% @albums.each do |album| %>
+              <tr>
+                <td class="col-md-4 align-middle" id="album-line">
+                  <%= album.title %>
+                </td>
+                <td class="col-md-4 align-middle" id="album-line">
+                  <%= album.description %>
+                </td>
+                <td class="col-md-1 align-middle" id="album-line">
+                  <%= link_to 'Voir', event_album_images_path(@event, album.id), class: 'btn sweetButton'%>
+                </td>
+                <td class="col-md-1 align-middle" id="album-line">
+                  <% if current_user.organizer? %>
+                    <%= button_to 'Supprimer', event_album_path(@event, album.id), method: :delete, class: 'btn sweetButton', style: 'background-color: transparent;'  %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
-    </div>
+    <% end %>
   </div>
-
-  </div>
+</div>
+</div>
 </div>
