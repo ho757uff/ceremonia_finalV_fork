@@ -1,21 +1,16 @@
 <div class="container-custom couple-bg-container apparitionprofil">
-  <h2 style="color: #ffffff; text-shadow: 1px 1px 20px #000000;">Changer votre mot de passe</h2>
-  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "needs-validation" }) do |f| %>
+  <h2 style="color: #ffffff; text-shadow: 1px 1px 20px #000000;">Mot de passe oublié ?</h2>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "needs-validation" }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-    <%= f.hidden_field :reset_password_token %>
+
     <div class="mb-3">
-      <%= f.label :password, "Nouveau mot de passe"%><br>
-      <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> caractères minimum)</em>
-      <% end %>
-      <%= f.password_field :password, class: "form-control", autofocus: true, autocomplete: "new-password", required: true %>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
-    <div class="mb-3">
-      <%= f.label :password_confirmation, "Confirmer le nouveau mot de passe"%>
-      <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password", required: true %>
-    </div>
-    <div class="text-center">
-      <%= f.submit "Changer mon mot de passe", class: "warningButton" %>
+    <div class="actions">
+      <%= f.submit "Envoyez moi un Email" %>
     </div>
   <% end %>
 </div>
+
+
