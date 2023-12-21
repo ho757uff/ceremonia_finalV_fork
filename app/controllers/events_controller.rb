@@ -80,7 +80,7 @@ class EventsController < ApplicationController
     existing_user = User.find_by(email: params[:email])
     if existing_user
       UserEvent.create(user: existing_user, event: @event, role: @role)
-      redirect_to guest_list_event_path(@event)
+      redirect_to guest_list_event_path(@event), notice: "un invité a bien était ajouté à l'événement."
     else
       @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: 'password123', password_confirmation: 'password123')
       if @user.save
