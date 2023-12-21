@@ -28,6 +28,7 @@
       <% else %>
         <p class="text-center">Vous n'avez pas encore ajouté d'invité à cet événement.</p>
       <% end %>
+      <p class="text-center">Voici le lien à partager avec vos invités : <%= event_url(@event) %> </p>
       <div class="d-flex justify-content-center mt-2 mx-auto">
         <%= link_to "Voir la liste d'invités", guest_list_event_path, class: "btn sweetButton mx-auto" %>
       </div>
