@@ -22,9 +22,9 @@
   </tbody>
 </table>
 <!-- Bouton "Add Guest" -->
-<button id="add-guest-button">Ajouter un invité</button>
+<%# <button id="add-guest-button">Ajouter un invité</button> %>
 <!-- Formulaire pour ajouter un invité -->
-<div id="add-guest-form" style="display: none;">
+<div id="add-guest-form" ><!---style="display: none;" -->
   <%= form_with url: add_guest_event_path(@event), method: :post do |form| %>
     <%= form.label :first_name, "Prénom" %>
     <%= form.text_field :first_name %>
@@ -36,13 +36,13 @@
   <% end %>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const addGuestButton = document.getElementById('add-guest-button');
-  const addGuestForm = document.getElementById('add-guest-form');
-
-  addGuestButton.addEventListener('click', function() {
-    addGuestForm.style.display = (addGuestForm.style.display === 'block') ? 'none' : 'block';
+<%# <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const addGuestButton = document.getElementById('add-guest-button');
+    var clickAddGuestButton = function() {
+      let addGuestForm = document.getElementById('add-guest-form');
+      addGuestForm.style.display = (addGuestForm.style.display === 'block') ? 'none' : 'block';
+    };
+    addGuestButton.addEventListener('click', clickAddGuestButton);
   });
-});
-</script>
+</script> %>
